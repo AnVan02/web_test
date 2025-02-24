@@ -1,0 +1,207 @@
+[26-Nov-2024 11:55:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "sub_note" on null in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-PRO.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-PRO.php on line 32
+[26-Nov-2024 11:56:37 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "sub_note" on null in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-PRO.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-PRO.php on line 32
+[27-Nov-2024 10:30:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php on line 21
+[27-Nov-2024 10:31:27 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php on line 21
+[27-Nov-2024 10:42:12 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php on line 21
+[27-Nov-2024 10:42:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php on line 21
+[27-Nov-2024 10:42:48 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success.php on line 21
+[29-Nov-2024 06:30:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'data.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-1.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-1.php on line 3
+[29-Nov-2024 06:31:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'data.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-2.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-2.php on line 3
+[29-Nov-2024 06:31:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'data.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-2.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-OFFICE-2.php on line 3
+[29-Nov-2024 06:31:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'data.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-AI.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-AI.php on line 3
+[29-Nov-2024 06:31:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'data.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-AI.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-AI.php on line 3
+[29-Nov-2024 06:32:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'data.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-GAMER-1.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-GAMER-1.php on line 3
+[29-Nov-2024 06:33:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'data.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-GAMER-2.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/ROSA-GAMER-2.php on line 2
+[02-Dec-2024 15:08:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 17:25:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '..header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 17:25:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '.../header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 17:25:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '.../header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:17:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '/header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 4
+[02-Dec-2024 19:17:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '/header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 4
+[02-Dec-2024 19:25:01 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '..header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:25:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '..footer.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:103
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 103
+[02-Dec-2024 19:33:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'https://office.rosacomputer.vn/header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:36:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '/office.rosacomputer.vn/header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:38:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '.../header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:39:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required './header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:39:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:40:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '/header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[02-Dec-2024 19:40:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required './header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/office.rosacomputer.vn/sanpham/success_test.php on line 3
+[07-Jan-2025 10:57:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '../data/products_test.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_test.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_test.php on line 4
+[08-Jan-2025 11:42:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "popup" on null in /home/nvpbgqcv/public_html/data/products_test.php:102
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_test.php(4): require()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/data/products_test.php on line 102
+[09-Jan-2025 10:50:27 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "popup" on null in /home/nvpbgqcv/public_html/data/products_test.php:73
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE-N100-test.php(4): require()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/data/products_test.php on line 73
+[09-Jan-2025 10:50:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "popup" on null in /home/nvpbgqcv/public_html/data/products_test.php:92
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE-N100-test.php(4): require()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/data/products_test.php on line 92
+[09-Jan-2025 10:51:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "popup" on null in /home/nvpbgqcv/public_html/data/products_test.php:92
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE-N100-test.php(4): require()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/data/products_test.php on line 92
+[09-Jan-2025 10:51:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "popup" on null in /home/nvpbgqcv/public_html/data/products_test.php:92
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE-N100-test.php(4): require()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/data/products_test.php on line 92
+[09-Jan-2025 10:51:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "popup" on null in /home/nvpbgqcv/public_html/data/products_test.php:92
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE-N100-test.php(4): require()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/data/products_test.php on line 92
+[09-Jan-2025 10:51:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Attempt to assign property "popup" on null in /home/nvpbgqcv/public_html/data/products_test.php:92
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE-N100-test.php(4): require()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/data/products_test.php on line 92
+[18-Jan-2025 15:27:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Object of class Entry could not be converted to string in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php:2687
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php on line 2687
+[18-Jan-2025 15:29:15 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Object of class Entry could not be converted to string in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php:2687
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php on line 2687
+[18-Jan-2025 16:38:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php:2674
+Stack trace:
+#0 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php on line 2674
+[20-Jan-2025 08:54:38 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php:2666
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php(2666): array_filter()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php on line 2666
+[20-Jan-2025 08:55:27 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php:2666
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php(2666): array_filter()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php on line 2666
+[20-Jan-2025 08:56:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php:2666
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php(2666): array_filter()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE_TEST.php on line 2666
+[20-Jan-2025 10:13:52 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /home/nvpbgqcv/public_html/sanpham/ROSA-GAMER-X3D.php:2846
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-GAMER-X3D.php(2846): array_filter()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-GAMER-X3D.php on line 2846
+[20-Jan-2025 15:03:38 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE.php:2668
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE.php(2668): array_filter()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE.php on line 2668
+[20-Jan-2025 15:45:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE.php:2661
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE.php(2661): array_filter()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-OFFICE.php on line 2661
+[21-Jan-2025 08:35:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: preg_replace() expects at least 3 arguments, 2 given in /home/nvpbgqcv/public_html/sanpham/ROSA-AI-test.php:2797
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-AI-test.php(2797): preg_replace()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-AI-test.php on line 2797
+[21-Jan-2025 08:35:27 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: preg_replace() expects at least 3 arguments, 2 given in /home/nvpbgqcv/public_html/sanpham/ROSA-AI-test.php:2797
+Stack trace:
+#0 /home/nvpbgqcv/public_html/sanpham/ROSA-AI-test.php(2797): preg_replace()
+#1 {main}
+  thrown in /home/nvpbgqcv/public_html/sanpham/ROSA-AI-test.php on line 2797
