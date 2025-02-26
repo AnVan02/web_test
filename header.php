@@ -10,8 +10,9 @@
 <link rel="stylesheet" type="text/css" href="assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="assets/styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
+<!-- <link rel="stylesheet" type="text/css" href="assets/styles/main_styles.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="assets/styles/responsive.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
 <body class="h-100">
     <!-- Header -->
@@ -26,20 +27,20 @@
                             <img src="assets/images/rosa.png" alt="Logo">
                         </div>
 
-                        <!-- Navigation -->
-                        <div class="col-lg-9 col-10 float-right">
-                            <nav class="navbar row">
-                                <!-- Search form -->
-                                <form method="post" class="col-lg-8 col-1 float-left" action="" onchange="search()">
-                                    <div class="navbar-search input-group input-group-lg">
+                                <!-- Navigation -->
+                            <!-- Form Tìm kiếm -->
+                                <form method="post" class="col-lg-8 col-md-8 col-sm-12" action="">
+                                    <div class="input-group input-group-lg navbar-search">
                                         <input type="text" class="form-control" id="searchbox" placeholder="Nhập tên sản phẩm cần tìm..." name="search">
                                         <div class="input-group-append">
-                                            <a id="btnsearch">
-                                                <input type="submit" value="Tìm kiếm" class="btn btn-outline-primary btn-lg">
-                                            </a>
+                                            <button type="submit" class="btn btn-outline-primary btn-lg">
+                                                Tìm kiếm
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
+
+
                                 <!-- Main navigation menu -->
                                 <div class="row p-2">
                                     <div class="nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
@@ -48,6 +49,7 @@
                                             <li><a href="aboutus.php">GIỚI THIỆU</a></li>
                                             <li><a href="product.php">SẢN PHẨM</a></li>
                                             <li><a href="phanmen.php">ỨNG DỤNG ROSA</a></li>
+                                            <li><a href="tintuc.php">TIN TỨC</a></li>
                                             <li><a href="check.php">KIỂM TRA ĐƠN HÀNG</a></li>
                                             <li><a href="baohanh_test.php">BẢO HÀNH </a></li>
                                         </ul>
