@@ -1,0 +1,13 @@
+{
+     "vi": {
+         "home": "Trang Chủ",
+         "about": "Giới Thiệu",
+         "products": "Sản Phẩm"
+     },
+     "en": {
+         "home": "Home",
+         "about": "About Us",
+         "products": "Products"
+     }
+ }
+ 
