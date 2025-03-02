@@ -58,7 +58,7 @@
                     <li><a id="home" href="index.php">TRANG CHỦ</></li>
                     <li><a id="about" href="aboutus.php">GIỚI THIỆU</></li>
                     <li><a id="products" href="product.php">SẢN PHẨM</></li>
-                    <li><a href="#">Ứng Dụng ROSA <i class="fas fa-chevron-down" style="margin-left: 15px"></i></a>
+                    <!-- <li><a href="#">Ứng Dụng ROSA <i class="fas fa-chevron-down" style="margin-left: 15px"></i></a>
                         <ul class="submenu">
                             <li><a href="ROSA-SW.php">Phần Mềm ROSA</a></li>
                             
@@ -70,7 +70,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li><a href="tintuc.php">TIN TỨC</a></li>
                     <li><a href="check.php">KIỂM TRA ĐƠN HÀNG</a></li>
                     <li><a href="baohanh_test.php">BẢO HÀNH</a></li>

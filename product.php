@@ -15,6 +15,7 @@
         	</div>
         	
         	 <!--Văn phòng-->
+             <div id="vanphong">
              <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
                 <div class="banner-content">
                    <H3><b style="color:#FFF">VĂN PHÒNG</b></H3>
@@ -25,6 +26,7 @@
                 </div>
             </div>    
              <div class="product-group vanphong">
+                
                     <?php 
                         $vp_list = [$rosa_office_n100, $rosa_office_1, $rosa_office_2];
 
@@ -51,8 +53,11 @@
                         }
                         ?>
                     </div>
+                    </div>
                  <!--GAMER-->
+                 <div id="gaming">
                  <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
+                    
                     <div class="banner-content">
                         <H3><b style="color:#FFF">GAMING</b><H3>
                         <h5 style="color:#DCDCDC">Trang bị cấu hình đỉnh cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích. Máy tính này giúp bạn trải nghiệm đồ họa sắc nét và chơi game mượt mà, ngay cả với các tựa game nặng</h5>
@@ -89,6 +94,7 @@
                     </div>
                     
                       <!--Mini PC-->
+                      <div id="mini">
                 <div class="main-banner" style=" background: linear-gradient(to right,#000000,#000000);">
                     <div class="banner-content">
                        <H3><b style="color:#FFF">MINI PC</b><H3>
@@ -128,6 +134,7 @@
            
                
                  <!--AI-->
+                 <div id="ai">
         	 <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
                 <div class="banner-content">
                     <H3><b style="color:#FFF">AI</b></H3>
@@ -171,6 +178,19 @@
             	
                 </div>
             </header>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    if (window.location.hash) {
+                        let element = document.querySelector(window.location.hash);
+                        if (element) {
+                            element.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                    }
+                });
+
+            </script>
+            
         <style>
             
         .body {

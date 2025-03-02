@@ -492,31 +492,33 @@ $conn->close();
                 <!-- <img src="Rosa_Office_I.png" alt="ROSA Office" class="small"> -->
                 <h3>ROSA Office</h3>
                 <p>Mang đến hiệu suất ổn định và tính năng bảo mật cao, hoàn hảo cho công việc văn phòng hàng ngày.</p>
-                <a href="#" class="btn">KHÁM PHÁ</a>
-            </div>
+                    <a href="product.php#vanphong" class="btn">KHÁM PHÁ</a>
+                </div>
             <div class="card">
                 <!-- <img src="image.png" alt="ROSA AI" class="large"> -->
                 <!-- <img src="Rosa_Office_I.png" alt="ROSA AI" class="small"> -->
                 <h3>ROSA AI</h3>
                 <p>Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
-                <a href="#" class="btn">KHÁM PHÁ</a>
-            </div>
+                <a href="product.php#ai" class="btn">KHÁM PHÁ</a>
+                </div>
             <div class="card">
                 <!-- <img src="image.png" alt="ROSA Gaming" class="large"> -->
                 <!-- <img src="Rosa_Office_I.png" alt="ROSA Gaming" class="small"> -->
                 <h3>ROSA Gaming</h3>
                 <p>Cấu hình cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích.</p>
-                <a href="#" class="btn">KHÁM PHÁ</a>
-            </div>
+                <a href="product.php#gaming" class="btn">KHÁM PHÁ</a>
+                </div>
             <div class="card">
                 <!-- <img src="image.png" alt="ROSA Server" class="large"> -->
                 <!-- <img src="Rosa_Office_I.png" alt="ROSA Server" class="small"> -->
-                <h3>ROSA Server</h3>
+                <h3>ROSA MINI </h3>
                 <p>Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
-                <a href="#" class="btn">KHÁM PHÁ</a>
-            </div>
+                <a href="product.php#mini" class="btn">KHÁM PHÁ</a>
+               </div>
         </div>
     </div>
+
+
 
 
 <!--software-->
