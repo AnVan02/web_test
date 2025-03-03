@@ -1,37 +1,23 @@
-<div class="benefit mt-2">
-    <div class="container">
-        <div class="row benefit_row">
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content mr-1">
-                        <h6>Bảo hành 3 năm</h6>
-                    </div>
-                </div>
+<div class="container footer-contact">
+            <div class="footer-newsletter">
+                <h3 style="color:red">Nhận thông tin từ ROSA.</h3>
+                <p>Đăng ký email để nhận các thông tin mới nhất từ ROSA</p>
+                <input type="email" placeholder="Email của bạn"> <button class="btn-subscribe">ĐĂNG KÝ</button>
             </div>
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content mr-1">
-                        <h6>Linh kiện chính hãng</h6>
-                    </div>
-                </div>
+            <div class="footer-support">
+                <h3  style="color:red" >Thông tin hỗ trợ.</h3>
+                <p>Kinh doanh: (028) 39293770 - (028) 39293765</p>
+                <p>Kỹ thuật & bảo hành: (028) 39260996</p>
             </div>
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content">
-                        <h6>Thanh toán dễ dàng</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content">
-                        <h6>Giao hàng tận nơi</h6>
-                    </div>
-                </div>
+            <div class="footer-social">
+                <h3  style="color:red">Liên kết social</h3>
+                <p>Theo dõi ROSA tại các kênh mạng xã hội</p>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
-    </div>
-</div>
 
 <footer class="footer">
     <div class="container">
@@ -83,6 +69,38 @@
 </footer>
 
 <style>
+    .footer-contact {
+    display: flex;
+    justify-content: space-between;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.footer-newsletter, .footer-support, .footer-social {
+    flex: 1;
+    padding: 10px;
+  
+}
+.btn-subscribe {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-subscribe:hover {
+    background: darkred;
+}
+.footer-social a {
+    margin: 0 5px;
+    font-size: 20px;
+    color: #555;
+}
+.footer-social a:hover {
+    color: red;
+}
 .row {
     display: flex;
     flex-wrap: nowrap; /* Ngăn các cột xuống dòng */

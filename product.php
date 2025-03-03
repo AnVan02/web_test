@@ -55,128 +55,128 @@
                     </div>
                     </div>
                  <!--GAMER-->
-                 <div id="gaming">
-                 <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
-                    
-                    <div class="banner-content">
-                        <H3><b style="color:#FFF">GAMING</b><H3>
-                        <h5 style="color:#DCDCDC">Trang bị cấu hình đỉnh cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích. Máy tính này giúp bạn trải nghiệm đồ họa sắc nét và chơi game mượt mà, ngay cả với các tựa game nặng</h5>
+                <div id="gaming">
+                    <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
+                        
+                        <div class="banner-content">
+                            <H3><b style="color:#FFF">GAMING</b><H3>
+                            <h5 style="color:#DCDCDC">Trang bị cấu hình đỉnh cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích. Máy tính này giúp bạn trải nghiệm đồ họa sắc nét và chơi game mượt mà, ngay cả với các tựa game nặng</h5>
+                        </div>
+                        <div class="banner-image">
+                            <img src="assets/images/game.jpg" alt="Gaming PC" />
+                        </div>
                     </div>
-                    <div class="banner-image">
-                        <img src="assets/images/game.jpg" alt="Gaming PC" />
-                    </div>
-                </div>
-                 <div class="product-group vanphong">
-                        <?php 
-                            $gaming_list = [$rosa_gamer_x3d, $rosa_gamer_1, $rosa_gamer_2];
+                    <div class="product-group vanphong">
+                            <?php 
+                                $gaming_list = [$rosa_gamer_x3d, $rosa_gamer_1, $rosa_gamer_2];
 
-                            foreach ($gaming_list as $product) {
-                                ?>
-                                <div class="card">
-                                    <div class="image-container">
-                                        <a href="<?= htmlspecialchars($product->page) ?>">
-                                            <img src="<?= htmlspecialchars($product->image) ?>" alt="gaming">
-                                        </a>
-                                    </div>
-                                    <div class="details">
-                                       <h3 style="color: red; font-size: 21px; text-align: center;font-weight: bold; "><?= htmlspecialchars($product->title) ?></h3>
-                                        <p><?= htmlspecialchars($product->subtitle) ?></p>
-                                        <div class="key-specs">
-                                            <?= $product->content ?>
+                                foreach ($gaming_list as $product) {
+                                    ?>
+                                    <div class="card">
+                                        <div class="image-container">
+                                            <a href="<?= htmlspecialchars($product->page) ?>">
+                                                <img src="<?= htmlspecialchars($product->image) ?>" alt="gaming">
+                                            </a>
                                         </div>
-                                        <div class="price"><?= htmlspecialchars($product->price) ?></div>
-                                        <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                        ?>
-                    </div>
-                    
-                      <!--Mini PC-->
-                      <div id="mini">
-                <div class="main-banner" style=" background: linear-gradient(to right,#000000,#000000);">
-                    <div class="banner-content">
-                       <H3><b style="color:#FFF">MINI PC</b><H3>
-                		<h5 style="color:#DCDCDC">Lựa chọn hoàn hảo cho không gian làm việc gọn gàng, cung cấp hiệu suất cao và khả năng đa nhiệm mượt mà với thiết kế nhỏ gọn, thích hợp cho cả văn phòng và nhu cầu sử dụng hàng ngày</h5>
-                    </div>
-                    <div class="banner-image">
-                        <img src="assets/images/mini.jpg" alt="Mini PC" style="width: 100%; height: auto"/>
-                    </div>
-                </div> 
-                 <div class="product-group vanphong">
-                        <?php 
-                            $mini_list = [$rosa_mini_1 , $rosa_mini_2];
-
-                            foreach ($mini_list as $product) {
-                                ?>
-                                <div class="card">
-                                    <div class="image-container">
-                                        <a href="<?= htmlspecialchars($product->page) ?>">
-                                            <img src="<?= htmlspecialchars($product->image) ?>" alt="mini">
-                                        </a>
-                                    </div>
-                                    <div class="details">
-                                        <h3  style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
-                                        <p><?= htmlspecialchars($product->subtitle) ?></p>
-                                        
-                                        <div class="key-specs">
-                                            <?= $product->content  ?>
+                                        <div class="details">
+                                        <h3 style="color: red; font-size: 21px; text-align: center;font-weight: bold; "><?= htmlspecialchars($product->title) ?></h3>
+                                            <p><?= htmlspecialchars($product->subtitle) ?></p>
+                                            <div class="key-specs">
+                                                <?= $product->content ?>
+                                            </div>
+                                            <div class="price"><?= htmlspecialchars($product->price) ?></div>
+                                            <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
                                         </div>
-                                        <div class="price"><?= htmlspecialchars($product->price) ?></div>
-                                        <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
                                     </div>
-                                </div>
-                                <?php
+                                    <?php
                                 }
                             ?>
-                    </div>
-           
+                        </div>
+                    
+                      <!--Mini PC-->
+                <div id="mini">
+                    <div class="main-banner" style=" background: linear-gradient(to right,#000000,#000000);">
+                        <div class="banner-content">
+                        <H3><b style="color:#FFF">MINI PC</b><H3>
+                            <h5 style="color:#DCDCDC">Lựa chọn hoàn hảo cho không gian làm việc gọn gàng, cung cấp hiệu suất cao và khả năng đa nhiệm mượt mà với thiết kế nhỏ gọn, thích hợp cho cả văn phòng và nhu cầu sử dụng hàng ngày</h5>
+                        </div>
+                        <div class="banner-image">
+                            <img src="assets/images/mini.jpg" alt="Mini PC" style="width: 100%; height: auto"/>
+                        </div>
+                    </div> 
+                    <div class="product-group vanphong">
+                            <?php 
+                                $mini_list = [$rosa_mini_1 , $rosa_mini_2];
+
+                                foreach ($mini_list as $product) {
+                                    ?>
+                                    <div class="card">
+                                        <div class="image-container">
+                                            <a href="<?= htmlspecialchars($product->page) ?>">
+                                                <img src="<?= htmlspecialchars($product->image) ?>" alt="mini">
+                                            </a>
+                                        </div>
+                                        <div class="details">
+                                            <h3  style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
+                                            <p><?= htmlspecialchars($product->subtitle) ?></p>
+                                            
+                                            <div class="key-specs">
+                                                <?= $product->content  ?>
+                                            </div>
+                                            <div class="price"><?= htmlspecialchars($product->price) ?></div>
+                                            <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    }
+                                ?>
+                        </div>
+            
                
                  <!--AI-->
-                 <div id="ai">
-        	 <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
-                <div class="banner-content">
-                    <H3><b style="color:#FFF">AI</b></H3>
-                    <h5 style="color:#DCDCDC">
-                        Tối ưu cho lập trình AI, với công cụ cài sẵn và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo
-                    </h5>
-                </div>
-                <div class="banner-image">
-                    <img src="assets/images/AI.jpg" alt="Gaming PC" />
-                </div>
-            </div>
-             <div class="product-group ai">
-                        <?php 
-                            $ai_list = [$rosa_ai];
-
-                            foreach ($ai_list as $product) {
-                                ?>
-                                <div class="card">
-                                    <div class="image-container">
-                                        <a href="<?= htmlspecialchars($product->page) ?>">
-                                            <img src="<?= htmlspecialchars($product->image) ?>" alt="ai">
-                                        </a>
-                                    </div>
-                                    <p></p>
-                                    <div class="details">
-                                        <p></p>
-                                        <h3  style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
-                                        <p><?= htmlspecialchars($product->subtitle) ?></p>
-                                        <div class="key-specs">
-                                            <?= $product->content  ?>
-                                        </div>
-                                        <div class="price"><?= htmlspecialchars($product->price) ?></div>
-                                        <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
-                                        
-                                    </div>
-                            </div>
-                                <?php
-                            }
-                            ?>
+            <div id="ai">
+                <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
+                    <div class="banner-content">
+                        <H3><b style="color:#FFF">AI</b></H3>
+                        <h5 style="color:#DCDCDC">
+                            Tối ưu cho lập trình AI, với công cụ cài sẵn và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo
+                        </h5>
                     </div>
-            	
+                    <div class="banner-image">
+                        <img src="assets/images/AI.jpg" alt="Gaming PC" />
+                    </div>
                 </div>
+                <div class="product-group ai">
+                            <?php 
+                                $ai_list = [$rosa_ai];
+
+                                foreach ($ai_list as $product) {
+                                    ?>
+                                    <div class="card">
+                                        <div class="image-container">
+                                            <a href="<?= htmlspecialchars($product->page) ?>">
+                                                <img src="<?= htmlspecialchars($product->image) ?>" alt="ai">
+                                            </a>
+                                        </div>
+                                        <p></p>
+                                        <div class="details">
+                                            <p></p>
+                                            <h3  style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
+                                            <p><?= htmlspecialchars($product->subtitle) ?></p>
+                                            <div class="key-specs">
+                                                <?= $product->content  ?>
+                                            </div>
+                                            <div class="price"><?= htmlspecialchars($product->price) ?></div>
+                                            <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
+                                            
+                                        </div>
+                                </div>
+                                    <?php
+                                }
+                                ?>
+                        </div>
+                    
+                    </div>
             </header>
 
             <script>
