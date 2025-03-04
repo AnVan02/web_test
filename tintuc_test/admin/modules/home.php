@@ -34,11 +34,10 @@
         </thead>
         <tbody>
             <?php
-                $servername = "localhost";
-                $username = "nvpbgqcv_banhang";
-                $password = "Vietson@123";
-                $dbname = "nvpbgqcv_banhang";
-
+               $host = 'localhost';
+               $username = 'root';
+               $password = '';
+               $database = 'database';
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
                 if ($conn->connect_error) {

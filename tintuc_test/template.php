@@ -13,9 +13,9 @@ error_reporting(E_ALL);
 <?php
 // Thông tin kết nối
 $host = 'localhost';
-$username = 'nvpbgqcv_banhang';
-$password = 'Vietson@123';
-$database = 'nvpbgqcv_banhang';
+$username = 'root';
+$password = '';
+$database = 'database';
 
 $conn = new mysqli($host, $username, $password, $database);
 if ($conn->connect_error) {

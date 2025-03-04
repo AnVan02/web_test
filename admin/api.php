@@ -5,10 +5,10 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type'); 
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "nvpbgqcv_banhang";
-$password = "Vietson@123";
-$dbname = "nvpbgqcv_banhang";
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'database';
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);

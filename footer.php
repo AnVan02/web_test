@@ -1,23 +1,33 @@
 <div class="container footer-contact">
-            <div class="footer-newsletter">
-                <h3 style="color:red">Nhận thông tin từ ROSA.</h3>
-                <p>Đăng ký email để nhận các thông tin mới nhất từ ROSA</p>
-                <input type="email" placeholder="Email của bạn"> <button class="btn-subscribe">ĐĂNG KÝ</button>
-            </div>
-            <div class="footer-support">
-                <h3  style="color:red" >Thông tin hỗ trợ.</h3>
-                <p>Kinh doanh: (028) 39293770 - (028) 39293765</p>
-                <p>Kỹ thuật & bảo hành: (028) 39260996</p>
-            </div>
-            <div class="footer-social">
-                <h3  style="color:red">Liên kết social</h3>
-                <p>Theo dõi ROSA tại các kênh mạng xã hội</p>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
+<div class="footer-newsletter">
+    <h3 style="color: red;">Nhận thông tin từ ROSA.</h3>
+    <p>Đăng ký email để nhận các thông tin mới nhất từ ROSA</p>
+
+    <form action="send_email.php" method="POST">
+        <input type="email" name="email" placeholder="Email của bạn" required 
+               style="padding: 10px; border: none; border-radius: 20px; width: 200px; text-align: center;">
+        <button type="submit" 
+                style="padding: 10px 20px; background-color: red; color: white; border: none; border-radius: 20px; cursor: pointer;">
+            ĐĂNG KÝ
+        </button>
+    </form>
+</div>
+
+
+    <div class="footer-support">
+        <h3  style="color:red" >Thông tin hỗ trợ.</h3>
+        <p>Kinh doanh: (028) 39293770 - (028) 39293765</p>
+        <p>Kỹ thuật & bảo hành: (028) 39260996</p>
+    </div>
+    <div class="footer-social">
+        <h3  style="color:red">Liên kết social</h3>
+        <p>Theo dõi ROSA tại các kênh mạng xã hội</p>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+</div>
 
 <footer class="footer">
     <div class="container">

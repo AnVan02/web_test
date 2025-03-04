@@ -17,21 +17,21 @@
 		<div class="container">
 			<div class="row">
 			<div class="col-lg-12 mb-3">
-<!-- <body class="h-100" style="background-image: ">
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src="assets/images/1.jpg" class="d-block w-100" alt="...">
+    <!-- <body class="h-100" style="background-image: ">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="assets/images/1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+        <img src="assets/images/2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+        <img src="assets/images/3.jpg" class="d-block w-100" alt="...">
+        </div>
+    
     </div>
-    <div class="carousel-item">
-      <img src="assets/images/2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/3.jpg" class="d-block w-100" alt="...">
-    </div>
-   
-  </div>
-</div> -->
+    </div> -->
 
 <?php if(isset($_SESSION["message"])) {echo 'onload="message()"';unset($_SESSION["message"]);}?>
 
@@ -124,7 +124,7 @@
                 return;
             }
 
-            fetch(`https://rosacomputer.vn/api.php?order_code=${orderCode}`)
+            fetch(`http://localhost:9090/test/api.php?order_code=${orderCode}`)
                 .then(response => response.json())
                 .then(data => {
                     const table = document.querySelector(".table");

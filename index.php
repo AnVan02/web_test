@@ -1,5 +1,4 @@
 <title>ROSA</title>
-
 <?php if(isset($_SESSION["message"])):?>
 
 	<script>
@@ -15,475 +14,164 @@
 <head>
 <!-- Banner bự-->
 <div class="banner">
-    <div class="row">
-        <div class="col-lg-12 mb-3">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    
-                    <div class="carousel-item active">
-                        <img src="assets/images/bannerrosa2.jpg" class="img-fluid" alt="Sale Banner">
+        <div class="row">
+            <div class="col-lg-12 mb-3">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/images/bannerrosa2.jpg" class="img-fluid" alt="Sale Banner">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
+                        </div>
                     </div>
-                    
-                    <div class="carousel-item">
-                        <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
-                    </div>
-
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
     </div>
-</div>
+  
 
-<?php if(isset($_SESSION["message"])) {echo 'onload="message()"';unset($_SESSION["message"]);}?>
-	 <!-- Banner nhỏ -->
-	<!-- <div class="main-banner1">
-        <div class="banner-content">
-            <H3><b style="color:#FFF">ROSA COMPUTER</b><p>
-    
-            <p style="color:#DCDCDC">Chuyên cung cấp máy tính đồng bộ mạnh mẽ, bảo hành 3 năm, đáp ứng mọi nhu cầu từ Văn Phòng, AI đến Gaming.</p>
-            <a href="/aboutus.php" class="subscribe-btn">Xem thêm</a>
-        </div>
-        <div class="banner-image">
-            <img src="/assets/images/nho1.jpg" alt="Gaming PC" />
-        </div>
-    </div> -->
 
 
 <style>
-.main-banner1 {
-    display: flex; /* Sử dụng Flexbox để căn chỉnh */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    justify-content: space-between; /* Căn giữa theo chiều ngang */
-    background: linear-gradient(to right, #0b011c, #0b011c); /* Màu nền gradient */
-    padding: 30px; /* Tăng padding để làm cho banner lớn hơn */
+/* Banner */
+.banner {
+    margin: 30px auto;
+    width: 95%;
+    max-width: 100%;
     border-radius: 10px;
-    background-color: #112233; /* Màu nền phía sau */
-    margin: 0 auto 15px; /* Căn giữa banner và khoảng cách dưới */
-    max-width: 1073px; /* Tăng chiều rộng tối đa cho banner */
+    overflow: hidden;
 }
-
-
-
-.carousel-item img {
+.banner img {
     width: 100%;
     height: auto;
-    max-height: 700px;
-    object-fit: cover;
+    border-radius: 10px;
 }
-
-.carousel-caption h5, 
-.carousel-caption p {
+.carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    border-radius: 50%;
     padding: 10px;
-    border-radius: 5px;
 }
-
-
-.banner-content {
-    flex: 1; /* Chiếm 50% chiều rộng */
-    color: #000; /* Màu chữ */
-}
-.subscribe-btn {
-    background-color: red; /* Màu nền đỏ */
-    color: white; /* Màu chữ trắng */
-    padding: 4px 12px; /* Khoảng cách bên trong */
-    text-decoration: none; /* Bỏ gạch chân */
-    border-radius: 5px; /* Bo góc */
-    display: inline-block; /* Hiển thị như một khối nội tuyến */
-    font-size: 20px;
-
-}
-
-.subscribe-btn:hover {
-    background-color: darkred; /* Màu nền khi di chuột qua */
-}
-
-.banner-content h5 {
-    font-size: 1.2rem; /* Tăng kích thước chữ tiêu đề */
-    margin-bottom: 10px; /* Giảm khoảng cách dưới tiêu đề */
-}
-
-.banner-content p {
-    font-size: 18px; /* Tăng kích thước chữ mô tả */
-    margin-bottom: 20px; /* Giảm khoảng cách dưới mô tả */
-    color: #FFFAF0;
-}
-
-.banner-image {
-    flex: 1; /* Chiếm 50% chiều rộng */
-    text-align: right; /* Căn phải cho hình ảnh */
-}
-
-.banner-image img {
-    max-width: 80%; /* Tăng kích thước hình ảnh */
-    height: auto; /* Giữ tỷ lệ hình ảnh */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-banner1 {
-        flex-direction: column; /* Đặt nội dung theo cột trên màn hình nhỏ */
-        text-align: center; /* Căn giữa nội dung */
-        max-width: 100%; /* Đảm bảo banner chiếm toàn bộ chiều rộng trên màn hình nhỏ */
-        /* padding: 20px; Giảm padding cho thiết bị di động */
-    }
-
-    .banner-image {
-        margin-top: 10px; /* Giảm khoảng cách giữa nội dung và hình ảnh */
-    }
-
-    .banner-content h5 {
-        font-size: 1.5rem; /* Tăng kích thước chữ tiêu đề cho dễ đọc trên di động */
-    }
-
-    .banner-content p {
-        font-size: 1.1rem; /* Tăng kích thước chữ mô tả cho dễ đọc trên di động */
-    }
-
-    .banner-image img {
-        max-width: 50%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của banner */
-    }
-}
-
 </style>
 	 
 </head>
 <body>
 <header>
 
-
-
-<style>
-	/* Tổng container */
-.ads-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 20px;
-    background: #f9f9f9;
-    padding: 10px;
-}
-
-/* Banner dọc */
-.left-banner, .right-banner {
-    width: 15%; /* Chiếm 15% mỗi bên */
-    text-align: center;
-}
-
-.left-banner img, .right-banner img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Nội dung chính */
-.main-content {
-    width: 70%; /* Chiếm 70% cho nội dung */
-    text-align: center;
-}
-
-.main-content h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #ff5722;
-}
-
-.deals {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.deal-item {
-    width: calc(100% / 5 - 10px); /* Chia đều 5 phần tử */
-    text-align: center;
-}
-
-.deal-item img {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.deal-item p {
-    font-size: 14px;
-    margin-top: 5px;
-    color: #333;
-    font-weight: bold;
-}
-</style>
-
 <?php
-$servername = "localhost"; // Thay bằng server của bạn
-$username = "root";        // Thay bằng username database
-$password = "";            // Thay bằng password database
-$dbname = "database"; // Thay bằng tên database
+$servername = "localhost"; 
+$username = "root";        
+$password = "";            
+$dbname = "database"; 
 
-// Kết nối database
 $conn = new mysqli($servername, $username, $password, $dbname);
 $conn->set_charset("utf8");
 
-// Kiểm tra kết nối
 if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
 }
 
-// Lấy danh sách bài viết mới nhất
+// Lấy 1 bài viết mới nhất
 $sql = "SELECT article_tag, article_title, article_date, article_image, article_link 
         FROM article 
         ORDER BY article_date DESC 
-        LIMIT 3";
-
+        LIMIT 1";
 
 $result = $conn->query($sql);
 ?>
 
-    <style>
-        /* CSS cho giao diện giống hình */
-        .blog-container {
-            display: flex;
-            gap: 115px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .blog-card {
-            width: 350px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            background: white;
-            transition: 0.3s;
-        }
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        .blog-content {
-            padding: 15px;
-        }
-        .blog-category {
-            font-size: 14px;
-            color: #888;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        .blog-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .blog-date {
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+<style>
+    .news-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+    .news-card {
+        width: 350px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background: white;
+        transition: 0.3s;
+    }
+    .news-card:hover {
+        transform: translateY(-5px);
+    }
+    .news-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .news-content {
+        padding: 15px;
+    }
+    .news-title a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .news-title a:hover {
+        color: red;
+    }
+</style>
 
-<div class="blog-container">
+<div class="news-container">
     <?php while ($row = $result->fetch_assoc()) { ?>
-        <div class="blog-card">
-            <img src="/tintuc_test/admin/modules/blog/uploads/<?= htmlspecialchars($row['article_image']); ?>" alt="Featured Image">
-        <div class="blog-content">
-            <div class="blog-category"><?php echo $row['article_tag']; ?></div>
-            <div class="blog-title"><?php echo $row['article_title']; ?></div>
-                <div class="blog-date"><?php echo date("d/m/Y", strtotime($row['article_date'])); ?></div>
+        <div class="news-card">
+            <a href="<?= htmlspecialchars($row['article_link']); ?>">
+                <img src="/tintuc_test/admin/modules/blog/uploads/<?= htmlspecialchars($row['article_image']); ?>" alt="News Image">
+            </a>
+            <div class="news-content">
+                <p>Tin tức<p>
+                <div class="news-title">
+                    <a href="<?= htmlspecialchars($row['article_link']); ?>">
+                        <?= htmlspecialchars($row['article_title']); ?>
+                    </a>
+                </div>
             </div>
         </div>
     <?php } ?>
+    
+    <div class="news-card">
+        <a href="/sanpham/ROSA-OFFICE.php">
+            <img src="/assets/images/RSVP.jpg" alt="ROSA VĂN PHÒNG">
+        </a>
+        <div class="news-content">
+            <p>Khuyên mãi<p>
+            <div class="news-title">
+                <a href="/sanpham/ROSA-OFFICE.php">ROSA VĂN PHÒNG</a>
+            </div>
+            <p>Cấu hình máy tính đồng bộ mạnh mẽ mang lại hiệu suất làm việc tối ưu.</p>
+        </div>
+    </div>
+    
+    <div class="news-card">
+        <a href="/sanpham/ROSA-AI.php">
+            <img src="/assets/images/AI.jpg" alt="ROSA AI">
+        </a>
+
+        <div class="news-content">
+        <p>Khuyên mãi<p>
+            <div class="news-title">
+                <a href="/sanpham/ROSA-AI.php">ROSA AI</a>
+            </div>
+            <p>Giải pháp tối ưu cho lập trình và phát triển AI với cấu hình mạnh mẽ, bảo hành 3 năm.</p>
+        </div>
+    </div>
 </div>
 
-<?php
-$conn->close();
-?>
-
-
-    <br><br><!-- Tạo khoảng cách bằng thẻ br -->
-    <div class="new_arrivals">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<!-- <div class="section_title new_arrivals_title">
-						<h2>SẢN PHẨM</h2>
-					</div> -->
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col text-center">
-					<div class="new_arrivals_sorting">
-						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter=".vanphong">ROSA VĂN PHÒNG</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".ai">ROSA AI</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".gamer">ROSA GAMER</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".mini">ROSA MINI PC</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-  <!--Văn phòng-->
-    <br><br><!-- Tạo khoảng cách bằng thẻ br -->
-    <h3><b>VĂN PHÒNG</b></h3>
-    <p></p>
-    <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
-        <div class="banner-content">
-            <H3><b style="color:#FFF">VĂN PHÒNG</b></H3>
-            <h5 style="color:#DCDCDC">Mang đến hiệu suất ổn định và tính năng bảo mật cao, hoàn hảo cho công việc văn phòng hàng ngày</h5>
-        </div>
-        <div class="banner-image">
-            <img src="assets/images/VP.jpg" alt="Gaming PC" />
-        </div>
-    </div>    
-    <div style="width: 100%; height: 4px; background-color:red; margin-top: 5px;"></div>
-    <p></p>
-    <div class="product-group vanphong">
-        
-        <?php 
-            $vp_list = [$rosa_office_n100, $rosa_office_1, $rosa_office_2 ];
-
-            foreach ($vp_list as $product) {
-                ?>
-                <div class="card">
-                    <div class="image-container">
-                        <a href="<?= htmlspecialchars($product->page) ?>">
-                            <img src="<?= htmlspecialchars($product->image) ?>" alt="vanphong">
-                        </a>
-                    </div>
-                    <div class="details">
-                        <h3 style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
-                        <p><?= htmlspecialchars($product->subtitle) ?></p>
-                        <div class="key-specs">
-                            <?= $product->content  ?>
-                        </div>
-                        <div class="price"><?= htmlspecialchars($product->price) ?></div>
-                        <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
-                    </div>
-                </div>
-                <?php
-            }
-        ?>
-    </div>
-    <br><br><!-- Tạo khoảng cách bằng thẻ br -->
-    <h3><b>AI</b></h3>
-    <div style="width: 100%; height: 4px; background-color:red; margin-top: 5px;"></div>
-    <p></p>
-    <div class="main-banner" style="background: linear-gradient(to right,#000000,#000000);">
-        <div class="banner-content">
-            <H3><b style="color:#FFF">AI</b></H3>
-            <h5 style="color:#DCDCDC">
-                Tối ưu cho lập trình AI, với công cụ cài sẵn và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo
-            </h5>
-        </div>
-        <div class="banner-image">
-            <img src="assets/images/AI.jpg" alt="Gaming PC" />
-        </div>
-    </div>
-
-        <div class="product-group ai">
-            <?php 
-                $ai_list = [$rosa_ai ];
-
-                foreach ($ai_list as $product) {
-                    ?>
-                    <div class="card">
-                        <div class="image-container">
-                            <a href="<?= htmlspecialchars($product->page) ?>">
-                                <img src="<?= htmlspecialchars($product->image) ?>" alt="ai">
-                            </a>
-                        </div>
-                        <div class="details">
-                            <h3 style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
-                            <p><?= htmlspecialchars($product->subtitle) ?></p>
-                            <div class="key-specs">
-                                <?= $product->content  ?>
-                            </div>
-                            <div class="price"><?= htmlspecialchars($product->price) ?></div>
-                            <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
-                        </div>
-                    </div>
-                    <?php
-                }
-            ?>
-        </div> -->
-    <br><br><!-- Tạo khoảng cách bằng thẻ br -->
-    <h3><b>GAMER</b></h3>
-    <div style="width: 100%; height: 4px; background-color:red; margin-top: 5px;"></div>
-        <p></p>
-        <div class="product-group vanphong">
-            <?php 
-                $gaming_list = [$rosa_gamer_x3d, $rosa_gamer_1, $rosa_gamer_2];
-
-                foreach ($gaming_list as $product) {
-                    ?>
-                    <div class="card">
-                        <div class="image-container">
-                            <a href="<?= htmlspecialchars($product->page) ?>">
-                                <img src="<?= htmlspecialchars($product->image) ?>" alt="gaming">
-                            </a>
-                        </div>
-                        <div class="details">
-                            <h3 style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
-                            <p><?= htmlspecialchars($product->subtitle) ?></p>
-                            <div class="key-specs">
-                                <?= $product->content ?>
-                            </div>
-                            <div class="price"><?= htmlspecialchars($product->price) ?></div>
-                            <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
-                        </div>
-                    </div>
-                    <?php
-                }
-            ?>
-        </div>
-
-
-      <br><br><!-- Tạo khoảng cách bằng thẻ br -->
-    <h3><b>MINI PC</b></h3>
-        <div style="width: 100%; height: 4px; background-color:red; margin-top: 5px;"></div>
-        <p></p>
-            <div class="product-group vanphong">
-                <?php 
-                    $mini_list = [$rosa_mini_1 , $rosa_mini_2];
-    
-                    foreach ($mini_list as $product) {
-                        ?>
-                        <div class="card">
-                            <div class="image-container">
-                                <a href="<?= htmlspecialchars($product->page) ?>">
-                                    <img src="<?= htmlspecialchars($product->image) ?>" alt="mini">
-                                </a>
-                            </div>
-                            <div class="details">
-                                <h3 style="color: red; font-size: 21px; text-align: center;font-weight: bold;"><?= htmlspecialchars($product->title) ?></h3>
-                                <p><?= htmlspecialchars($product->subtitle) ?></p>
-                                <div class="key-specs">
-                                    <?= $product->content  ?>
-                                </div>
-                                <div class="price"><?= htmlspecialchars($product->price) ?></div>
-                                <a href="<?= htmlspecialchars($product->page) ?>" class="shop-button">Mua ngay</a>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                ?>
-        </div>
-    </div>
 <!-- TỔNG QUAN VỀ SẢN PHÂM -->
 <div class="container my-5">
-    <h3><b style='color: red ;font-weight: bolder;'>DÒNG MÁY PHÙ HỢP CHO BẠN </b></h3>
+    <h3><b style='color: red ;font-weight: bolder;'>DÒNG MÁY PHÙ HỢP VỚI BẠN </b></h3>
         <p>KHÁM PHÁ CÁC DÒNG MÁY ROSA PHÙ HỢP VỚI NHU CẤU SỬ DỤNG CỦA BẠN</p>
     <div class="container">
         <div class="grid">
@@ -518,16 +206,17 @@ $conn->close();
         </div>
     </div>
 
-
-
-
 <!--software-->
+
 <div class="container my-5">
-<h3><b style='color: red ;font-weight: bolder;'>GIẢI PHÁP DÀNH CHO BẠN </b></h3>
+<h3><b style='color: red ;font-weight: bolder;'>GIẢI PHÁP PHẦN MỀM KHOÁ HỌC CHO BẠN</b></h3>
     <p>KHÁM PHÁ KHOÁ HỌC & PHẦN MỀM AI THÚ VỊ MÀ ROSA MANG ĐẾN CHO BẠN</p>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
         .container-box {
             display: flex;
             align-items: center;
@@ -540,12 +229,20 @@ $conn->close();
         .image-container {
             flex: 1;
             max-width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
         .image-container img {
-            width: 100%;
-            height: auto;
+            width: 820px;
+            height: 430px;
             border-radius: 10px;
+            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+            max-width: 100%; /* Giữ responsive trên màn hình nhỏ */
         }
+
+
     </style>
     <div class="container my-5">
         <div class="container-box">
@@ -562,8 +259,8 @@ $conn->close();
                             <div class="accordion-body">
                                 <p>Khóa học Python cơ bản giúp bạn xây dựng nền tảng vững chắc trong lập trình Python.</p>
                                 <ul>
-                                    <li>Lacinia porta facilisi commodo vestibulum urna facilisi.</li>
-                                    <li>Non ultrices primis convallis scelerisque varius facilisi.</li>
+                                    <li>Khóa học này bao gồm các khái niệm cốt lõi như biến, vòng lặp, hàm, và cấu trúc dữ liệu căn bản. Từng bước, bạn sẽ học cách viết mã dễ hiểu, hiệu quả và làm quen với những ứng dụng đơn giả</li>
+                                    <li>Khóa học này sẽ giúp bạn làm chủ các kiến thức nền tảng về Python, từ cú pháp cơ bản đến việc sử dụng các thư viện phổ biến như NumPy và Pandas</li>
                                 </ul>
                                 <a href="#" class="explore-link">Khám phá</a>
                             </div>
@@ -580,8 +277,8 @@ $conn->close();
                             <div class="accordion-body">
                                 <p>Khám phá thuật toán tiên phong trong lĩnh vực Thị giác máy tính.</p>
                                 <ul>
-                                    <li>Lacinia porta facilisi commodo vestibulum urna facilisi.</li>
-                                    <li>Non ultrices primis convallis scelerisque varius facilisi.</li>
+                                    <li>Khóa học này được thiết kế để phù hợp với mọi đối tượng, từ người mới bắt đầu đến những chuyên gia muốn nâng cao kiến thức.</li>
+                                    <li>Khóa học sẽ là nền tảng vững chắc để bạn xây dựng các giải pháp thông minh, giải quyết hiệu quả các bài toán thực tiễn, đồng thời mở rộng cơ hội phát triển trong lĩnh vực AI đang không ngừng phát triển.</li>
                                 </ul>
                                 <a href="#" class="explore-link">Khám phá</a>
                             </div>
@@ -598,8 +295,8 @@ $conn->close();
                             <div class="accordion-body">
                                 <p>Nextcloud là một phần mềm mã nguồn mở cung cấp các giải pháp cloud.</p>
                                 <ul>
-                                    <li>Lacinia porta facilisi commodo vestibulum urna facilisi.</li>
-                                    <li>Non ultrices primis convallis scelerisque varius facilisi.</li>
+                                    <li>Nextcloud là một phần mềm có mã nguồn mở cung cấp các giải pháp cloud, tạo và sử dụng các dịch vụ lưu trữ tệp cho các cá nhân và doanh nghiệp.</li>
+                                    <li>Với hình thức lưu trữ theo cấu trúc thư mục thông thường, người dùng có thể lưu files trên các server riêng. Nexcloud cung cấp quyền kiểm soát hai bên, vì thế người dùng có thể quyết định được nơi lưu trữ ảnh, tài liệu và cấp phép truy cập cho người khác một cách tiện lợi.</li>
                                 </ul>
                                 <a href="#" class="explore-link">Khám phá</a>
                             </div>
@@ -609,7 +306,7 @@ $conn->close();
             </div>
             <!-- Khu vực hiển thị hình ảnh -->
             <div class="image-container">
-                <img id="accordionImage" src="rosa.png" alt="Hình ảnh minh họa">
+                <img id="accordionImage" src="tải xuống.png" alt="Hình ảnh minh họa">
             </div>
         </div>
     </div>
@@ -617,7 +314,7 @@ $conn->close();
     <script>
         document.querySelectorAll('.accordion-button').forEach((button, index) => {
             button.addEventListener('click', () => {
-                const imagePaths = ['image1.jpg', 'image2.jpg', 'image3.jpg'];
+                const imagePaths = ['tải xuống.png', 'tải xuống.png', 'tải xuống.png'];
                 document.getElementById('accordionImage').src = imagePaths[index];
             });
         });
@@ -625,79 +322,30 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </div>
-<!-- dịch vụ  -->
+
+<!-- CÂU HỎI LIÊN QUAN  -->
 <div class="container my-5">
-<h3><b style='color: red ;font-weight: bolder;'></b></h3>
-    <p>KHÁM PHÁ KHOÁ HỌC & PHẦN MỀM AI THÚ VỊ MÀ ROSA MANG ĐẾN CHO BẠN</p>
-    <style>
-        .card-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        .card {
-            width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px;
-        }
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .explore-button {
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
-    </style>
-    <div class="container my-5">
-        <div class="card-container">
-            <div class="card">
-                <h3>Dịch vụ doanh nghiệp</h3>
-                <p>Netus proin orci ligula sociosqu ut hac magnis.</p>
-                <img src="image1.jpg" alt="Dịch vụ doanh nghiệp">
-                <a href="#" class="explore-button">Khám phá</a>
-            </div>
-            <div class="card">
-                <h3>Dịch vụ cá nhân</h3>
-                <p>Netus proin orci ligula sociosqu ut hac magnis.</p>
-                <img src="image2.jpg" alt="Dịch vụ cá nhân">
-                <a href="#" class="explore-button">Khám phá</a>
-            </div>
-            <div class="card">
-                <h3>Hỗ trợ khách hàng</h3>
-                <p>Netus proin orci ligula sociosqu ut hac magnis.</p>
-                <img src="image3.jpg" alt="Hỗ trợ khách hàng">
-                <a href="#" class="explore-button">Khám phá</a>
-            </div>
-        </div>
-    </div>
-<!-- dịch vụ  -->
-<div class="container my-5">
-<h3><b style='color: red ;font-weight: bolder;'></b></h3>
-    <p>KHÁM PHÁ KHOÁ HỌC & PHẦN MỀM AI THÚ VỊ MÀ ROSA MANG ĐẾN CHO BẠN</p>
+<h3><b style='color: red ;font-weight: bolder;'>CÂU HỎI LIÊN QUAN ĐẾN ROSA  </b></h3>
+    <p>Những câu hỏi phổ biển nhất có thể bạn chưa biết đến ROSA</p>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
+       
         .faq-container {
             display: flex;
             gap: 40px;
             max-width: 1100px;
             margin: auto;
             padding: 40px 0;
+            
         }
         .faq-left {
             width: 35%;
         }
         .faq-right {
             width: 65%;
+  
         }
         .faq-title {
             color: red;
@@ -743,21 +391,28 @@ $conn->close();
             font-weight: bold;
         }
     </style>
-    <div class="faq-container">
+  <div class="faq-container">
         <!-- Phần bên trái -->
         <div class="faq-left">
-            <p class="faq-title">Bạn có câu hỏi cho chúng tôi?</p>
-            <p class="faq-subtitle">Những câu hỏi phổ biến nhất có thể bạn sẽ đặt ra cho ROSA</p>
             <div class="tab-buttons">
                 <button class="active" onclick="setActive(this)">Tư vấn</button>
                 <button onclick="setActive(this)">Cấu hình</button>
                 <button onclick="setActive(this)">Bảo hành</button>
                 <button onclick="setActive(this)">Giao hàng</button>
                 <button onclick="setActive(this)">Phương thức thanh toán</button>
-                <button onclick="setActive(this)">Nguồn gốc linh kiện</button>
+                <button onclick="setActive(this)">Sản phẩm & linh kiện</button>
+                <p style="color:red , font-size: 18px;">Bạn không có câu trả lời mình cần trong danh sách này? Hãy gửi câu hỏi cho chung tôi tại đây nhé !</p>
+                <a href="https://zalo.me/your-link" 
+                    style="display: inline-block; padding: 10px 25px; font-size: 16px; font-weight: bold; 
+                            color: white; background-color: red; border: none; border-radius: 25px; 
+                            cursor: pointer; text-decoration: none; text-align: center; 
+                            transition: background 0.3s ease; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+                        Liên hệ
+                    </a>
+
+
             </div>
         </div>
-        
         <!-- Phần bên phải -->
         <div class="faq-right">
             <div class="accordion" id="faqAccordion">
@@ -781,26 +436,76 @@ $conn->close();
                         <div class="accordion-body">Diam metus leo hendrerit, congue sodales donec.</div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                            Nunc phasellus porttitor libero?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">Vestibulum at metus vel arcu consequat.</div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <script>
-        function setActive(button) {
-            document.querySelectorAll('.tab-buttons button').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-        }
-    </script>
+    const faqData = {
+        "Tư vấn": [
+            { question: "Rosa hiện tại có chi nhánh không ?", answer: "Hiện tại Rosa chỉ có một địa chỉ giao dịch duy nhất tại địa chỉ 150 Ter Bùi Thị Xuân , Phường Phạm Ngũ Lão ,Quận 1 , TP HCM " },
+            { question: "Tôi muốn hỏi giờ làm việc chính thức của Rosa để có thể sắp xếp tới xem và mua hàng .", answer: "Giờ làm việc của Rosa  được thông báo trên website Rosa, cụ thể như sau Bán hàng: Thứ 2 – Thứ 7"},
+            { question: "Rosa hiện tại có bán hàng trên các website và sàn thương mại điện tử không ?", answer: "Hiện tại  Rosa có  nhiều kênh bán hàng , có thể kể tới như Store online , mua bằng ví điện tử , thông qua đại lý… Nhưng để được hỗ trợ kịp thời và tốt nhất chúng tôi khuyến khích quý khách mua trược tiếp tại   store chính thức  và thông qua website Rosacomputer.ai ." },
+            { question: "Rosa có link facebook không ?", answer: "Rosa có link facebook không ?:<a href https://www.facebook.com/profile.php?id=61559427752479" }
+            
+        ],
+        "Cấu hình": [
+            { question: "Tôi có thể tuỳ chỉnh cấu hình không?", answer: "Có, bạn có thể tuỳ chỉnh linh kiện theo nhu cầu." },
+            { question: "Có hỗ trợ ép xung không?", answer: "Chúng tôi hỗ trợ ép xung nếu yêu cầu." }
 
+        ],
+        "Phương thức thanh toán": [
+            { question: "Có mấy phương thức thanh toán ", answer: "Có 2 phương thức chuyển khoản và chuyển tiên mặt " }
+        ],
+
+        "Bảo hành": [
+            {question: "Tôi mua hàng Rosa rồi , sau này có vấn đề về bảo hành thì liên hệ tại đâu ?", answer:"Thông tin về chính sách bảo hành được Rosa công bố rộng rãi trên website của mình, tại đường dẫn sau Hoặc bạn có thể liên hệ trực tiếp tại địa chỉ chính thức của Rosa : 150 Ter Bùi Thị Xuân , Phường Phạm Ngũ Lão ,Quận 1 , TP HCM ."},
+            { question: "Hiện tại máy bộ Rosa bảo hành 3 năm theo quy định của hãng .", answer: "Hiện tại máy bộ Rosa bảo hành 3 năm theo quy định của hãng ." },
+            { question: "Số Điện Thoại trung tâm bảo hành Rosa ", answer: "(028) 39260996" }
+        ],
+        "Giao hàng": [
+            { question: "Thời gian giao hàng là bao lâu?", answer: "Thời gian giao hàng tuỳ thơi gian tỉnh thành đó " }
+        ],
+
+        "Sản phẩm & linh kiện": [
+            { question: "Hiện tại Rosa có sản phẩm gì ?", answer: "Hiện tại sản phẩm chính của Rosa là máy bộ bao gồm rất nhiều lựa chọn , đủ đáp ứng nhu cầu của quý khách hàng ." },
+            { question: "Hiện tại sản phẩm chính của Rosa bao gồm những sản phẩm gì ?", answer: "ROSA AI , ROSA VĂN PHÒNG , ROSA GAMER " },
+            { question: "ROSA AI là gì?", answer:"ROSA AI PC được thiết kế cho lập trình và phát triển AI, tích hợp cấu hình mạnh mẽ cùng các công cụ cài sẵn, sẵn sàng cho hành trình sáng tạo của bạn."}
+        
+        
+        ]
+    };
+
+    // Hàm cập nhật nội dung bên phải khi bấm vào tab
+    function setActive(button) {
+        // Loại bỏ class 'active' khỏi tất cả nút
+        document.querySelectorAll(".tab-buttons button").forEach(btn => btn.classList.remove("active"));
+        // Thêm class 'active' vào nút được bấm
+        button.classList.add("active");
+
+        // Lấy nội dung cần hiển thị
+        const category = button.innerText;
+        const faqList = faqData[category] || [];
+
+        // Cập nhật nội dung phần FAQ bên phải
+        const faqContainer = document.getElementById("faqAccordion");
+        faqContainer.innerHTML = faqList.map((item, index) => `
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#faq${index}">
+                        ${item.question}
+                    </button>
+                </h2>
+                <div id="faq${index}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">${item.answer}</div>
+                </div>
+            </div>
+        `).join('');
+    }
+    // Khởi động: Đặt tab đầu tiên là "Tư vấn"
+    document.addEventListener("DOMContentLoaded", () => {
+        setActive(document.querySelector(".tab-buttons button"));
+    });
+    </script>
 
 
 </header>
@@ -854,58 +559,57 @@ $conn->close();
         border-radius: 5px;
     }
     /*  */
-        .title {
-            color: red;
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .subtitle {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        .card {
-            position: relative;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        .card img.large {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .card img.small {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            background: white;
-            padding: 10px;
-        }
-        .card h3 {
-            margin: 60px 0 10px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            background: red;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    .title {
+        color: red;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .card {
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    .card img.large {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .card img.small {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        background: white;
+        padding: 10px;
+    }
+    .card h3 {
+        margin: 60px 0 10px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background: red;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
 
-       
     /*  */
     body {
         background-color: #f8f9fa;

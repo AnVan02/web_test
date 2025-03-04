@@ -1,6 +1,6 @@
 <?php
     // local
-    $mysqli = new mysqli ("localhost","nvpbgqcv_banhang","Vietson@123","nvpbgqcv_banhang");
+    $mysqli = new mysqli ("localhost","root","","database");
    
     //newpost
    //$mysqli = new mysqli("","","","");
