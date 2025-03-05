@@ -238,6 +238,4 @@
 
 </style>
 
-<?php
-    require "footer.php" ;
-?>
+<!--  -->

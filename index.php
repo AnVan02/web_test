@@ -122,6 +122,22 @@ $result = $conn->query($sql);
     .news-title a:hover {
         color: red;
     }
+    @media (max-width: 768px) {
+    .news-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .news-card {
+        width: 90%;
+    }
+    .news-card img {
+        height: 150px;
+    }
+    .news-title a {
+        font-size: 16px;
+    }
+}
+
 </style>
 
 <div class="news-container">
@@ -241,6 +257,54 @@ $result = $conn->query($sql);
             object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
             max-width: 100%; /* Giữ responsive trên màn hình nhỏ */
         }
+        @media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .accordion-body {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: justify; /* Căn đều văn bản */
+        max-width: 90%; /* Giới hạn độ rộng chữ */
+        margin: 0 auto; /* Căn giữa */
+    }
+
+    .accordion-button {
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .accordion-body ul {
+        padding-left: 15px;
+    }
+
+    .accordion-body li {
+        margin-bottom: 5px;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+        border-radius: 8px;
+    }
+}
+
+
 
 
     </style>
