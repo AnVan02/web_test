@@ -48,7 +48,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 40px; /* Đảm bảo padding nhỏ cho điện thoại */
+    /* padding: 40px; Đảm bảo padding nhỏ cho điện thoại */
     background-color: #f9f9f9;
     box-sizing: border-box; /* Đảm bảo padding được tính vào chiều rộng và chiều cao */
 }
@@ -295,7 +295,7 @@ button {
     });
 </script>
 
-<?php require "footer.php"; ?>
+
 
 
 <script>
@@ -335,4 +335,5 @@ button {
 
     loadAgencies();
 </script>
+<?php require "footer.php"; ?>
 

@@ -92,11 +92,12 @@
     max-width: 1073px; /* Tăng chiều rộng tối đa cho banner */
 }
 h5 {
-    font-size: 15px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
 }
 
 b {
-     font-size:17px;
+     font-size:20px;
 }
 
 .banner-content {

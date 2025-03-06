@@ -13,9 +13,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="assets/styles/main_styles.css"> -->
 <!-- <link rel="stylesheet" type="text/css" href="assets/styles/responsive.css"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Top Header -->
     <div class="header-top">
@@ -57,8 +55,8 @@
                         </ul>
                     </li>
                     <li><a href="tintuc_test/template.php">TIN TỨC</a></li>
-                    <li><a href="check.php">KIỂM TRA ĐƠN HÀNG</a></li>
                     <li><a href="baohanh_test.php">BẢO HÀNH</a></li>
+                    <li><a href="check.php">KIỂM TRA ĐƠN HÀNG</a></li>
                 </ul>
             </nav>
             <div class="hamburger_container d-md-none">
@@ -73,14 +71,15 @@
         <div class="hamburger_menu_content text-right">
             <ul class="menu_top_nav">
                 <li><a href="/./">TRANG CHỦ</a></li>
-                <li><a href="/aboutus.php">GIỚI THIỆU</a></li>
-                <li><a href="/product.php">SẢN PHẨM</a></li>
-                <li><a href="/tintuc_test/template.php">TIN TỨC </a></li>
-                <li><a href="/check.php">KIỂM TRA HOÁ ĐƠN</a></li>
+                <li><a href="aboutus.php">GIỚI THIỆU</></li>
+                <li><a href="product.php">SẢN PHẨM</></li>
+                <li><a href="tintuc_test/template.php">TIN TỨC </a></li>
+                <li><a href="baohanh_test.php">BẢO HÀNH</a></li>
+                <li><a href="check.php">KIỂM TRA ĐƠN HÀNG</a></li>
                 <li class="has-submenu">
                     <a href="">ỨNG DỤNG ROSA <i class="fas fa-chevron-down"style="margin-left: 15px"></i></a>
                     <ul class="submenu">
-                        <li><a href="/ROSA-SW.php">PHẦN MỀM ROSA</a>
+                        <li><a href="ROSA-SW.php">PHẦN MỀM ROSA</a>
                         <i class="fas fa-chevron-down"style="margin-left: 15px"></i></a></a></li>
                         <li><a href="/courses/Nextcloud.php">PHẦN MỀM QUẢN TRỊ DOANH NGHIỆP</a></li>
                         <li class="has-submenu">
@@ -88,7 +87,6 @@
                             <ul class="submenu">
                                 <li><a href="/courses/python-course.php">PYTHON CƠ BẢN</a></li>
                                 <li><a href="/courses/yolo-course.php">THỊ GIÁC MÁY TÍNH</a></li>
-                                <li><a href="baohanh.php">BẢO HÀNH</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -134,11 +132,13 @@
         <style>
        
         .header {
+        
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px 0;
-            /* font-weight: bold; */
+            /* font-weight:bold; */
             font-size: 20px;
+            font-family: Arial, sans-serif;
             
         }
 
@@ -337,10 +337,10 @@
             height: auto;
         }
         .brand_text {
-            font-size: 16px;
+            font-size: 13px;
             /* font-weight: bold; // in đậm */
             color: #333;
-            margin-left: 40%;
+            /* margin-left: 40%; */
             white-space: nowrap;
         }
         .contact_info {
@@ -369,7 +369,7 @@
         .nav_container ul li a {
             text-decoration: none;
             color: #333;
-            font-size: 14px;
+            font-size: 15px;
             transition: color 0.3s ease;
         }
         .nav_container ul li a:hover {
@@ -457,6 +457,21 @@
             border: 1px solid #ccc;
             font-size: 14px;
             cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+        @media (max-width: 480px){
+            .nav_cotainer ul {
+                display :none ;
+                flex-direction: column ;
+                align-items: center ;
+
+            }
+            .hamburger_container {
+                display : block ;
+            }
+            .contact_info {
+                display: block; 
+            }
         }
         @media (max-width: 768px) {
             .nav_container ul {
@@ -480,6 +495,7 @@
         .brand_text {
             font-size: 12px; /* Giảm kích thước chữ để phù hợp */
             margin-top: 5px;
+            font-family: Arial, sans-serif;
         }
 
         .logo_container img {

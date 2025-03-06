@@ -24,6 +24,13 @@
                         <div class="carousel-item">
                             <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
                         </div>
+                        
+                        <div class="carousel-item">
+                            <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
+                        </div>
+
+                        </div>
+                        
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,7 +44,7 @@
             </div>
         </div>
     </div>
-<style>
+    <style>
 /* Banner */
 .banner {
     margin: 30px auto;
@@ -57,7 +64,7 @@
     padding: 10px;
 }
 </style>
-	 
+
 </head>
 <body>
 <header>
@@ -89,9 +96,13 @@ $result = $conn->query($sql);
         display: flex;
         gap: 20px;
         justify-content: center;
+        max-width: 1356px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     .news-card {
-        width: 350px;
+        width: 100%;
+        max-width: 700px; /* Increased width */
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -114,19 +125,56 @@ $result = $conn->query($sql);
         color: black;
         font-size: 18px;
         font-weight: bold;
+        font-family: Arial, sans-serif;
     }
     .news-title a:hover {
         color: red;
     }
     .image-img {
-        width: 350px;
+        width: 100%;
         height: 200px;
         border-radius: 10px;
         object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
         max-width: 100%; /* Giữ responsive trên màn hình nhỏ */
     }
 
+    /* Media Queries for Mobile Devices */
+    @media (max-width: 768px) {
+        .news-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .news-card {
+            width: 90%;
+            max-width: 300px;
+        }
+        .news-card img {
+            height: 150px;
+        }
+        .news-title a {
+            font-size: 16px;
+        }
+        .news-content {
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .news-card {
+            max-width: 280px;
+        }
+        .news-card img {
+            height: 120px;
+        }
+        .news-title a {
+            font-size: 14px;
+        }
+        .news-content {
+            padding: 8px;
+        }
+    }
 </style>
+
 
 <div class="news-container">
     <?php while ($row = $result->fetch_assoc()) { ?>
@@ -174,41 +222,47 @@ $result = $conn->query($sql);
     </div>
 </div>
 
+
 <!-- TỔNG QUAN VỀ SẢN PHÂM -->
+<div class="image-container">
+    <img id="accordionImage" src="222.jpg" alt="Hình ảnh minh họa">
+</div>
 <div class="container my-5">
     <h3><b style='color: red ;font-weight: bolder;'>DÒNG MÁY PHÙ HỢP VỚI BẠN </b></h3>
-        <p>KHÁM PHÁ CÁC DÒNG MÁY ROSA PHÙ HỢP VỚI NHU CẤU SỬ DỤNG CỦA BẠN</p>
+    <div style="width: 10%; height: 2px; background-color:red; margin-top: 1px;"></div><p></p>
+        <p>Khám phá các dòng máy ROSA phù hợp với nhu cầu sử dụng của bạn</p>
     <div class="container">
         <div class="grid">
             <div class="card">
-                <img src="55.jpg" alt="ROSA Server" class="large">
-                <img src="nen1.png" alt="ROSA Server" class="small">
+                <img src="name (3).jpg" alt="Background" class="large">
+                <img src="nen1.png" alt="PC" class="small">
                 <h3>ROSA OFFICE</h3>
-                <p>Mang đến hiệu suất ổn định và tính năng bảo mật cao, hoàn hảo cho công việc văn phòng hàng ngày.</p>
-                    <a href="product.php#vanphong" class="btn">KHÁM PHÁ</a>
+                <p style="text-align:center">Mang đến hiệu suất ổn định và tính năng bảo mật cao, hoàn hảo cho công việc văn phòng hàng ngày.</p>
+                    <a href="product.php#vanphong" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
             <div class="card">
-                <img src="banner_ai.jpg" alt="ROSA Server" class="large">
-                <img src="2.png" alt="ROSA Server" class="small">
+                <img src="deep-learning.jpg" alt="Background" class="large">
+                <img src="2.png" alt="PC" class="small">
                 <h3>ROSA AI</h3>
-                <p>Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
-                    <a href="product.php#ai" class="btn">KHÁM PHÁ</a>
+                <p style=" text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
+                    <a href="product.php#ai" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
             <div class="card">
-                <img src="banner_gaming.jpg" alt="ROSA Server" class="large">
-                <img src="nen2.png" alt="ROSA Server" class="small">
+                <img src="name (6).jpg" alt="Background" class="large">
+                <img src="nen2.png" alt="PC" class="small">
                 <h3>ROSA GAMING</h3>
-                <p>Cấu hình cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích.</p>
-                    <a href="product.php#gaming" class="btn">KHÁM PHÁ</a>
+                <p style="text-align:center">Cấu hình cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích.</p>
+                    <a href="product.php#gaming" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
             <div class="card">
-                <img src="44.jpg" alt="ROSA Server" class="large" style="display:flex">
-                <img src="1.2.png" alt="ROSA Server" class="small">
+                <img src="name (4).jpg" alt="Background" class="large" style="display:flex">
+                <img src="1.2.png" alt="PC" class="small">
                 <h3>ROSA MINI </h3>
-                <p>Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
-                    <a href="product.php#mini" class="btn">KHÁM PHÁ</a>
+                <p style="text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
+                    <a href="product.php#mini" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
         </div>
+
     </div>
 <style>
 
@@ -218,17 +272,22 @@ $result = $conn->query($sql);
     .card,
     img.large,
     img.small {
-        background: none !important;
+        /* background: none !important; */
         background-color: transparent !important;
+        
     }
 
     .container img,
     .grid img,
     .card img {
-        background: none !important;
+        /* background: none !important; */
         background-color: transparent !important;
     }
     
+    .small {
+        display: block;
+    }
+
     .title {
         color: red;
         font-size: 24px;
@@ -246,7 +305,7 @@ $result = $conn->query($sql);
     }
     .card {
         position: relative;
-        background: white;
+        background: #d50000;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -255,39 +314,84 @@ $result = $conn->query($sql);
     .card img.large {
         width: 100%;
         border-radius: 10px;
+        filter: brightness(100%) blur(3px); /* Làm tối và mờ nền */
     }
     .card img.small {
         position: absolute;
-        bottom: 180px;
+        bottom: 207px;
         left: 50%;
         transform: translateX(-50%);
         width: 50%;
         border-radius: 10px;
         /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); */
         background: white;
-        padding: 10px;
+        padding: 1px;
     }
     .card h3 {
         margin: 60px 0 10px;
     }
     .btn {
-        display: inline-block;
-        padding: 10px 15px;
-        background: red;
+        display: block;
+        text-align: center;
+        padding: 20px 15px;
+        background: #D50000; /* Đỏ đậm */
         color: white;
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
+        margin-top: 10px;
+        transition: background 0.3s ease-in-out;
+    }
+        /* Áp dụng cho màn hình nhỏ hơn 768px (thiết bị di động) */
+        @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+        
+        .grid {
+            grid-template-columns: 1fr; /* Hiển thị mỗi thẻ card thành một cột duy nhất */
+            gap: 10px;
+        }
+
+        .card {
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .card img.large {
+            filter: brightness(100%) blur(3px); /* Làm tối và mờ nền */
+        }
+
+        .card img.small {
+            /* position: static; */
+            display: block;
+            /* width: 100%; */
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            padding: 15px;
+            font-size: 16px;
+        }
     }
 
     </style>
     
 
 <!--software-->
-
+<div class="image-container">
+    <img id="accordionImage" src="mission-education-img2.png" alt="Hình ảnh minh họa">
+</div>
 <div class="container my-5">
 <h3><b style='color: red ;font-weight: bolder;'>GIẢI PHÁP PHẦN MỀM KHOÁ HỌC CHO BẠN</b></h3>
-    <p>KHÁM PHÁ KHOÁ HỌC & PHẦN MỀM AI THÚ VỊ MÀ ROSA MANG ĐẾN CHO BẠN</p>
+<div style="width: 10%; height: 2px; background-color:red; margin-top: 1px;"></div><p></p>
+    <p>Khám phá khoá học & phần mềm AI thú vị mà ROSA mang đến cho bạn </p>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -296,32 +400,32 @@ $result = $conn->query($sql);
         }
         .container-box {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1356px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         .content {
             flex: 1;
             padding-right: 20px;
         }
-
         .image-container {
             flex: 1;
-            max-width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         .image-container img {
-            width: 820px;
-            height: 830px;
+            width: 100%; /* Expand to full width */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 10px;
             object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
             max-width: 100%; /* Giữ responsive trên màn hình nhỏ */
         }
-
-
     </style>
+
+
     <div class="container my-5">
         <div class="container-box">
             <div class="content">
@@ -384,7 +488,7 @@ $result = $conn->query($sql);
             </div>
             <!-- Khu vực hiển thị hình ảnh -->
             <div class="image-container">
-                <img id="accordionImage" src="image1.jpg" alt="Hình ảnh minh họa">
+                <img id="accordionImage" src="education-img.png" alt="Hình ảnh minh họa">
             </div>
         </div>
     </div>
@@ -400,10 +504,13 @@ $result = $conn->query($sql);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </div>
-
+<div class="image-container">
+    <img id="accordionImage" src="cauhoi.jpg" alt="Hình ảnh minh họa">
+</div>
 <!-- CÂU HỎI LIÊN QUAN  -->
 <div class="container my-5">
 <h3><b style='color: red ;font-weight: bolder;'>CÂU HỎI LIÊN QUAN ĐẾN ROSA  </b></h3>
+<div style="width: 10%; height: 2px; background-color:red; margin-top: 1px;"></div><p></p>
     <p>Những câu hỏi phổ biển nhất có thể bạn chưa biết đến ROSA</p>
     <style>
         body {
@@ -469,6 +576,7 @@ $result = $conn->query($sql);
             font-weight: bold;
         }
     </style>
+
   <div class="faq-container">
         <!-- Phần bên trái -->
         <div class="faq-left">
@@ -491,6 +599,7 @@ $result = $conn->query($sql);
 
             </div>
         </div>
+
         <!-- Phần bên phải -->
         <div class="faq-right">
             <div class="accordion" id="faqAccordion">
@@ -654,6 +763,7 @@ $result = $conn->query($sql);
         padding-right: 30px;
     }
     .content h2 {
+        font-family: Arial, sans-serif;
         font-size: 1.8rem;
         font-weight: bold;
     }
@@ -1054,6 +1164,237 @@ $result = $conn->query($sql);
         padding: 12px 0; /* Thêm padding cho nút */
     }
 }
+/* Media Queries */
+@media (max-width: 768px) {
+    .product-group {
+        display: flex; /* Sử dụng flexbox cho điện thoại */
+        flex-direction: column; /* Sắp xếp theo chiều dọc */
+        gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    }
+
+    .main-banner {
+        flex-direction: column; 
+        padding: 20px;
+    }
+
+    .title h3 {
+        font-size: 22px;
+    }
+
+    .details h3 {
+        font-size: 16px; 
+    }
+
+    .key-specs {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .shop-button {
+        padding: 12px 0;
+    }
+}
+        
+    .a{
+        max-width:10px;
+        margin :20px auto;
+        padding: 0 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .title h1 {
+        font-size: 28px;
+        margin: 10px 0;
+    }
+    .title p {
+        color: #666;
+    }
+    .card-content {
+        min-height: 250px; /* Chiều cao tối thiểu cho phần nội dung */
+        overflow: hidden; /* Ẩn nội dung thừa nếu vượt quá chiều cao */
+    }
+
+    /* Nút mua ngay */
+    .card-footer {
+        margin-top: 10px; /* Tạo khoảng cách giữa phần nội dung và nút */
+        text-align: center;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column; /* Thay đổi từ row thành column để ảnh ở trên và chi tiết ở dưới */
+        align-items: center; /* Căn giữa các phần tử */
+        gap: 20px;
+        justify-content: space-between; /* Căn đều nội dung bên trong */
+        height: 100%; /* Đảm bảo chiều cao đồng nhất */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container {
+        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của thẻ */
+        height: 250px; /* Cố định chiều cao ảnh */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container img {
+        width: 77%;
+        height: 90%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* text-align: center; */
+    }
+
+    .details h3 {
+        font-size: 18px;
+        color: red;
+        margin: 10px 0;
+        font-family:'Arial', sans-serif;
+    }
+
+    .details p {
+        font-size: 16px;
+        color: #000000;
+        margin: 10px 0;
+    }
+
+    .key-specs {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    .price {
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        margin: 10px 0;
+    }
+
+    .shop-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: #ff0000;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .shop-button:hover {
+        background-color: #cc0000;
+    }
+
+
+    /* Styling for product titles */
+    .details h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        color: red; /* Màu đỏ nổi bật */
+    }
+
+    /* Key specifications styling */
+    .key-specs {
+        font-size: 15px;
+        color: #00000;
+        line-height: 1.6;
+    }
+
+    /* Price styling */
+    .price {
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        margin-top: 10px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 10px; /* Khoảng cách giữa đoạn văn và nút */
+        color: #4F4F4F;
+    }
+
+    .shop-button {
+        display: inline-block; /* Đảm bảo hiển thị như một khối */
+        width: 300px; /* Đặt chiều rộng cố định */
+        text-align: center; /* Canh giữa chữ trong nút */
+        background-color: #ff0000;
+        color: white;
+        padding: 10px 0; /* Khoảng cách trên và dưới */
+        text-decoration: none;
+        border-radius: 5px; /* Bo góc nút */
+        font-size: 15px; /* Kích thước chữ riêng cho nút */
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .shop-button:hover {
+        background-color: #FF0000; /* Hiệu ứng hover */
+    }
+    
+	@media (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Vẫn giữ layout ngang trên điện thoại */
+        gap: 10px; /* Giảm khoảng cách giữa ảnh và nội dung */
+        padding: 10px; /* Giảm padding để tối ưu không gian */
+    }
+
+    .image-container img {
+        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng */
+        height: auto; /* Giữ tỷ lệ ảnh */
+    }
+
+    .details h3 {
+        font-size: 16px; /* Giảm kích thước font tiêu đề */
+    }
+    
+    p {
+        font-size: 14px; /* Giảm kích thước chữ */
+    }
+
+    .key-specs {
+        font-size: 12px; /* Giảm kích thước font cho thông số */
+    }
+
+    .price {
+        font-size: 16px; /* Giảm kích thước giá */
+    }
+
+    /* Điều chỉnh nút "Mua ngay" */
+    .shop-button {
+        width: 100%; /* Đặt nút shop chiếm toàn bộ chiều rộng */
+        padding: 12px 0; /* Thêm padding cho nút */
+    }
+}
+
 
 	</style>
 

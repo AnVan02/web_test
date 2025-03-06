@@ -1,5 +1,5 @@
-
-<div class="container footer-contact">
+<br>
+<div class="container footer-contact"style="">
 <div class="footer-newsletter">
     <h3 style="color: red;">Nhận thông tin từ ROSA.</h3>
     <p>Đăng ký email để nhận các thông tin mới nhất từ ROSA</p>
@@ -15,7 +15,7 @@
 </div>
 
 
-    <div class="footer-support">
+    <div class="footer-support" >
         <h3  style="color:red" >Thông tin hỗ trợ.</h3>
         <p>Kinh doanh: (028) 39293770 - (028) 39293765</p>
         <p>Kỹ thuật & bảo hành: (028) 39260996</p>
@@ -39,23 +39,23 @@
 				<h3>THÔNG TIN CÔNG TY </h3>
 				<p>Thửa đất số 13A, Tờ bản đồ C2, Khu phố 1B, Phường An Phú, Thành phố Thuận An, Tỉnh Bình Dương</p>
 				<p>Chi nhánh & TTBH HCM: 150 Ter, đường Bùi Thị Xuân, phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh .</p>
-				<p>Chi nhánh Hà Nội: Chi nhánh Hà Nội: Tầng 4, Tòa nhà Viet Tower, số 01 phố Thái Hà, P. Trung Liệt, Q. Đống Đa, TP Hà Nội</p>
+				<p>Chi nhánh Hà Nội: Tầng 4, Tòa nhà Viet Tower, số 01 phố Thái Hà, P. Trung Liệt, Q. Đống Đa, TP Hà Nội</p>
 			</div>
 		<!-- HƯỚNG DẪN KHÁCH HÀNG -->
 			<div class="footer-column">
 				<h3>CHÍNH SÁCH CÔNG TY</h3>
 				<ul class="list-info">
-                        <li><a href="#">CHÍNH SÁCH ĐẠI LÝ</a></li>
-                        <li><a href="#">CHÍNH SÁCH BẢO HÀNH</a></li>
+                        <li><a href="DSDL.php"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>DANH SÁCH ĐẠI LÝ</a></li>
+                        <li><a href="CSBH.php"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>CHÍNH SÁCH BẢO HÀNH</a></li>
                     </ul>
 			</div>
 		<!-- PHẦN MỀM & KHÓA HỌC -->
 			<div class="footer-column">
 				<h3>PHẦN MỀM & KHÓA HỌC</h3>
 				<ul class="list-info">
-                        <li><a href="#">PYTHON CƠ BẢN</a></li>
-                        <li><a href="#">THỊ GIÁC MÁY TÍNH</a></li>
-                        <li><a href="#">QUẢN TRỊ DOANH NGHIỆP</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i> PYTHON CƠ BẢN </a></li>
+                        <li><a href="#"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>THỊ GIÁC MÁY TÍNH</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>QUẢN TRỊ DOANH NGHIỆP</a></li>
                     </ul>
                 </div>
 		<!-- CỘNG ĐỒNG ROSA -->
@@ -81,10 +81,11 @@
 </footer>
 
 <style>
+    
     .footer-contact {
     display: flex;
     justify-content: space-between;
-    background:rgb(235, 231, 231);
+    background-color:#edeaea!important; /* Thay đổi mã màu nền theo ý bạn */
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
@@ -105,6 +106,11 @@
 }
 a {
     color: #FF0000;
+}
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #000000;
 }
 .btn-subscribe:hover {
     background: darkred;
@@ -168,19 +174,27 @@ a {
     margin-right: 10px;
 }
 
+
 .footer-column ul {
     list-style: none;
     padding: 0;
 }
 .footer-column ul li a {
     text-decoration: none;
-    color: #666;
+    color:  #000000;
     font-size: 16px;
     display: block;
     padding: 5px 0;
 }
 .footer-column ul li a:hover {
     color: red;
+}
+
+.footer-newsletter form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
 }
 
 #foot-bot p {
@@ -200,7 +214,15 @@ a {
         width: 100%; /* Chiếm toàn bộ chiều rộng */
         padding: 10px 0;
     }
+    .footer-contact{
+        flex-direction: column;
+    }
+    .footer-newsletter form {
+        flex-direction: row;
+        gap: 10px;
+    }
 }
+
 .benefit {
     background-color: #fff;
     padding: 20px 0;

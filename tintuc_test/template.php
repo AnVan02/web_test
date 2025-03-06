@@ -124,7 +124,7 @@ error_reporting(E_ALL);
                             <?= htmlspecialchars($newsItem['article_title']); ?>
                         </a>
                     </h2>
-                    <small>Ngày: <?= htmlspecialchars($newsItem['article_date']); ?></small>
+                    <small>Ngày: <?= date("d/m/Y", strtotime(htmlspecialchars($featuredNews['article_date']))); ?></small>
                     <small>Người viết: <?= htmlspecialchars($newsItem['article_author']); ?></small>
                     <p class="description"><?= htmlspecialchars_decode($newsItem['article_content']); ?></p>
                 </div>
@@ -147,7 +147,7 @@ error_reporting(E_ALL);
                         <?= htmlspecialchars($item['article_title']); ?>
                     </a>
                 </h2>
-                <small>Ngày: <?= htmlspecialchars($item['article_date']); ?></small>
+                <small>Ngày: <?= date("d/m/Y", strtotime(htmlspecialchars($featuredNews['article_date']))); ?></small>
                 <small>Người viết: <?= htmlspecialchars($item['article_author']); ?></small>
                 <p class="description"><?= htmlspecialchars_decode($item['article_content']); ?></p>
             </div>

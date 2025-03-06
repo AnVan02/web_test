@@ -178,8 +178,8 @@
         <style>
             
         .body {
-            font-family: 'Arial', sans-serif; 
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
             margin: 0;
             padding: 0;
         }
@@ -188,7 +188,7 @@
         .title h1 {
             font-size: 28px;
             margin: 10px 0;
-            font-family: 'Arial', sans-serif; 
+            font-family: Arial, sans-serif;
         }
     
         .title p {
@@ -196,6 +196,7 @@
         }
         h5 {
             font-size: 20px;
+            font-family: Arial, sans-serif;
         }
     
         .title {
@@ -490,7 +491,7 @@
 
     .shop-button {
         display: inline-block; /* Đảm bảo hiển thị như một khối */
-        width: 300px; /* Đặt chiều rộng cố định */
+        width: 240px; /* Đặt chiều rộng cố định */
         text-align: center; /* Canh giữa chữ trong nút */
         background-color: #ff0000;
         color: white;
@@ -512,7 +513,9 @@
         gap: 10px; /* Giảm khoảng cách giữa ảnh và nội dung */
         padding: 10px; /* Giảm padding để tối ưu không gian */
     }
-
+    .banner-image img {
+        height : 171px
+    }
     .image-container img {
         width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng */
         height: auto; /* Giữ tỷ lệ ảnh */

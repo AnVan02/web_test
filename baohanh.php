@@ -191,6 +191,7 @@ function checkAndRemoveExpired($SOSERI_SP, $currentDate){
         color: red;
         font-size: 18px;
         margin-top: 20px;
+
     }
     /* CSS cho phần thông tin sản phẩm */
 .section-detail {
@@ -201,6 +202,7 @@ function checkAndRemoveExpired($SOSERI_SP, $currentDate){
     font-size: 24px;
     color: dodgerblue;
     margin-bottom: 10px;
+    font-family: Arial, sans-serif;
 }
 
 .section-detail .create-date {
@@ -215,7 +217,7 @@ function checkAndRemoveExpired($SOSERI_SP, $currentDate){
 }
 
 .border input {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .result-box {

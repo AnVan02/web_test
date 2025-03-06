@@ -40,6 +40,12 @@ function checkAndRemoveExpired($SOSERI_SP, $currentDate){
     return $result;
 }
 ?>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/./">TRANG CHỦ</a></li>
+        <li class="breadcrumb-item"><a href="../baohanh_test.php">TRA CỨU THÔNG TIN BẢO HÀNH</a></li>
+    </ol>
+</nav>
 <div class="main-content fl-right">
     <div class="section" id="detail-blog-wp">
         <div class="section-head clearfix">
@@ -52,7 +58,9 @@ function checkAndRemoveExpired($SOSERI_SP, $currentDate){
         <div class="section-detail">
             <div class="border border-zinc-300 p-4 rounded mb-4">
                 <div class="flex items-center">
-                    <h3 style="color:dodgerblue;">Tra cứu thông tin sản phẩm </h3>
+                    <h3 style="color:dodgerblue;">Tra cứu thông tin sản phẩm 
+                    <div style="width: 30%; height: 2px; background-color:red; margin-top: 1px;"></div><p></p>
+                    </h3>
                 </div>
                 <form name="test" action="#" method="POST">
                     <input name="search" type="text" placeholder="NHẬP MÃ SERIAL SẢN PHẨM CẦN TÌM" 
@@ -258,7 +266,9 @@ function checkAndRemoveExpired($SOSERI_SP, $currentDate){
     form button {
         width: 100%;
     }
+    
 }
+
 
 
 </style>

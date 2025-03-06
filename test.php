@@ -1,160 +1,176 @@
-<title>Kiểm Tra Đơn Hàng</title>
+<title>Thông Tin Đặt Hàng</title>
 
 <?php
-    require "header.php";
+require "../data/bank_info.php";
+require "../header.php";
+// Database connection
+$servername = "localhost";
+$username = "nvpbgqcv_banhang";
+$password = "Vietson@123";
+$dbname = "nvpbgqcv_banhang";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
+}
+
+// Get orderID
+$orderId_decoded = isset($_GET['orderId']) ? $_GET['orderId'] : '';
+$orderId = base64_decode($orderId_decoded);
+
+// Fetch order information from database
+$query = "SELECT * FROM `order` WHERE `formatted_order_id` = ?";
+$selectStmt = $conn->prepare($query);
+$selectStmt->bind_param("s", $orderId);
+$selectStmt->execute();
+$result = $selectStmt->get_result();
+
+$order = "";
+$order_date = "";
+$name = "";
+$phone = "";
+$email = "";
+$shipping = "";
+$address = "";
+$note = "";
+$found = false;
+
+if ($result->num_rows > 0) {
+    $found = true;
+    $row = $result->fetch_assoc();
+    $order = $row['order'];
+    $order_date = $row['order_date'];
+    $name = $row['customer_name'];
+    $phone = $row['customer_phone'];
+    $email = $row['customer_email'];
+    $shipping = $row['shipping_method'];
+    $address = $row['delivery_address'];
+    $note = $row['customer_note'];
+}
+else{
+    $orderId = "";
+}
+
 ?>
-
-<?php if(isset($_SESSION["message"])):?>
     <script>
-        function message() {
-        window.alert("<?php echo $_SESSION["message"];?>");
-        }
-    </script>
-<?php endif;?>
-
-<!-- Banner -->
-<div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 mb-3">
-
-    <?php if(isset($_SESSION["message"])) {echo 'onload="message()"';unset($_SESSION["message"]);}?>
-
-<!-- Main content -->
-<div class="tab">
-        <h1>Kiểm tra đơn hàng</h1>
-        <p>(Dành cho đơn đặt hàng online trên website)</p>
-        <label for="order-code">Nhập mã đơn hàng để kiểm tra đơn hàng của bạn.</label><br><br>
-        <input type="text" id="order-code">
-        <button id="check_id">Kiểm tra</button>
-        <table class="table">
-            <tr>
-                <th>ID</th>
-                <th>Mã đơn hàng</th>
-                <th>Họ tên</th>
-                <th>Điện thoại</th>
-                <th>Ngày đặt hàng</th>
-                <th>Tổng tiền</th>
-                <th>Trạng thái</th>
-            </tr>
-        </table>
-        
-        <div id="order_content"></div>
-    </div>
-    <script>
-        document.getElementById("check_id").addEventListener("click", function () {
-            const orderCode = document.getElementById("order-code").value.trim();
-
-            if (!orderCode) {
-                alert("Vui lòng nhập mã đơn hàng");
-                return;
-            }
-
-            fetch(`http://localhost/demo_test/api.php?order_code=${orderCode}`)
-                .then(response => response.json())
-                .then(data => {
-                    const table = document.querySelector(".table");
-                    table.innerHTML = `
-                        <tr>
-                            <th>Mã đơn hàng</th>
-                            <th>Họ tên</th>
-                            <th>Điện thoại</th>
-                            <th>Ngày đặt hàng</th>
-                            <th>Trạng thái</th>
-                        </tr>
-                    `;
-
-                    if (data.success) {
-                        const row = `
-                            <tr>
-                                <td>${data.data.formatted_order_id}</td>
-                                <td>${data.data.customer_name}</td>
-                                <td>${data.data.customer_phone}</td>
-                                <td>${data.data.order_date}</td>
-                                <td>${data.data.status}</td>
-                            </tr>
-                        `;
-                        table.style.display = "table";
-                        table.innerHTML += row;
-                        // document.querySelector(".tab").innerHTML += `<div>${data.data.order}</div>`;
-                        document.getElementById('order_content').innerHTML = data.data.order;
-                    } else {
-                        alert(data.message);
-                        table.style.display = "none";
-                        // clear order content
-                        document.getElementById('order_content').innerHTML = "";
-                    }
-                })
-                .catch(err => {
-                    console.error(err);
-                    alert("Đã xảy ra lỗi khi kết nối với server!");
-                });
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('order-info').innerHTML = <?php echo json_encode($order);?>;
         });
     </script>
 
-
-<!-- Closing div tags for the container and row -->
+        <main>
+            <?php if ($found): ?>
+                <h3 ><b style='color: red ;font-weight: bolder;'>Đặt Hàng Thành Công<br>
+                <small>Cảm ơn bạn đã đặt hàng ROSA .Vui lòng xem lại thông tin hoá đơn hàng & nhân viên sẽ liên hệ với quý khách trong thời gian sớm nhất</small></h3>
+            
+            <?php else: ?>
+                <h3>Không Tìm Thấy Đơn Hàng</h3>
+            <?php endif; ?>
+            <h3 style ="font-size:22px">Thông tin đơn hàng  </h3>
+            <h4>Hóa Đơn ID: <?php echo $orderId; ?></h4>
+            <h4>Ngày Tạo: <?php echo $order_date; ?></h4>
+            <br>
+            <h3 style="font-size:22px" >THÔNG TIN KHÁCH HÀNG </h3>
+            <p><strong>Tên Khách Hàng:</strong> <?php echo $name; ?></p>
+            <p><strong>Số điện thoại:</strong> <?php echo $phone; ?></p>
+            <p><strong>Email:</strong> <?php echo $email; ?></p>
+             
+            <?php if ($shipping === 'home'): ?>
+                <p><strong>Hình thức nhận hàng:</strong> Giao hàng tại nhà</p>
+                <p><strong>Địa chỉ giao hàng:</strong> <?php echo $address; ?></p>
+                <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
+           
+            <?php elseif ($shipping === 'store'): ?>
+                <p><strong>Hình thức nhận hàng:</strong> Nhận hàng tại đại lý uỷ quyền ROSA</p>
+                <p><strong>Địa chỉ đại lý:</strong> <?php echo $address; ?></p>
+                <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
+            <?php else: ?>
+                <p><strong>Hình thức nhận hàng:</strong></p>
+            <?php endif; ?>
+           
+            <h3>Nội Dung Hóa Đơn:</h3>
+            <div id="order-info">
             </div>
-        </div>
+
+            <?php if ($shipping === 'home'): ?>
+                <h3>Thông Tin Chuyển Khoản:</h3>
+                <p><strong>Tên tài khoản:</strong> <?php echo $accountName; ?></p>
+                <p><strong>Số tài khoản:</strong> <?php echo $accountNumber; ?></p>
+                <p><strong>Tên Ngân Hàng:</strong> <?php echo $bankName; ?></p>
+                <div class="qr-code">
+                    <img src=<?php echo $QRcode; ?> alt="QR Code" />
+                </div>
+            <?php endif; ?>
+            
+            <?php if ($shipping === 'store'): ?>
+                <h3>Thông Tin Chuyển Khoản:</h3>
+                <p><strong>Tên tài khoản:</strong> <?php echo $accountName; ?></p>
+                <p><strong>Số tài khoản:</strong> <?php echo $accountNumber; ?></p>
+                <p><strong>Tên Ngân Hàng:</strong> <?php echo $bankName; ?></p>
+                <div class="qr-code">
+                    <img src=<?php echo $QRcode; ?> alt="QR Code" />
+                </div>
+            <?php endif; ?>
+
+            <a href="/index.php">Quay lại trang chủ</a>
+        </main>
     </div>
 
+    <!--<script src="../javascript/A3000A52-8-128.js"></script>-->
+
+    
+<?php require "../footer.php";?>
+
+
+
+
 <style>
-    .tab {
-        padding: 20px;
-        background-color: white;
-        margin: 20px auto;
-        width: 80%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .tab h1 {
-        font-size: 24px;
+     
+          /* Cơ bản thiết lập cho body và header */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
         color: #333;
-        display: inline-block;
+    }
+
+    
+    /* Nội dung chính */
+    main {
+        padding: 126px 120px; /* Thêm khoảng cách trên cùng để tránh header */
+    }
+    
+    /* Các tiêu đề và đoạn văn bản */
+    h3 {
+        color: #FF3300;
+        border-bottom: 2px solid #FF3300;
         padding-bottom: 5px;
     }
-    .tab p {
-        color: red;
-        font-size: 14px;
+    
+    p {
+        line-height: 1.6;
+        color: #000;
     }
-    .tab label {
-        font-size: 16px;
-        color: #333;
+    
+    /* QR Code */
+    .qr-code img {
+        max-width: 350px; /* Maximum width */
+        max-height: 350px; /* Maximum height */
+        width: auto; /* Automatically adjust width while maintaining aspect ratio */
+        height: auto; /* Automatically adjust height while maintaining aspect ratio */
+        display: block; /* Ensure proper layout behavior */
     }
-    .tab input[type="text"] {
-        padding: 10px;
-        width: 200px;
-        margin-right: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    .tab button {
-        padding: 10px 20px;
-        background-color: red;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    .container button:hover {
-        background-color: black;
-    }
-    .table {
-        display: none;
-        width: 100%;
-        margin-top: 20px;
-        border-collapse: collapse;
-    }
-    .table th, .table td {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid #ddd;
-    }
-    .table th {
-        background-color: red;
-        color: white;
-    }
-</style>
+    
+    
 
-<?php
-    require "footer.php";
-?>
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        main {
+            padding: 123px 20px; /* Giảm khoảng cách trên cùng cho điện thoại */
+        }
+    }
+        </style>
+    
+</body>
+</html>

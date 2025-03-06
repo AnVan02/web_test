@@ -29,7 +29,7 @@
 </nav>
     <div class="tab">
         <h1>Kiểm tra đơn hàng</h1>
-        <div style="width: 30%; height: 4px; background-color:red; margin-top: 5px;"></div>
+        <div style="width: 10%; height: 2px; background-color:red; margin-top: -7px;"></div>
         <br>
         <p>(Dành cho đơn đặt hàng online trên website)</p>
         <label for="order-code">Nhập mã đơn hàng để kiểm tra đơn hàng của bạn.</label><br><br>

@@ -1282,7 +1282,7 @@ foreach ($dealers as $dealer) {
                             <p>Tên tài khoản: CÔNG TY TNHH ĐIỆN TỬ VÀ TIN HỌC TOÀN VIỆT<p>
                             <p>Số tài khoản: 0381000415803</p>
                             <p>Ngân hàng: VIETCOMBANK-CHI NHÁNH THỦ ĐỨC</p>
-                        </div>
+                        </div> 
                             
                         <!-- Trong phần delivery-method của form -->
                         <div class="delivery-method">

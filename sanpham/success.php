@@ -21,7 +21,7 @@ $orderId_decoded = isset($_GET['orderId']) ? $_GET['orderId'] : '';
 $orderId = base64_decode($orderId_decoded);
 
 // Fetch order information from database
-$query = "SELECT * FROM `order` WHERE `order_id` = ?";
+$query = "SELECT * FROM `order` WHERE `formatted_order_id` = ?";
 $selectStmt = $conn->prepare($query);
 $selectStmt->bind_param("s", $orderId);
 $selectStmt->execute();
@@ -37,11 +37,11 @@ $address = "";
 $note = "";
 $found = false;
 
-if ($result->num_rows > 0) {
-    $found = true;
-    $row = $result->fetch_assoc();
-    $order = $row['order'];
-    $order_date = $row['order_date'];
+if ($result ->num_rows >0) {
+    $found = true ;
+    $row = $result -> fetch_assoc();
+    $order = $row ['order'];
+    $order_date = $row ['order_date'];
     $name = $row['customer_name'];
     $phone = $row['customer_phone'];
     $email = $row['customer_email'];
@@ -67,17 +67,21 @@ else{
     </script>
 
     <main>
+    <!-- <div class="letter-content"> -->
         <?php if ($found): ?>
             <h3 ><b style='color: red ;font-weight: bolder;'>Đặt Hàng Thành Công<br>
             <small>Cảm ơn bạn đã đặt hàng ROSA .Vui lòng xem lại thông tin hoá đơn hàng & nhân viên sẽ liên hệ với quý khách trong thời gian sớm nhất</small></h3>
         <?php else: ?>
             <h3>Không Tìm Thấy Đơn Hàng</h3>
         <?php endif; ?>
-        <h3>THÔNG TIN ĐƠN HÀNG </h3>
+
+        
+        <h3 style="font-size:22px" >THÔNG TIN ĐƠN HÀNG </h3>
+
         <h4>Hóa Đơn ID: <?php echo $orderId; ?></h4>
         <h4>Ngày Tạo: <?php echo $order_date; ?></h4>
         <br>
-        <h3>THÔNG TIN KHÁCH HÀNG </h3>
+        <h3 style="font-size:22px" >THÔNG TIN KHÁCH HÀNG </h3>
         <p><strong>Tên Khách Hàng:</strong> <?php echo $name; ?></p>
         <p><strong>Số điện thoại:</strong> <?php echo $phone; ?></p>
         <p><strong>Email:</strong> <?php echo $email; ?></p>
@@ -91,11 +95,12 @@ else{
             <p><strong>Hình thức nhận hàng:</strong> Nhận hàng tại đại lý uỷ quyền ROSA</p>
             <p><strong>Địa chỉ đại lý:</strong> <?php echo $address; ?></p>
             <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
+            
         <?php else: ?>
             <p><strong>Hình thức nhận hàng:</strong></p>
         <?php endif; ?>
         
-        <h3>THÔNG TIN HOÁ ĐƠN</h3>
+        <h3 style="font-size:22px" >THÔNG TIN HOÁ ĐƠN</h3>
         <div id="order-info">
         </div>
 
@@ -121,7 +126,7 @@ else{
 
         <a href="/index.php">Quay lại trang chủ</a>
     </main>
-</div>
+<!-- </div> -->
 
     <!--<script src="../javascript/A3000A52-8-128.js"></script>-->
 
@@ -134,17 +139,32 @@ else{
 <style>
      
           /* Cơ bản thiết lập cho body và header */
-    /* body {
+    body {
         margin: 0;
         font-family: Arial, sans-serif;
         background-color:rgb(255, 251, 251);
         color: #333;
-    } */
+    }
+    .continer {
+        max-width: 1350px;
+        margin: 0 auto ;
+        padding : 0, 20px;
+
+    }
+    .letter-content {
+        /* background-color:#F8F8FF; */
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 70%;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+    }
 
     
     /* Nội dung chính */
     main {
-        padding: 10px 200px; /* Thêm khoảng cách trên cùng để tránh header */
+        padding: 0px 200px; /*Thêm khoảng cách trên cùng để tránh header*/
     }
     
     /* Các tiêu đề và đoạn văn bản */

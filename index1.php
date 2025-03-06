@@ -193,6 +193,7 @@
 }
 
 .main-content h2 {
+    font-family: Arial, sans-serif;
     font-size: 24px;
     margin-bottom: 15px;
     color: #ff5722;
