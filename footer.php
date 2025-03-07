@@ -1,6 +1,6 @@
 <br>
-<div class="container footer-contact"style="">
-<div class="footer-newsletter">
+<div class="container footer-contact1"style="">
+<div class="footer-newsletter1">
     <h3 style="color: red;">Nhận thông tin từ ROSA.</h3>
     <p>Đăng ký email để nhận các thông tin mới nhất từ ROSA</p>
 
@@ -15,12 +15,12 @@
 </div>
 
 
-    <div class="footer-support" >
+    <div class="footer-support1" >
         <h3  style="color:red" >Thông tin hỗ trợ.</h3>
         <p>Kinh doanh: (028) 39293770 - (028) 39293765</p>
         <p>Kỹ thuật & bảo hành: (028) 39260996</p>
     </div>
-    <div class="footer-social">
+    <div class="footer-social1">
         <h3  style="color:red">Liên kết social</h3>
         <p>Theo dõi ROSA tại các kênh mạng xã hội</p>
         <a href="https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/"><i class="fab fa-facebook" style="color:#1877F2" ></i></a>
@@ -31,18 +31,18 @@
 </div>
 <br/>
 
-<footer class="footer">
+<footer class="footer1">
     <div class="container">
-        <div class="footer-sections">
+        <div class="footer-sections1">
 		<!-- THÔNG TIN CÔNG TY -->
-			<div class="footer-column">
+			<div class="footer-column1">
 				<h3>THÔNG TIN CÔNG TY </h3>
 				<p>Thửa đất số 13A, Tờ bản đồ C2, Khu phố 1B, Phường An Phú, Thành phố Thuận An, Tỉnh Bình Dương</p>
 				<p>Chi nhánh & TTBH HCM: 150 Ter, đường Bùi Thị Xuân, phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh .</p>
 				<p>Chi nhánh Hà Nội: Tầng 4, Tòa nhà Viet Tower, số 01 phố Thái Hà, P. Trung Liệt, Q. Đống Đa, TP Hà Nội</p>
 			</div>
 		<!-- HƯỚNG DẪN KHÁCH HÀNG -->
-			<div class="footer-column">
+			<div class="footer-column1">
 				<h3>CHÍNH SÁCH CÔNG TY</h3>
 				<ul class="list-info">
                         <li><a href="DSDL.php"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>DANH SÁCH ĐẠI LÝ</a></li>
@@ -50,7 +50,7 @@
                     </ul>
 			</div>
 		<!-- PHẦN MỀM & KHÓA HỌC -->
-			<div class="footer-column">
+			<div class="footer-column1">
 				<h3>PHẦN MỀM & KHÓA HỌC</h3>
 				<ul class="list-info">
                         <li><a href="#"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i> PYTHON CƠ BẢN </a></li>
@@ -59,7 +59,7 @@
                     </ul>
                 </div>
 		<!-- CỘNG ĐỒNG ROSA -->
-            <div class="footer-column">
+            <div class="footer-column1">
                 <h3>CÔNG ĐỒNG ROSA</h3>
 				<ul class="list-info">
 					<li><a href="https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/"><i class="fab fa-facebook" style="color:#1877F2;"></i> ROSA AI COMPUTER</a></li>
@@ -72,7 +72,7 @@
             </div>
         </div>
     </div>
-    <div id="foot-bot">
+    <div id="foot-bot1">
         <div class="container" >
             <p>&copy; 2024 Bản quyền thuộc về <a href="https://rosacomputer.vn/">CÔNG TY TNHH ĐIỆN TỬ VÀ TIN HỌC TOÀN VIỆT</a></p>
         </div>
@@ -82,7 +82,7 @@
 
 <style>
     
-    .footer-contact {
+.footer-contact1 {
     display: flex;
     justify-content: space-between;
     background-color:#edeaea!important; /* Thay đổi mã màu nền theo ý bạn */
@@ -91,7 +91,7 @@
     margin-top: 20px;
     flex-direction: row
 }
-.footer-newsletter, .footer-support, .footer-social {
+.footer-newsletter1, .footer-support1, .footer-social1{
     flex: 1;
     padding: 10px;
   
@@ -130,7 +130,7 @@ p {
     margin-left: -15px;
     justify-content: space-between;
 }
-.footer {
+.footer1 {
     background-color:#edeaea;
     padding: 10px 0;
     font-family: Arial, sans-serif;
@@ -141,18 +141,18 @@ p {
     margin: 0 auto;
     padding: 0 20px;
 }
-.footer-sections {
+.footer-sections1 {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap; /* Ngăn các cột xuống dòng */
     gap: 20px;
 }
-.footer-column {
+.footer-column1 {
     width: 23%; /* Điều chỉnh kích thước để giống hình */
     padding: 20px;
     text-align: left;
 }
-.footer-column h3 {
+.footer-column1 h3 {
     font-size: 22px;
     color: rgb(255, 13, 13);
     margin-bottom: 15px;
@@ -160,7 +160,7 @@ p {
     display: inline-block;
 }
 
-.footer-column h3::after {
+.footer-column1 h3::after {
     content: "";
     display: block;
     width: 60px;
@@ -169,24 +169,24 @@ p {
     margin-top: 8px;
 }
 
-.footer-column p::before {
+.footer-column1 p::before {
     content: "\1F3E0"; /* Unicode cho icon nhà */
     margin-right: 10px;
 }
 
 
-.footer-column ul {
+.footer-column1 ul {
     list-style: none;
     padding: 0;
 }
-.footer-column ul li a {
+.footer-column1 ul li a {
     text-decoration: none;
     color:  #000000;
     font-size: 16px;
     display: block;
     padding: 5px 0;
 }
-.footer-column ul li a:hover {
+.footer-column1 ul li a:hover {
     color: red;
 }
 
@@ -197,7 +197,7 @@ p {
     
 }
 
-#foot-bot p {
+#foot-bot1 p {
     text-align: center;
     margin: 0;
     padding: 10px 0;

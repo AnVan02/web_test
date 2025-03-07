@@ -29,8 +29,6 @@
                             <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
                         </div>
 
-                        </div>
-                        
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -235,35 +233,94 @@ $result = $conn->query($sql);
         <div class="grid">
             <div class="card">
                 <img src="name (3).jpg" alt="Background" class="large">
-                <img src="nen1.png" alt="PC" class="small">
+                <img src="Rosa_Office_3-removebg-preview.png" alt="PC" class="small" style= " bottom: 340px;">
                 <h3>ROSA OFFICE</h3>
                 <p style="text-align:center">Mang đến hiệu suất ổn định và tính năng bảo mật cao, hoàn hảo cho công việc văn phòng hàng ngày.</p>
+                <span><p style="vertical-align: inherit;">Sử dụng cho</p></span>
+                <ul1>
+                    <li1>
+                        <img src="icon/icons8-excel-48.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="icon/icons8-nextcloud-48.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="icon/icons8-excel-48.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="icon/icons8-nextcloud-48.png" alt="" class="img-fluid">
+                    </li1>
+                </ul1>
                     <a href="product.php#vanphong" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
+
             <div class="card">
                 <img src="deep-learning.jpg" alt="Background" class="large">
-                <img src="2.png" alt="PC" class="small">
+                <img src="2.png" alt="PC" class="small" style =" bottom:340px;">
                 <h3>ROSA AI</h3>
                 <p style=" text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
+                <span><p style="vertical-align:inherit">Sử dụng cho </p></span>
+                <ul1>
+                    <li1>
+                        <img src="icon/python.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img width="24" height="24" src="https://img.icons8.com/color/24/visual-studio-code-2019.png" alt="visual-studio-code-2019"/>                    </li1>
+                    <li1>
+                        <img width="24" height="24" src="https://img.icons8.com/ultraviolet/24/artificial-intelligence-productivity.png" alt="artificial-intelligence-productivity"/>
+                    </li1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Blender.png" alt="" class="img-fluid">
+                    </li1>
+                </ul1>
                     <a href="product.php#ai" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
+
             <div class="card">
                 <img src="name (6).jpg" alt="Background" class="large">
-                <img src="nen2.png" alt="PC" class="small">
+                <img src="nen2.png" alt="PC" class="small" style="bottom:345px;">
                 <h3>ROSA GAMING</h3>
                 <p style="text-align:center">Cấu hình cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích.</p>
+                <span><p style="vertical-align:inherit">Sử dụng cho</p></span>
+                <ul1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Id.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Ai.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/PS.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Blender.png" alt="" class="img-fluid">
+                    </li1>
+                </ul1>
                     <a href="product.php#gaming" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
+
             <div class="card">
                 <img src="name (4).jpg" alt="Background" class="large" style="display:flex">
-                <img src="1.2.png" alt="PC" class="small">
+                <img src="1.2.png" alt="PC" class="small" style="bottom: 270px;">
                 <h3>ROSA MINI </h3>
                 <p style="text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
+                <p class="double-line-through-text">Đây là đoạn văn bản có đường gạch ngang ở hai bên.</p>
+                <ul1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Pr.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Ae.png" alt="" class="img-fluid">
+                    </li1>
+                    <li1>
+                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/davinchi.png" alt="" class="img-fluid">
+                    </li1>                
+                </ul1>
                     <a href="product.php#mini" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
         </div>
-
     </div>
+
 <style>
 
     /* Áp dụng cho các phần tử cụ thể trong trường hợp có lớp cha */
@@ -276,7 +333,6 @@ $result = $conn->query($sql);
         background-color: transparent !important;
         
     }
-
     .container img,
     .grid img,
     .card img {
@@ -287,13 +343,27 @@ $result = $conn->query($sql);
     .small {
         display: block;
     }
-
-    .title {
-        color: red;
-        font-size: 24px;
-        font-weight: bold;
-        margin-top: 20px;
+    .ul1 {
+        list-style: none; /* Remove default bullet points */
+        padding: 0;       /* Remove default padding */
+        display: flex;    /* Display list items in a row */
+        justify-content: center; /* Center the list items */
     }
+
+    .ul1 .li1 {
+        margin: 0 10px; /* Space out the list items */
+    }
+
+    .ul1 .li1 img {
+        max-width: 50px; /* Limit the maximum width of the images */
+        height: auto;    /* Maintain the aspect ratio of the images */
+        transition: transform 0.3s; /* Smooth transform transition */
+    }
+
+    .ul1 .li1 img:hover {
+        transform: scale(1.1); /* Slightly enlarge the image on hover */
+    }
+
     .subtitle {
         font-size: 18px;
         margin-bottom: 20px;
@@ -302,11 +372,12 @@ $result = $conn->query($sql);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        padding: 50px;
     }
     .card {
         position: relative;
         background: #d50000;
-        padding: 20px;
+        padding: 0px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
@@ -318,7 +389,7 @@ $result = $conn->query($sql);
     }
     .card img.small {
         position: absolute;
-        bottom: 207px;
+        /* bottom: 180px; */
         left: 50%;
         transform: translateX(-50%);
         width: 50%;
@@ -330,6 +401,7 @@ $result = $conn->query($sql);
     .card h3 {
         margin: 60px 0 10px;
     }
+
     .btn {
         display: block;
         text-align: center;
@@ -347,7 +419,7 @@ $result = $conn->query($sql);
         .container {
             padding: 10px;
         }
-        
+                
         .grid {
             grid-template-columns: 1fr; /* Hiển thị mỗi thẻ card thành một cột duy nhất */
             gap: 10px;
@@ -392,7 +464,6 @@ $result = $conn->query($sql);
 <h3><b style='color: red ;font-weight: bolder;'>GIẢI PHÁP PHẦN MỀM KHOÁ HỌC CHO BẠN</b></h3>
 <div style="width: 10%; height: 2px; background-color:red; margin-top: 1px;"></div><p></p>
     <p>Khám phá khoá học & phần mềm AI thú vị mà ROSA mang đến cho bạn </p>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -496,7 +567,7 @@ $result = $conn->query($sql);
     <script>
         document.querySelectorAll('.accordion-button').forEach((button, index) => {
             button.addEventListener('click', () => {
-                const imagePaths = ['python.jpg', 'TGMT.png', 'nextclount.png'];
+                const imagePaths = ['.jpg', '.png', '.png'];
                 document.getElementById('accordionImage').src = imagePaths[index];
             });
         });
@@ -879,6 +950,7 @@ $result = $conn->query($sql);
         width: 100%; /* Đảm bảo chi tiết chiếm toàn bộ chiều rộng */
         flex-grow: 1; /* Cho phép chi tiết mở rộng nếu cần */
     }
+    .
 
     .details h3 {
         margin: 0 0 8px;

@@ -26,11 +26,11 @@ if ($conn->connect_error) {
     exit;
 }
 
-if (isset($_GET['order_code'])) {
-    $order_code = $_GET['order_code'];
+if (isset($_GET['order_id'])) {
+    $order_id = $_GET['order_id'];
 
-    $stmt = $conn->prepare("SELECT * FROM orders WHERE order_code = ?");
-    $stmt->bind_param("s", $order_code);
+    $stmt = $conn->prepare("SELECT * FROM orders WHERE order_id = ?");
+    $stmt->bind_param("s", $order_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -39,7 +39,7 @@ if (isset($_GET['order_code'])) {
 
         $customer_email = $row["customer_email"]; // Thêm trường email trong database
         $data = [
-            "formatted_order_id" => $row["order_code"],
+            "formatted_order_id" => $row["order_id"],
             "customer_name" => $row["customer_name"],
             "customer_phone" => $row["customer_phone"],
             "order_date" => $row["order_date"],
@@ -57,7 +57,7 @@ if (isset($_GET['order_code'])) {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
-            $mail->setFrom('vanan02102002@gmil.com', 'Cửa hàng ABC');
+            $mail->setFrom('vanan02102002@gmil.com', 'rosacomputer');
             $mail->addAddress($customer_email, $row["customer_name"]);
 
             $mail->isHTML(true);
@@ -66,7 +66,8 @@ if (isset($_GET['order_code'])) {
                 <h3>Xin chào {$row["customer_name"]},</h3>
                 <p>Đơn hàng của bạn có thông tin như sau:</p>
                 <ul>
-                    <li><b>Mã đơn hàng:</b> {$row["order_code"]}</li>
+                    <li><b>Mã đơn hàng:</b> {$row["order_id"]}</li>
+                    <li><b>Tên đơn hàng: {$row["order"]}</b></li>
                     <li><b>Ngày đặt hàng:</b> {$row["order_date"]}</li>
                     <li><b>Trạng thái:</b> {$row["status"]}</li>
                 </ul>
