@@ -2786,22 +2786,22 @@ $cart_list = [$amd_ryzen7_7800x3d, // CPU
     }
 
     .product-to {
-    display: flex;
-    justify-content: space-between; /* Spread elements across available space */
-    text-align: center; /* Center align content horizontally */
-    padding: 10px 20px;
-    background-color: #F5F5FA;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between; /* Spread elements across available space */
+        text-align: center; /* Center align content horizontally */
+        padding: 10px 20px;
+        background-color: #F5F5FA;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 
-    max-width: 1200px; /* Constrain the width of the content */
-    margin: 0 auto; /* Center the container horizontally */
-    border-radius: 8px; /* Optional: Rounded corners for a polished look */
-}
+        max-width: 1200px; /* Constrain the width of the content */
+        margin: 0 auto; /* Center the container horizontally */
+        border-radius: 8px; /* Optional: Rounded corners for a polished look */
+    }
 
     .product-info-bottom {
         flex: 1; /* Chiếm không gian bên trái */

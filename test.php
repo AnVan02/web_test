@@ -174,3 +174,11 @@ else{
     
 </body>
 </html>
+
+.pList-logo-sec ul {
+    display: flex
+;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #282828;
+    padding: 5px;

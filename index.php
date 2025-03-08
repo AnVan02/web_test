@@ -19,16 +19,17 @@
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="assets/images/bannerrosa2.jpg" class="img-fluid" alt="Sale Banner">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
-                        </div>
-                        
-                        <div class="carousel-item">
-                            <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
+                            <img src="8-3-Rosa.jpg" class="img-fluid" alt="Sale Banner">
                         </div>
 
+                        <div class="carousel-item">
+                            <img src="assets/images/bannerrosa2.jpg" class="img-fluid" alt="New Year Banner">
+                        </div>
+
+                        <!-- <div class="carousel-item">
+                            <img src="assets/images/bannerrosa3.jpg" class="img-fluid" alt="New Year Banner">
+                        </div> -->
+                        
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -223,7 +224,7 @@ $result = $conn->query($sql);
 
 <!-- TỔNG QUAN VỀ SẢN PHÂM -->
 <div class="image-container">
-    <img id="accordionImage" src="222.jpg" alt="Hình ảnh minh họa">
+    <img  id="accordionImage" src="sanpham2.jpg" alt="Hình ảnh minh họa">
 </div>
 <div class="container my-5">
     <h3><b style='color: red ;font-weight: bolder;'>DÒNG MÁY PHÙ HỢP VỚI BẠN </b></h3>
@@ -233,88 +234,98 @@ $result = $conn->query($sql);
         <div class="grid">
             <div class="card">
                 <img src="name (3).jpg" alt="Background" class="large">
-                <img src="Rosa_Office_3-removebg-preview.png" alt="PC" class="small" style= " bottom: 340px;">
-                <h3>ROSA OFFICE</h3>
+                <img src="Rosa_Office_3-removebg-preview.png" alt="PC" class="small" style= " bottom: 270px;">
+                <h3 style="font-weight: bolder">ROSA OFFICE</h3>
                 <p style="text-align:center">Mang đến hiệu suất ổn định và tính năng bảo mật cao, hoàn hảo cho công việc văn phòng hàng ngày.</p>
-                <span><p style="vertical-align: inherit;">Sử dụng cho</p></span>
-                <ul1>
+                <ul1 class="pList-logo-sec ul1">
                     <li1>
-                        <img src="icon/icons8-excel-48.png" alt="" class="img-fluid">
+                        <img src="https://img.icons8.com/fluency/48/windows-11.png" alt="microsoft-powerpoint-2019--v1"/>                    
                     </li1>
+
                     <li1>
-                        <img src="icon/icons8-nextcloud-48.png" alt="" class="img-fluid">
-                    </li1>
+                        <img src="https://img.icons8.com/color/48/microsoft-powerpoint-2019--v1.png" alt="" class="img-fluid">
+                    </li1> 
+                   
                     <li1>
-                        <img src="icon/icons8-excel-48.png" alt="" class="img-fluid">
+                        <img src="https://img.icons8.com/color/48/microsoft-excel-2019--v1.png" alt="" class="img-fluid">
                     </li1>
+
                     <li1>
-                        <img src="icon/icons8-nextcloud-48.png" alt="" class="img-fluid">
+                        <img src="https://img.icons8.com/fluency/48/microsoft-word-2019.png" alt="" class="img-fluid">
                     </li1>
+                
+                
                 </ul1>
                     <a href="product.php#vanphong" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
 
             <div class="card">
                 <img src="deep-learning.jpg" alt="Background" class="large">
-                <img src="2.png" alt="PC" class="small" style =" bottom:340px;">
-                <h3>ROSA AI</h3>
+                <img src="2.png" alt="PC" class="small" style =" bottom:270px;">
+                <h3 style="font-weight: bolder">ROSA AI</h3>
                 <p style=" text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
-                <span><p style="vertical-align:inherit">Sử dụng cho </p></span>
-                <ul1>
-                    <li1>
-                        <img src="icon/python.png" alt="" class="img-fluid">
-                    </li1>
-                    <li1>
-                        <img width="24" height="24" src="https://img.icons8.com/color/24/visual-studio-code-2019.png" alt="visual-studio-code-2019"/>                    </li1>
-                    <li1>
-                        <img width="24" height="24" src="https://img.icons8.com/ultraviolet/24/artificial-intelligence-productivity.png" alt="artificial-intelligence-productivity"/>
-                    </li1>
-                    <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Blender.png" alt="" class="img-fluid">
-                    </li1>
-                </ul1>
+                    <ul1 class="pList-logo-sec ul1">
+                        <li1>
+                            <img src="icon/python.png" alt="" class="PYTHON">
+                        </li1>
+                        <li1>
+                            <img src="https://img.icons8.com/color/48/visual-studio-code-2019.png" alt="artificial"/>
+                        </li1>
+                        <li1>
+                            <img src="https://img.icons8.com/fluency/48/pytorch.png" alt="" class="img-fluid">
+                        </li1>
+                        <li1>
+                            <img src="https://scikit-learn.org/stable/_static/favicon.ico" alt="" class="img-fluid">
+                        </li1>
+                    </ul1>
                     <a href="product.php#ai" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
 
             <div class="card">
                 <img src="name (6).jpg" alt="Background" class="large">
-                <img src="nen2.png" alt="PC" class="small" style="bottom:345px;">
-                <h3>ROSA GAMING</h3>
+                <img src="case 510 (1).png" alt="PC" class="small" style="width: 417px; bottom:244px">
+                <h3 style="font-weight: bolder">ROSA GAMING</h3>
                 <p style="text-align:center">Cấu hình cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích.</p>
-                <span><p style="vertical-align:inherit">Sử dụng cho</p></span>
-                <ul1>
+                <ul1 class= "pList-logo-sec ul1">
                     <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Id.png" alt="" class="img-fluid">
+                        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/73206bd9-257c-4f50-b1f3-59a306e24084/di02q99-d9964ac7-2ca4-4a86-9a65-cc92fa8ebea5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzczMjA2YmQ5LTI1N2MtNGY1MC1iMWYzLTU5YTMwNmUyNDA4NFwvZGkwMnE5OS1kOTk2NGFjNy0yY2E0LTRhODYtOWE2NS1jYzkyZmE4ZWJlYTUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yIxX6QcEmdPfLbEdT7-7tmX0arFEkcpQFC6Jj9ul0GU" style="max-width: 90%" alt="" class="garena">
                     </li1>
                     <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Ai.png" alt="" class="img-fluid">
+                        <img src="assassin creed.png" style="max-width: 90%" alt="" class="free-fire" >
                     </li1>
                     <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/PS.png" alt="" class="img-fluid">
+                        <img src="https://www.freepnglogos.com/uploads/apex-legends-logo-png/apex-legends-characters-circle-logo-transparent-png-24.png" style="max-width: 95%" alt="" class="img-fluid">
                     </li1>
                     <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Blender.png" alt="" class="img-fluid">
+                        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/73206bd9-257c-4f50-b1f3-59a306e24084/dfnd3kn-3aaf12be-fed0-4e71-8e67-764a792c5849.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzczMjA2YmQ5LTI1N2MtNGY1MC1iMWYzLTU5YTMwNmUyNDA4NFwvZGZuZDNrbi0zYWFmMTJiZS1mZWQwLTRlNzEtOGU2Ny03NjRhNzkyYzU4NDkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.k0Ot6s9-JI_0ipxVWoabMeQxbB9aLU2Nli_7E3Y19VY" style="max-width: 90%" alt="" class="img-fluid">
                     </li1>
                 </ul1>
                     <a href="product.php#gaming" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
+
             </div>
 
             <div class="card">
                 <img src="name (4).jpg" alt="Background" class="large" style="display:flex">
-                <img src="1.2.png" alt="PC" class="small" style="bottom: 270px;">
-                <h3>ROSA MINI </h3>
+                <img src="1.2.png" alt="PC" class="small" style="bottom: 220px;">
+                <h3 style="font-weight: bolder">ROSA MINI </h3>
                 <p style="text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
-                <p class="double-line-through-text">Đây là đoạn văn bản có đường gạch ngang ở hai bên.</p>
-                <ul1>
+                <ul1 class = "pList-logo-sec ul1">
                     <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Pr.png" alt="" class="img-fluid">
+                        <img src="https://img.icons8.com/fluency/48/windows-11.png" alt="microsoft-powerpoint-2019--v1"/>                    
                     </li1>
+
                     <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/Ae.png" alt="" class="img-fluid">
+                        <img src="https://img.icons8.com/color/48/microsoft-powerpoint-2019--v1.png" alt="" class="img-fluid">
+                    </li1> 
+                   
+                    <li1>
+                        <img src="https://img.icons8.com/color/48/microsoft-excel-2019--v1.png" alt="" class="img-fluid">
                     </li1>
+
                     <li1>
-                        <img src="https://www.ant-pc.com/workstation-assets/assets/images/davinchi.png" alt="" class="img-fluid">
-                    </li1>                
+                        <img src="https://img.icons8.com/fluency/48/microsoft-word-2019.png" alt="" class="img-fluid">
+                    </li1>
+                                   
                 </ul1>
                     <a href="product.php#mini" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
@@ -339,29 +350,53 @@ $result = $conn->query($sql);
         /* background: none !important; */
         background-color: transparent !important;
     }
-    
+
     .small {
         display: block;
     }
+    .pList-logo-sec ul1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 5px;
+        
+    }
+    .pList-logo-sec li {
+        display: flex;
+        align-items: center;
+    }
+
+    .pList-logo-sec img {
+        width: 50px;  /* Điều chỉnh kích thước logo */
+        height: auto;  /* Giữ nguyên tỷ lệ */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .pList-logo-sec img:hover {
+        transform: scale(1.1);  /* Hiệu ứng phóng to khi hover */
+}
+    
+    span:before {
+        content: '';
+        top: 50%;
+        width: 39%;
+        height: 1px;
+        background: rgba(59, 58, 58, 0.2);
+    }
+    
     .ul1 {
-        list-style: none; /* Remove default bullet points */
-        padding: 0;       /* Remove default padding */
-        display: flex;    /* Display list items in a row */
-        justify-content: center; /* Center the list items */
+        display: flex; /* layout khoang cách icon */
+        gap: 50px; /* khoảng cách icon */
+        list-style: none; /* Removes bullet points */
+        padding: 0;
+        justify-content: center; /* Centers the icons horizontally */
+        vertical-align: inherit;
     }
 
-    .ul1 .li1 {
-        margin: 0 10px; /* Space out the list items */
-    }
-
-    .ul1 .li1 img {
-        max-width: 50px; /* Limit the maximum width of the images */
-        height: auto;    /* Maintain the aspect ratio of the images */
-        transition: transform 0.3s; /* Smooth transform transition */
-    }
-
-    .ul1 .li1 img:hover {
-        transform: scale(1.1); /* Slightly enlarge the image on hover */
+    .li1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .subtitle {
@@ -458,7 +493,7 @@ $result = $conn->query($sql);
 
 <!--software-->
 <div class="image-container">
-    <img id="accordionImage" src="mission-education-img2.png" alt="Hình ảnh minh họa">
+    <img id="accordionImage" src="education-phanmen.jpg" alt="Hình ảnh minh họa">
 </div>
 <div class="container my-5">
 <h3><b style='color: red ;font-weight: bolder;'>GIẢI PHÁP PHẦN MỀM KHOÁ HỌC CHO BẠN</b></h3>
@@ -559,7 +594,7 @@ $result = $conn->query($sql);
             </div>
             <!-- Khu vực hiển thị hình ảnh -->
             <div class="image-container">
-                <img id="accordionImage" src="education-img.png" alt="Hình ảnh minh họa">
+                <img id="accordionImage" src="education.jpg" alt="Hình ảnh minh họa">
             </div>
         </div>
     </div>

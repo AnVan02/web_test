@@ -133,8 +133,6 @@ error_reporting(E_ALL);
     </div>
 </div>
 
-
-
 <div class="news-container">
     <?php foreach ($currentPageItems as $item): ?>
         <div class="news-item">
@@ -153,16 +151,13 @@ error_reporting(E_ALL);
             </div>
         </div>
     <?php endforeach; ?>
-
 </div>
 <div class="pagination">
     <?php for ($i = 1; $i <= $totalPages; $i++): ?>
         <a href="?page=<?= $i; ?>" <?= $i == $page ? "class='active'" : ""; ?>><?= $i; ?></a>
     <?php endfor; ?>
 </div>
-
-<?php $conn->close(); ?>
-
+    <?php $conn->close(); ?>
 <style>
  
 

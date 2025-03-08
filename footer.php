@@ -23,7 +23,7 @@
     <div class="footer-social1">
         <h3  style="color:red">Liên kết social</h3>
         <p>Theo dõi ROSA tại các kênh mạng xã hội</p>
-        <a href="https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/"><i class="fab fa-facebook" style="color:#1877F2" ></i></a>
+        <a href="https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/"><i class="fab fa-facebook" style="color:#1877F2 " ></i></a>
         <a href="https://www.linkedin.com/in/rosa-ai-computer-20980b352/"><i class="fab fa-linkedin" style="color:#1877F2" ></i></a>
         <!-- <a href="#"><i class="fab fa-youtube" style="color:#FF0000"></i></a>
         <a href="#"><i class="fab fa-tiktok" style="color:#000000"></i></a> -->
