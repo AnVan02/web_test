@@ -1804,17 +1804,15 @@ foreach ($dealers as $dealer) {
                         for (const city in dealersROSA){
                             htmlText += `<option value="` + city + `">` + city + `</option>`;
                         }
-
                         htmlText += `</select>
-                                            
-                                         <select id="districts" onchange="displayStores(document.getElementById('province').value, this.value)">
-                                                <option value="">Quận/Huyện</option>
-                                            </select>
-                                            <div id="stores"></div>
-                                        </form>
-                                    </div>
-                                </div>`;
-                        
+                                    <select id="districts" onchange="displayStores(document.getElementById('province').value, this.value)">
+                                        <option value="">Quận/Huyện</option>
+                                    </select>
+                                    <div id="stores"></div>
+                                </form>
+                            </div>
+                        </div>`;
+                    
                         deliveryInfo.innerHTML = htmlText; 
                         
                         // update voucher display
@@ -2916,6 +2914,7 @@ echo "</div>";
 
 <style>
 
+
 .product-container {
     display: flex;
     flex-wrap: wrap; /* Cho phép xuống hàng nếu không đủ không gian */
@@ -3022,9 +3021,6 @@ echo "</div>";
     padding: 0;
 }
 
-/* .product-item a:hover {
-    background-color: #cc0000; /* Màu khi hover */
-} */
 
 @media (max-width: 768px) {
     .product-item {

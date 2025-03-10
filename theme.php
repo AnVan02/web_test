@@ -50,7 +50,6 @@
             <p>Giải đáp thắc mắc thông dụng...</p>
         </div>
     </div>
-
     
 <script>
     function showSection(sectionId) {

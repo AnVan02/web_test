@@ -21,7 +21,7 @@ $orderId_decoded = isset($_GET['orderId']) ? $_GET['orderId'] : '';
 $orderId = base64_decode($orderId_decoded);
 
 // Fetch order information from database
-$query = "SELECT * FROM `order` WHERE `formatted_order_id` = ?";
+$query = "SELECT * FROM `order` WHERE `order_id` = ?";
 $selectStmt = $conn->prepare($query);
 $selectStmt->bind_param("s", $orderId);
 $selectStmt->execute();
@@ -48,12 +48,15 @@ if ($result ->num_rows >0) {
     $shipping = $row['shipping_method'];
     $address = $row['delivery_address'];
     $note = $row['customer_note'];
+    
 }
 else{
     $orderId = "";
 }
 
+
 ?>
+
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/./">TRANG CHỦ</a></li>
@@ -67,6 +70,7 @@ else{
     </script>
 
     <main>
+        
     <!-- <div class="letter-content"> -->
         <?php if ($found): ?>
             <h3 ><b style='color: red ;font-weight: bolder;'>Đặt Hàng Thành Công<br>
@@ -74,6 +78,7 @@ else{
         <?php else: ?>
             <h3>Không Tìm Thấy Đơn Hàng</h3>
         <?php endif; ?>
+        
 
         
         <h3 style="font-size:22px" >THÔNG TIN ĐƠN HÀNG </h3>
@@ -81,6 +86,7 @@ else{
         <h4>Hóa Đơn ID: <?php echo $orderId; ?></h4>
         <h4>Ngày Tạo: <?php echo $order_date; ?></h4>
         <br>
+        
         <h3 style="font-size:22px" >THÔNG TIN KHÁCH HÀNG </h3>
         <p><strong>Tên Khách Hàng:</strong> <?php echo $name; ?></p>
         <p><strong>Số điện thoại:</strong> <?php echo $phone; ?></p>
@@ -90,12 +96,12 @@ else{
             <p><strong>Hình thức nhận hàng:</strong> Giao hàng tại nhà</p>
             <p><strong>Địa chỉ giao hàng:</strong> <?php echo $address; ?></p>
             <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
-        
+        <br>
         <?php elseif ($shipping === 'store'): ?>
             <p><strong>Hình thức nhận hàng:</strong> Nhận hàng tại đại lý uỷ quyền ROSA</p>
             <p><strong>Địa chỉ đại lý:</strong> <?php echo $address; ?></p>
             <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
-            
+        <br>
         <?php else: ?>
             <p><strong>Hình thức nhận hàng:</strong></p>
         <?php endif; ?>
@@ -113,6 +119,8 @@ else{
                 <img src=<?php echo $QRcode; ?> alt="QR Code" />
             </div>
         <?php endif; ?>
+        
+        
 
         <?php if ($shipping === 'store'): ?>
             <h3>Thông Tin Chuyển Khoản:</h3>
@@ -125,17 +133,17 @@ else{
         <?php endif; ?>
 
         <a href="/index.php">Quay lại trang chủ</a>
+        
     </main>
 <!-- </div> -->
 
     <!--<script src="../javascript/A3000A52-8-128.js"></script>-->
 
     <br>
+
+
 <?php require "../footer.php";?>
-
-
-
-
+ 
 <style>
      
           /* Cơ bản thiết lập cho body và header */

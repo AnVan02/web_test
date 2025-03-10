@@ -487,6 +487,53 @@ $result = $conn->query($sql);
             font-size: 16px;
         }
     }
+    /* Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr; /* Hiển thị một cột */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card img.large {
+        filter: brightness(80%) blur(2px); /* Làm tối nhẹ */
+    }
+
+    .card img.small {
+        /* position: static; */
+        width: 60%;
+        max-width: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .pList-logo-sec {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .pList-logo-sec img {
+        width: 35px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
 
     </style>
     
@@ -592,6 +639,7 @@ $result = $conn->query($sql);
                     </div>
                 </div>
             </div>
+            
             <!-- Khu vực hiển thị hình ảnh -->
             <div class="image-container">
                 <img id="accordionImage" src="education.jpg" alt="Hình ảnh minh họa">
@@ -636,8 +684,8 @@ $result = $conn->query($sql);
         }
         .faq-right {
             width: 65%;
-  
         }
+        
         .faq-title {
             color: red;
             font-size: 24px;
@@ -652,6 +700,13 @@ $result = $conn->query($sql);
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 20px;
+        }
+        .tab-container {
+            display : flex;
+            gap:40px;
+            max-width:1100px;
+            margin: auto;
+            padding: 40px 0;
         }
         .tab-buttons button {
             border: 1px solid #ddd;
@@ -747,7 +802,8 @@ $result = $conn->query($sql);
 
         ],
         "Phương thức thanh toán": [
-            { question: "Có mấy phương thức thanh toán ", answer: "Có 2 phương thức chuyển khoản và chuyển tiên mặt " }
+            { question: "Có mấy phương thức thanh toán ", answer: "Có 2 phương thức chuyển khoản và chuyển tiên mặt " },
+            { question:"", answer:}
         ],
 
         "Bảo hành": [

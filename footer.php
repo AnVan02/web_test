@@ -45,10 +45,12 @@
 			<div class="footer-column1">
 				<h3>CHÍNH SÁCH CÔNG TY</h3>
 				<ul class="list-info">
-                        <li><a href="DSDL.php"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>DANH SÁCH ĐẠI LÝ</a></li>
-                        <li><a href="CSBH.php"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>CHÍNH SÁCH BẢO HÀNH</a></li>
-                    </ul>
+                    <li><a href="DSDL.php"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>DANH SÁCH ĐẠI LÝ</a></li>
+                    <li><a href="CSBH.php"><i class="fas fa-angle-right" style="color: #FF0000; margin-right: 5px;"></i>CHÍNH SÁCH BẢO HÀNH</a></li>
+                    <li><a href=""></a></li>
+                </ul>
 			</div>
+            
 		<!-- PHẦN MỀM & KHÓA HỌC -->
 			<div class="footer-column1">
 				<h3>PHẦN MỀM & KHÓA HỌC</h3>
