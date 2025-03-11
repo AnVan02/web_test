@@ -53,16 +53,14 @@ if ($result ->num_rows >0) {
 else{
     $orderId = "";
 }
-
-
 ?>
-
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/./">TRANG CHỦ</a></li>
-            <li class="breadcrumb-item"><a href="../product.php">SẢN PHẨM</a></li>
+            <li class="breadcrumb-item"><a href="../succuss.php">THÔNG TIN ĐƠN HÀNG</a></li>
         </ol>
     </nav>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('order-info').innerHTML = <?php echo json_encode($order);?>;
@@ -70,6 +68,7 @@ else{
     </script>
 
     <main>
+    
         
     <!-- <div class="letter-content"> -->
         <?php if ($found): ?>
@@ -79,13 +78,7 @@ else{
             <h3>Không Tìm Thấy Đơn Hàng</h3>
         <?php endif; ?>
         
-
         
-        <h3 style="font-size:22px" >THÔNG TIN ĐƠN HÀNG </h3>
-
-        <h4>Hóa Đơn ID: <?php echo $orderId; ?></h4>
-        <h4>Ngày Tạo: <?php echo $order_date; ?></h4>
-        <br>
         
         <h3 style="font-size:22px" >THÔNG TIN KHÁCH HÀNG </h3>
         <p><strong>Tên Khách Hàng:</strong> <?php echo $name; ?></p>
@@ -107,6 +100,17 @@ else{
         <?php endif; ?>
         
         <h3 style="font-size:22px" >THÔNG TIN HOÁ ĐƠN</h3>
+        <h4>Hoá Đơn Id : <?php echo $orderId ;?></h4>
+        <h4>Ngày Tạo : <?php echo $order_date ;?></h4>
+        <br>
+
+        <p><strong>Chi tiết Hoá Đơn</strong></p>
+          
+
+        <p><strong>Tổng cộng : </strong></p>
+
+  
+
         <div id="order-info">
         </div>
 
@@ -134,14 +138,81 @@ else{
 
         <a href="/index.php">Quay lại trang chủ</a>
         
-    </main>
+ 
 <!-- </div> -->
 
     <!--<script src="../javascript/A3000A52-8-128.js"></script>-->
 
     <br>
+<div class ="container my-5">
+    <h3><b style="color:red , font-weight: boder">Thông tin hỗ trợ</b></h3>
+    <p>Tim hiểu thêm thông tin hỗ trợ khác từ ROSA sau khi bạn đã mua sản phẩm chúng tôi </p>
+    
+        <ul>
+            <li><a href="../DSDL.php" >Danh sách đại lý</a></li>
+            <li><a href="../baohanh.php" > Bảo hành </a></li>
+            <li><a href="../CSBH.php" > Chính sách bảo hành </a></li>
+            <li><a href="../index.php#cauhoi" > Câu hỏi thường gặp </a></li>
+        </ul>
+
+<div class="container my-5">
+    <h3><b style ="color:red ; font-weight:boder">Tin tức ROSA </b></h3>
+    <p>Bạn có thể khám phá them nhiều thông tin thú vị về công nghệ & giải pháp từ tin tức ROSA</p>
+
+<?php 
+    $servername ="localhost";
+    $username ="root";
+    $password ="";
+    $dbname="database";
+
+    $conn = new mysqli ($servername , $username , $password , $dbname);
+    $conn->set_charset ("utf8");
 
 
+    
+    if ($conn->connect_error) {
+        die("Kết nối thất bại: " . $conn->connect_error);
+    }
+    
+    // lấy 3 bài tin tức mới nhất 
+    $sql = "SELECT article_tag, article_title, article_date, article_image, article_link 
+        FROM article 
+        ORDER BY article_date DESC 
+        LIMIT 1";
+
+    $result = $conn->query($sql);
+    ?>
+
+    </div>
+
+    <div class="news-container">
+    <?php while ($row = $result->fetch_assoc()) { ?>
+        <div class="news-card">
+            <a href="<?= htmlspecialchars($row['article_link']); ?>">
+                <img src="/tintuc_test/admin/modules/blog/uploads/<?= htmlspecialchars($row['article_image']); ?>" alt="News Image">
+            </a>
+            <div class="news-content">
+                <p>Tin tức<p>
+                <div class="news-title">
+                    <a href="<?= htmlspecialchars($row['article_link']); ?>">
+                        <?= htmlspecialchars($row['article_title']); ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
+    <div class="new-card">
+        <a href="product.php#vanphong"></a>
+        <div class ="new-container">
+            <p></p>
+            <div class="new-title">
+                <a href="product.php#vanphong">Văn Phòng</a>
+            </div>
+        </div>
+    </div>
+</main>
+        
 <?php require "../footer.php";?>
  
 <style>
@@ -172,7 +243,7 @@ else{
     
     /* Nội dung chính */
     main {
-        padding: 0px 200px; /*Thêm khoảng cách trên cùng để tránh header*/
+        padding: 0px 117px; /*Thêm khoảng cách trên cùng để tránh header*/
     }
     
     /* Các tiêu đề và đoạn văn bản */
@@ -195,13 +266,83 @@ else{
         height: auto; /* Automatically adjust height while maintaining aspect ratio */
         display: block; /* Ensure proper layout behavior */
     }
+    .container my-5 {
+        max-width: 1350px;
+        margin:0 auto;
+        display : flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
     
-    
+    /* css bai viết tin tức */
+    .new-container{
+        display : flex;
+        gap :20px;
+        justify-content:center;
+        max-width:1356px;
+        margin: 0 auto; 
+        padding : 0 20px;
+    }
+
+
+    .container {
+        max-width: 1350px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap; /* Ensures responsiveness */
+        justify-content: flex-end; /* Pushes content to the right */
+    }
+
+    .container .support-section,
+    .container .news-section {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 350px; /* Limit width for alignment */
+        margin-left: 20px; /* Space between sections */
+    }
+
+    /* Bố cục chính */
+    .order-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    /* Cột bên trái - Thông tin đơn hàng */
+    .order-info {
+        flex: 2; /* Chiếm 2/3 không gian */
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cột bên phải - Thông tin hỗ trợ & Tin tức */
+    .support-news {
+        flex: 1; /* Chiếm 1/3 không gian */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Hộp hỗ trợ & tin tức */
+    .support-section, .news-section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
         main {
             padding: 123px 20px; /* Giảm khoảng cách trên cùng cho điện thoại */
         }
+        .container {
+        flex-direction: column; /* Stacks content vertically on smaller */
+        }
+
     }
-        </style>
+    </style>

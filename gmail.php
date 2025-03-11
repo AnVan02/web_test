@@ -52,12 +52,12 @@ if (isset($_GET['order_id'])) {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com'; // SMTP của Gmail
             $mail->SMTPAuth = true;
-            $mail->Username = 'vanan02102002@gmil.com'; // Thay bằng email của bạn
+            $mail->Username = ''; // Thay bằng email của bạn
             $mail->Password = ''; // Thay bằng mật khẩu ứng dụng Gmail
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
-            $mail->setFrom('vanan02102002@gmil.com', 'rosacomputer');
+            $mail->setFrom('', 'rosacomputer');
             $mail->addAddress($customer_email, $row["customer_name"]);
 
             $mail->isHTML(true);

@@ -13,190 +13,134 @@ $password = "";
 $dbname = "database"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 if ($conn->connect_error) {
-    $response["message"] = "Lỗi kết nối database";
-    echo json_encode($response);
-    exit;
+    die(json_encode(["success" => false, "message" => "Kết nối thất bại: " . $conn->connect_error]));
 }
 
-if (isset($_GET['order_code'])) {
-    $order_code = $_GET['order_code'];
-    
-    // Truy vấn lấy thông tin đơn hàng
-    $stmt = $conn->prepare("SELECT * FROM orders WHERE order_code = ?");
-    $stmt->bind_param("s", $order_code);
+// Kiểm tra phương thức HTTP
+$method = $_SERVER['REQUEST_METHOD'];
+
+if ($method === 'POST') {
+    // --- XỬ LÝ TẠO ĐƠN HÀNG ---
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    if (!empty($data)) {
+        $order = $data['order'];
+        $customerName = $data['customerName'];
+        $customerPhone = $data['customerPhone'];
+        $customerEmail = $data['customerEmail'];
+        $shippingMethod = $data['shippingMethod'];
+        $deliveryAddress = $data['deliveryAddress'];
+        $customerNote = $data['customerNote'];
+        
+        // $status = $data['status'];
+        $status = "Đang xử lý";
+        
+        // $order_date = $data['order_date'];
+        // get current datetime
+        $timezone = new DateTimeZone('Asia/Ho_Chi_Minh');
+        $currentDateTime = new DateTime('now', $timezone);
+        $order_date = $currentDateTime->format('d-m-Y H:i:s');
+
+        $sql = "INSERT INTO `order` (`order`, `customer_name`, `customer_phone`, `customer_email`, `shipping_method`, `delivery_address`, `customer_note`, `status`, `order_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param("sssssssss", $order, $customerName, $customerPhone, $customerEmail, $shippingMethod, $deliveryAddress, $customerNote, $status, $order_date);
+
+            if ($stmt->execute()) {
+                $orderId = $stmt->insert_id; // Lấy ID của đơn hàng mới chèn 
+
+                // Truy vấn lại để lấy `formatted_order_id`
+                $formattedOrderId = null;
+                $query = "SELECT `formatted_order_id` FROM `order` WHERE `order_id` = ?";
+                if ($selectStmt = $conn->prepare($query)) {
+                    $selectStmt->bind_param("i", $orderId);
+                    if ($selectStmt->execute()) {
+                        $result = $selectStmt->get_result();
+                        if ($row = $result->fetch_assoc()) {
+                            $formattedOrderId = $row['formatted_order_id'];
+                        }
+                    }
+                    $selectStmt->close();
+                }
+
+                $encodedOrderId = base64_encode($formattedOrderId);
+                echo json_encode([
+                    'status' => 'success',
+                    'message' => 'Đơn hàng đã được gửi thành công.',
+                    'order_id' => $encodedOrderId,
+                    'orderDetails' => $data
+                ]);
+            } else {
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Lỗi khi lưu dữ liệu vào cơ sở dữ liệu.',
+                    'error' => $stmt->error
+                ]);
+            }
+
+            $stmt->close();
+        } else {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Không thể chuẩn bị câu lệnh SQL.',
+                'error' => $conn->error
+            ]);
+        }
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Dữ liệu không hợp lệ.'
+        ]);
+    }
+} elseif ($method === 'GET') {
+    // --- XỬ LÝ TRUY VẤN ĐƠN HÀNG ---
+    $orderCode = $_GET['order_code'] ?? '';
+
+    if (empty($orderCode)) {
+        echo json_encode(["success" => false, "message" => "Vui lòng nhập mã đơn hàng!"]);
+        exit;
+    }
+
+    $sql = "SELECT * FROM `order` WHERE `formatted_order_id` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $orderCode);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
+        $order = $result->fetch_assoc();
 
-        $data = [
-            "formatted_order_id" => $row["order_code"],
-            "customer_name" => $row["customer_name"],
-            "customer_phone" => $row["customer_phone"],
-            "order_date" => $row["order_date"],
-            "status" => $row["status"]
-        ];
+        // Tách "Tổng Cộng" từ cột `order`
+        $orderData = $order['order'];
+        preg_match('/Tổng Cộng:\s([\d,]+)đ/', $orderData, $matches);
+        $total = $matches[1] ?? 'Không xác định';
 
-        $response = ["success" => true, "data" => $data];
+        // Trả về dữ liệu
+        echo json_encode([
+            "success" => true,
+            "data" => [
+                "order_id" => $order['order_id'],
+                "formatted_order_id" => $order['formatted_order_id'],
+                "customer_name" => $order['customer_name'],
+                "customer_phone" => $order['customer_phone'],
+                "order_date" => $order['order_date'],
+                "total_price" => $total,
+                "status" => $order['status'],
+                "order" => $order['order']
+            ]
+        ]);
     } else {
-        $response["message"] = "Không tìm thấy đơn hàng";
+        echo json_encode(["success" => false, "message" => "Không tìm thấy đơn hàng!"]);
     }
-    $stmt->close();
+} else {
+    // Phương thức không được hỗ trợ
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Phương thức không được hỗ trợ!'
+    ]);
 }
 
 $conn->close();
-echo json_encode($response);
-exit;
-
 ?>
-    <title>Kiểm Tra Đơn Hàng</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 30px;
-        }
-
-        .tab {
-            padding: 20px;
-            background-color: white;
-            margin: 20px auto;
-            width: 80%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .tab h1 {
-            font-size: 24px;
-            color: #333;
-        }
-
-        .tab p {
-            color: red;
-            font-size: 14px;
-        }
-
-        .tab input[type="text"] {
-            padding: 10px;
-            width: 200px;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .tab button {
-            padding: 10px 20px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .tab button:hover {
-            background-color: black;
-        }
-
-        .table {
-            display: none;
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
-
-        .table th, .table td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-
-        .table th {
-            background-color: red;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="tab">
-        <h1>Kiểm tra đơn hàng</h1>
-        <p>(Dành cho đơn đặt hàng online trên website)</p>
-        <label for="order-code">Nhập mã đơn hàng:</label><br><br>
-        <input type="text" id="order-code">
-        <button id="check_id">Kiểm tra</button>
-
-        <table class="table" id="order_table">
-            <tr>
-                <th>Mã đơn hàng</th>
-                <th>Họ tên</th>
-                <th>Điện thoại</th>
-                <th>Ngày đặt hàng</th>
-                <th>Trạng thái</th>
-            </tr>
-        </table>
-
-        <div id="order_content"></div>
-    </div>
-
-    <script>
-        document.getElementById("check_id").addEventListener("click", async function () {
-            const orderCode = document.getElementById("order-code").value.trim();
-
-            if (!orderCode) {
-                alert("Vui lòng nhập mã đơn hàng");
-                return;
-            }
-
-            try {
-                const response = await fetch(`http://localhost/demo_test/api.php?order_code=${orderCode}`);
-
-                if (!response.ok) {
-                    throw new Error(`Lỗi server: ${response.status}`);
-                }
-
-                const data = await response.json();
-                console.log("API Response:", data);
-
-                const table = document.getElementById("order_table");
-
-                // Xóa dữ liệu cũ trong bảng, chỉ giữ lại tiêu đề
-                table.innerHTML = `
-                    <tr>
-                        <th>Mã đơn hàng</th>
-                        <th>Họ tên</th>
-                        <th>Điện thoại</th>
-                        <th>Ngày đặt hàng</th>
-                        <th>Trạng thái</th>
-                    </tr>
-                `;
-
-                if (data.success) {
-                    const row = `
-                        <tr>
-                            <td>${data.data.formatted_order_id}</td>
-                            <td>${data.data.customer_name}</td>
-                            <td>${data.data.customer_phone}</td>
-                            <td>${data.data.order_date}</td>
-                            <td>${data.data.status}</td>
-                        </tr>
-                    `;
-                    table.style.display = "table";
-                    table.innerHTML += row;
-                    document.getElementById('order_content').innerHTML = "Đơn hàng đã được tìm thấy.";
-                } else {
-                    alert(data.message);
-                    table.style.display = "none";
-                    document.getElementById('order_content').innerHTML = "Không tìm thấy đơn hàng.";
-                }
-            } catch (err) {
-                console.error("Lỗi:", err);
-                alert("API không phản hồi đúng JSON! Kiểm tra console để xem chi tiết.");
-            }
-        });
-    </script>
-
-</body>
-</html>

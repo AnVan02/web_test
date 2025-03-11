@@ -82,6 +82,95 @@ $powercolor_7600xt = new Product(name:"POWERCOLOR FIGHTER RX7600XT 16G", type:"v
 // ---- MAINBOARD ----
 $asus_prime_h510m = new Product(name:"ASUS PRIME H510M-K R2.0-CSM-SI",type:"main",note:["port"=>"2 x USB 2.0 , 4 x USB 3.1 , 3 x Audio jacks, 1 x keyboard/mouse PS/2, 1 x Realtek 1Gb Ethernet",
                                                                                         "display" =>"1 x HDMI , 1 x HDMI"], sub_note:"");
+
+
+$asrock_x870 = new product (name :"ASROCK X870 Steel Legend Wifi", type:"main", price:1438, note:["port"=>"2 x USB4 , 3 x USB 3.2 , 2 x USB 3.2 , 4 x USB 2.0 , 1 x lan RJ-45  ",
+                                                                                                "display"=>"1 x HDMI " ], sub_note:"");
+                                                                                                   
+$asrock_x870 -> popup = '
+<div class="modal-header">
+            
+<button type="button" class="close" data-dismiss="modal">x</button>
+    </div>
+    <div class="modal-body">
+         <h4>ASUS PRIME A520M-K D4</h4>
+        <img src="../assets/images/X870 Steel Legend WiFi(L1).png" alt="a520" style="width: 100%; max-width: 400px; display: block; margin: 10px auto;">
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+       
+        <tbody>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Chipset</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">AMD X870</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Socket</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">AMD Socket AM5</td>
+            </tr>
+            
+            <tr>
+                <td style="padding:10px;border:1px soild #ddd;"><b>Loại Ram</b></td>
+                <td style="padding:10px;border:1px soild #ddd;"><b>DDR5</b></td>
+
+            </tr>
+
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Kích thước </b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">305 mm x 244 mm (ATX)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Khe RAM tối đa</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">4 khe</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Dung lượng Ram hỗ trợ tối đa</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">256 GB</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Tốc độ Bus</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">up to 8000+(OC)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Kết nối mạng LAN</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">	1 x 2.5 Gigabit LAN 10/100/1000/2500 Mb/s</td>
+            </tr>
+             <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Cổng xuất hình</b></td>
+                 <td style="padding: 10px; border: 1px solid #ddd;">
+                    1 x HDMI 2.1 TMDS/FRL 8G Compatible, supports HDR, HDCP 2.3 and max. resolution up to 4K 120Hz, 2 x USB4, support HDCP 2.3 and max. resolution up to 8K 30Hz
+                 </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Khe cắm</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                   1 x Blazing M.2 2280 PCIe Gen5x4 (128 Gb/s), 1 x Hyper M.2 2230/2260/2280 PCIe Gen4x4 (64 Gb/s), 1 x Hyper M.2 2260/2280 PCIe Gen4x4 (64 Gb/s), 4 x SATA3 6.0 Gb/s
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Giao Tiếp VGA</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                    1 x PCIe 5.0 x16, 1 x PCIe 4.0 x16, 1 x Vertical M.2 Socket (Key E)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><b>Số cổng USB</b></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                    <br>Sau: 2 x USB4 Type-C, 2 x USB 3.2 Gen2 Type-A, 3 x USB 3.2 Gen1 Type-A, 4 x USB 2.0</br>
+                    <br>Trước: 1 x USB 3.2 Gen2x2 Type-C, 2 x USB 3.2 Gen1 Type-A , 4 x USB 2.0 </br>
+                </td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+    <br></br>
+        <a href="https://www.asrock.com/mb/AMD/X870%20Steel%20Legend%20WiFi/index.asp" target="_blank">Xem thêm ></a>
+    </div>
+';
+ 
+$asus_prime_h510m = new Product(name:"ASUS PRIME H510M-K R2.0-CSM-SI",type:"main",note:["port"=>"2 x USB 2.0 , 4 x USB 3.1 , 3 x Audio jacks, 1 x keyboard/mouse PS/2, 1 x Realtek 1Gb Ethernet",
+                                                                                        "display" =>"1 x HDMI , 1 x HDMI"], sub_note:"");
 $asus_prime_h510m -> popup = '
 <div class="modal-header">
             

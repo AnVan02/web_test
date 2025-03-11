@@ -151,7 +151,7 @@ $rosa_gamer_x3d->page = "sanpham/ROSA-GAMER-X3D.php";
 
 
 $list_sp = [
-    $rosa_office_n100,
+    
     $rosa_office_1,
     $rosa_office_2,
     $rosa_mini_1,

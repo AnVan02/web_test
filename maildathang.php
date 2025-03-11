@@ -12,15 +12,15 @@ if ($found) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; // SMTP của Gmail
         $mail->SMTPAuth = true;
-        $mail->Username = 'tvdell789@gmail.com'; // Email của bạn
+        $mail->Username = ''; // Email của bạn
         $mail->Password = 'your-email-password'; // Mật khẩu ứng dụng Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Cấu hình người gửi
-        $mail->setFrom('tvdell789@gmail.com', 'COMPUTER ');
+        $mail->setFrom('', 'COMPUTER ');
         $mail->addAddress($email, $name); // Gửi đến khách hàng
-        $mail->addReplyTo('tvdell789@gmail.com', 'COMPUTER');
+        $mail->addReplyTo('', 'COMPUTER');
 
         // Nội dung email
         $mail->isHTML(true);

@@ -7,7 +7,6 @@ require '../data/api_urls.php';
  require "../header.php";
 $pcName = "ROSA AI";
 
-$image_sp = "/assets/images/case_inwin_right.jpg";
 $thumbnail1 = "/assets/images/case_inwin_right.jpg";
 $thumbnail2 = "/assets/images/case_inwin_left.jpg";
 $thumbnail3 = "/assets/images/case_inwin_front.jpg";
@@ -15,53 +14,37 @@ $thumbnail3 = "/assets/images/case_inwin_front.jpg";
 $extra = new Product(name:"🔧 Cài sẵn CUDA, Python, VSCode<br>🎁 Tặng giáo trình Python & Demo lập trình ứng dụng AI", type:"extra", price: 0, note:"", sub_note:"");
 
 // Create CPU list
-$amd_ryzen5_4650g->price = 0;
-$amd_ryzen7_5700g->price = 2000;
 $cpu_list = [$amd_ryzen5_4650g,$amd_ryzen7_5700g];
 
 // Create VGA list
-$asus_4060->price = 0;
-$asus_4060ti->price = 6312;
 $vga_list = [$asus_4060,$asus_4060ti];
 
 // Create MAINBOARD list
-$asus_prime_b550->price = 0;
 $main_list = [$asus_prime_b550];
 
 // Create RAM list
-$lexar_16g_3200->price = 0;
-$kingston_32g_3200->price = 800;
 $ram_list = [$lexar_16g_3200,$kingston_32g_3200];
 
 // Create SSD list
-$lexar_256g_sata->price = 0;
-$lexar_512g_sata->price = 438;
-$ssd_list = [$lexar_256g_sata,$lexar_512g_sata];
+$ssd_list = [$lexar_256g_sata,$lexar_512g_sata,$kingston_1t_m2];
 
 // Create CASE list
-$inwin_efs063->price = 0;
 $case_list = [$inwin_efs063];
 
 // Create monitor list
-$no_monitor->price = 0;
-$aoc_21->price = 1775;
-$aoc_24->price = 2225;
 $monitor_list =[$no_monitor,$aoc_21,$aoc_24];
 
 // Create keyboard & mouse list
-$rosa_key_mouse->price = 0;
 $key_mouse_list = [$rosa_key_mouse];
 
 
 // Update Win11 Pro Price
-$win11_pro->price = 0; 
+$win11_pro->price = 556; 
 $os_list = [$win11_pro];
 
-// Update PSU
-$inwin_450w->price = 0;
-
 // Update other expenses
-$others->price = 18599;
+$others->price += 56; // ROSA SW
+$others->price += 445; // extra
 
 $rosa_key_mouse->sub_note = "🎁 Tặng kèm";
 
@@ -763,7 +746,7 @@ foreach ($dealers as $dealer) {
             }
 
             .performance p {
-                font-size: 16px;
+                font-size: 14px;
                 margin: 4px 0;
                 color: #666;
             }
@@ -778,7 +761,7 @@ foreach ($dealers as $dealer) {
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 8px;
-                font-size: 16px;
+                font-size: 14px;
                 color: #333;
             }
 
@@ -799,7 +782,7 @@ foreach ($dealers as $dealer) {
                 padding: 8px 12px;
                 border-radius: 4px;
                 cursor: pointer;
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .resolution button.active {
@@ -809,7 +792,7 @@ foreach ($dealers as $dealer) {
             }
 
             .note {
-                font-size: 16px;
+                font-size: 12px;
                 color: #999;
                 text-align: center;
             }
@@ -873,17 +856,17 @@ foreach ($dealers as $dealer) {
                             <div><strong>Sẵn sàng lập trình AI ngay từ khi khởi động!</strong><br> 
                                 ROSA AI PC được trang bị cấu hình mạnh mẽ và cài đặt sẵn các công cụ cần thiết như: 
                                 <dl>
-                                    <p style="font-weight: bold">👉 CUDA</p>
-                                    <p>Nền tảng điện toán song song của NVIDIA, cho phép khai thác tối đa sức mạnh GPU để tăng tốc xử lý dữ liệu và ứng dụng AI.</p>
-                                    <p style="font-weight: bold">👉 Python</p>
-                                    <p>Ngôn ngữ lập trình phổ biến, dễ học, được sử dụng rộng rãi trong phát triển phần mềm, AI, và học máy.</p>
-                                    <p style="font-weight: bold">👉 Visual Studio Code</p>
-                                    <p>Trình soạn thảo mã nguồn mạnh mẽ, hỗ trợ nhiều ngôn ngữ lập trình và tiện ích giúp lập trình hiệu quả hơn.</p>
+                                    <dt>👉 CUDA</dt>
+                                    <dd>Nền tảng điện toán song song của NVIDIA, cho phép khai thác tối đa sức mạnh GPU để tăng tốc xử lý dữ liệu và ứng dụng AI.</dd>
+                                    <dt>👉 Python</dt>
+                                    <dd>Ngôn ngữ lập trình phổ biến, dễ học, được sử dụng rộng rãi trong phát triển phần mềm, AI, và học máy.</dd>
+                                    <dt>👉 Visual Studio Code</dt>
+                                    <dd>Trình soạn thảo mã nguồn mạnh mẽ, hỗ trợ nhiều ngôn ngữ lập trình và tiện ích giúp lập trình hiệu quả hơn.</dd>
                                 </dl>
-                                <p>
+                                
                                 Ngoài ra, máy còn tích hợp các <b>giáo trình Python và demo hướng dẫn </b> sử dụng các thư viện AI như <b>PyTorch, YOLO, scikit learn</b>,... 
                                 để giúp bạn dễ dàng tạo ra những ứng dụng thú vị và sáng tạo.<br>
-                                <p>
+                                <br>
                                 Cùng với Copilot thông mình và nhiều tính năng ưu việt từ <b>Windows 11 Pro</b>, ROSA AI PC hỗ trợ tối đa trên hành trình khám phá công nghệ của bạn!
                                                     
                                 <br><br>
@@ -915,128 +898,137 @@ foreach ($dealers as $dealer) {
                         <div class="config-sections">
                             
                             <!-- OS Selection -->
-                           <div class="config-section">
+                            <div class="config-section">
                                 <h3>Hệ Điều Hành</h3>
                                 <div class="config-options">
-                                    <?php foreach ($os_list as $index => $product): ?>
-                                        <?php if (!empty($product->popup)): ?>
-                                            <div class="modal fade" id="popup-os-<?= $index ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content"><?= $product->popup ?></div>
-                                                </div>
+                                    <?php
+                                        foreach ($os_list as $index => $product) {
+                                        if (!empty($product->popup)) {
+                                            $detailButton = '<div class="detail-button-wrapper"><a href="#" data-toggle="modal" data-target="#popup-os-' . $index . '">Chi Tiết</a></div>';
+                                            echo '<div class="modal fade" id="popup-os-' . $index . '" tabindex="-1" role="dialog" aria-hidden="true">
+                                             <input type=\"radio\" name=\"{$product->type}\" value=\"\" checked hight>
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-content">' . $product->popup . '</div>
+                                                    </div>
+                                                </div>';
+                                        } else {
+                                            $detailButton = '';
+                                        }
+    
+                                        echo "<div class=\"config-option selected\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                            <input type=\"radio\" name=\"{$product->type}\" value=\"\" hidden>
+                                            <div class=\"option-info\">
+                                                <span class=\"option-name\">{$product->name}</span>
+                                                <span class=\"option-desc\">{$product->sub_note}</span>
+                                                $detailButton 
                                             </div>
-                                            <?php $detailButton = "<div class='detail-button-wrapper'><a href='#' data-toggle='modal' data-target='#popup-os-{$index}'>Chi Tiết</a></div>"; ?>
-                                        <?php else: ?>
-                                            <?php $detailButton = ''; ?>
-                                        <?php endif; ?>
-                                       
-                                        <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
-                                            data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
-                                            <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
-                                            <div class="option-info">
-                                                <span class="option-name"><?= $product->name ?></span>
-                                                <span class="option-desc"><?= $product->sub_note ?></span>
-                                                <?= $detailButton ?>
-                                            </div>
-                                            <span class="option-price"><?= $product->side_note ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
+                                            <span class=\"option-price\">{$product->side_note}</span>
+                                        </div>";
+                                        }
+                                    ?>   
                                 </div>
                             </div>
                             
                             <!-- CPU Selection -->
-                             <div class="config-section">
+                            <div class="config-section">
                                 <h3>CPU</h3>
                                 <div class="config-options">
-                                    <?php foreach ($cpu_list as $index => $product): ?>
-                                        <?php if (!empty($product->popup)): ?>
-                                            <div class="modal fade" id="popup-cpu-<?= $index ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content"><?= $product->popup ?></div>
+                                    <?php
+                                        foreach ($cpu_list as $index => $product) {
+                                            if (!empty($product->popup)) {
+                                                $detailButton = '<div class="detail-button-wrapper"><a href="#" data-toggle="modal" data-target="#popup-cpu-' . $index . '">Chi Tiết</a></div>';
+                                                echo '<div class="modal fade" id="popup-cpu-' . $index . '" tabindex="-1" role="dialog" aria-hidden="true">
+                                                 <input type=\"radio\" name=\"{$product->type}\" value=\"\" checked hidden>
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">' . $product->popup . '</div>
+                                                        </div>
+                                                    </div>';
+                                            } else {
+                                                $detailButton = '';
+                                            }
+        
+                                             echo "<div class=\"config-option selected\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
+                                                    $detailButton 
                                                 </div>
-                                            </div>
-                                            <?php $detailButton = "<div class='detail-button-wrapper'><a href='#' data-toggle='modal' data-target='#popup-cpu-{$index}'>Chi Tiết</a></div>"; ?>
-                                        <?php else: ?>
-                                            <?php $detailButton = ''; ?>
-                                        <?php endif; ?>
-                                        
-                                        <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
-                                            data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
-                                            <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
-                                            <div class="option-info">
-                                                <span class="option-name"><?= $product->name ?></span>
-                                                <span class="option-desc"><?= $product->sub_note ?></span>
-                                                <?= $detailButton ?>
-                                            </div>
-                                            <span class="option-price"><?= $product->side_note ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                    ?>
                                 </div>
                             </div>
 
                             <!-- VGA Selection -->
-                           <div class="config-section">
-                            <h3>VGA</h3>
-                            <div class="config-options">
-                                <?php foreach ($vga_list as $index => $product): ?>
-                                    <?php if (!empty($product->popup)): ?>
-                                        <div class="modal fade" id="popup-cpu-<?= $index ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content"><?= $product->popup ?></div>
-                                            </div>
-                                        </div>
-                                        <?php $detailButton = "<div class='detail-button-wrapper'><a href='#' data-toggle='modal' data-target='#popup-vga-{$index}'>Chi Tiết</a></div>"; ?>
-                                    <?php else: ?>
-                                        <?php $detailButton = ''; ?>
-                                    <?php endif; ?>
+                            <div class="config-section">
+                                <h3>VGA</h3>
+                                <div class="config-options">
+                                     <?php
+                                        foreach ($cpu_list as $index => $product) {
+                                            if (!empty($product->popup)) {
+                                                $detailButton = '<div class="detail-button-wrapper"><a href="#" data-toggle="modal" data-target="#popup-cpu-' . $index . '">Chi Tiết</a></div>';
+                                                echo '<div class="modal fade" id="popup-cpu-' . $index . '" tabindex="-1" role="dialog" aria-hidden="true">
+                                                 <input type=\"radio\" name=\"{$product->type}\" value=\"\" checked hidden>
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">' . $product->popup . '</div>
+                                                        </div>
+                                                    </div>';
+                                            } else {
+                                                $detailButton = '';
+                                            }
+        
+                                             echo "<div class=\"config-option selected\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
+                                                    $detailButton 
+                                                </div>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                    ?>
                                     
-                                    <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
-                                        data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
-                                        <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
-                                        <div class="option-info">
-                                            <span class="option-name"><?= $product->name ?></span>
-                                            <span class="option-desc"><?= $product->sub_note ?></span>
-                                            <?= $detailButton ?>
-                                        </div>
-                                        <span class="option-price"><?= $product->side_note ?></span>
-                                    </div>
-                                <?php endforeach; ?>
+                                </div>
                             </div>
-                        </div>
                             
                             <!-- MAINBOARD Selection -->
-                             <div class="config-section">
+                            <div class="config-section">
                                 <h3>MAINBOARD</h3>
                                 <div class="config-options">
-                                    <?php foreach ($main_list as $index => $product): ?>
-                                        <?php if (!empty($product->popup)): ?>
-                                            <div class="modal fade" id="popup-main-<?= $index ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content"><?= $product->popup ?></div>
+                                    <?php
+                                        foreach ($main_list as $index => $product) {
+                                            if (!empty($product->popup)) {
+                                                $detailButton = '<div class="detail-button-wrapper"><a href="#" data-toggle="modal" data-target="#popup-cpu-' . $index . '">Chi Tiết</a></div>';
+                                                echo '<div class="modal fade" id="popup-cpu-' . $index . '" tabindex="-1" role="dialog" aria-hidden="true">
+                                                 <input type=\"radio\" name=\"{$product->type}\" value=\"\" checked hidden>
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">' . $product->popup . '</div>
+                                                        </div>
+                                                    </div>';
+                                            } else {
+                                                $detailButton = '';
+                                            }
+        
+                                             echo "<div class=\"config-option selected\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
+                                                    $detailButton 
                                                 </div>
-                                            </div>
-                                            <?php $detailButton = "<div class='detail-button-wrapper'><a href='#' data-toggle='modal' data-target='#popup-main-{$index}'>Chi Tiết</a></div>"; ?>
-                                        <?php else: ?>
-                                            <?php $detailButton = ''; ?>
-                                        <?php endif; ?>
-                                        
-                                        <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
-                                            data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
-                                            <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
-                                            <div class="option-info">
-                                                <span class="option-name"><?= $product->name ?></span>
-                                                <span class="option-desc"><?= $product->sub_note ?></span>
-                                                <?= $detailButton ?>
-                                            </div>
-                                            <span class="option-price"><?= $product->side_note ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                    ?>
                                 </div>
                             </div>
 
                             <!-- RAM Selection -->
-                           <div class="config-section">
-                                <h3>Ram</h3>
+                            <div class="config-section">
+                            <h3>RAM</h3>
                                 <div class="config-options">
                                     <?php foreach ($ram_list as $index => $product): ?>
                                         <?php if (!empty($product->popup)): ?>
@@ -1049,7 +1041,7 @@ foreach ($dealers as $dealer) {
                                         <?php else: ?>
                                             <?php $detailButton = ''; ?>
                                         <?php endif; ?>
-                            
+                                    
                                         <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
                                             data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
                                             <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
@@ -1062,10 +1054,10 @@ foreach ($dealers as $dealer) {
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                            </div>
-
+                        </div>
                             
                             <!-- SSD Selection -->
+                          
                             <div class="config-section">
                                 <h3>SSD</h3>
                                 <div class="config-options">
@@ -1097,91 +1089,94 @@ foreach ($dealers as $dealer) {
                             
                             <!-- CASE Selection -->
                             <div class="config-section">
-                                <h3>Thùng Máy </h3>
+                                <h3>Thùng Máy</h3>
                                 <div class="config-options">
-                                    <?php foreach ($case_list as $index => $product): ?>
-                                        <?php if (!empty($product->popup)): ?>
-                                            <div class="modal fade" id="popup-case-<?= $index ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content"><?= $product->popup ?></div>
+                                    <?php
+                                    foreach ($case_list as $index => $product) {
+                                        if ($index === 0){
+                                            echo "<div class=\"config-option selected\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" checked hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
                                                 </div>
-                                            </div>
-                                            <?php $detailButton = "<div class='detail-button-wrapper'><a href='#' data-toggle='modal' data-target='#popup-case-{$index}'>Chi Tiết</a></div>"; ?>
-                                        <?php else: ?>
-                                            <?php $detailButton = ''; ?>
-                                        <?php endif; ?>
-                                    
-                                        <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
-                                            data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
-                                            <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
-                                            <div class="option-info">
-                                                <span class="option-name"><?= $product->name ?></span>
-                                                <span class="option-desc"><?= $product->sub_note ?></span>
-                                                <?= $detailButton ?>
-                                            </div>
-                                            <span class="option-price"><?= $product->side_note ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                            
-                           <div class="config-section">
-                            <h3>Phụ Kiện</h3>
-                            <div class="config-sections">
-                            <h5>Màn Hình</h5>
-                                <div class="config-options">
-                                    <?php foreach ($monitor_list as $index => $product): ?>
-                                        <?php if (!empty($product->popup)): ?>
-                                            <div class="modal fade" id="popup-monitor-<?= $index ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content"><?= $product->popup ?></div>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                        else{
+                                            echo "<div class=\"config-option\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
                                                 </div>
-                                            </div>
-                                            <?php $detailButton = "<div class='detail-button-wrapper'><a href='#' data-toggle='modal' data-target='#popup-monitor-{$index}'>Chi Tiết</a></div>"; ?>
-                                        <?php else: ?>
-                                            <?php $detailButton = ''; ?>
-                                        <?php endif; ?>
-                                    
-                                        <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
-                                            data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
-                                            <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
-                                            <div class="option-info">
-                                                <span class="option-name"><?= $product->name ?></span>
-                                                <span class="option-desc"><?= $product->sub_note ?></span>
-                                                <?= $detailButton ?>
-                                            </div>
-                                            <span class="option-price"><?= $product->side_note ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             
                             <div class="config-section">
+                                <h3>Phụ Kiện</h3>
+                               <div class="config-sections">
+                                    <h5>Màn Hình</h5>
+                                <div class="config-options">
+                                    <?php
+                                    foreach ($monitor_list as $index => $product) {
+                                        if ($index === 0){
+                                            echo "<div class=\"config-option selected\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" checked hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
+                                                </div>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                        else{
+                                            echo "<div class=\"config-option\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
+                                                </div>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="config-section">
                                 <h5>Phím & Chuột</h5>
                                 <div class="config-options">
-                                    <?php foreach ($key_mouse_list as $index => $product): ?>
-                                        <?php if (!empty($product->popup)): ?>
-                                            <div class="modal fade" id="popup-key_mouse-<?= $index ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content"><?= $product->popup ?></div>
+                                    <?php
+                                    foreach ($key_mouse_list as $index => $product) {
+                                        if ($index === 0){
+                                            echo "<div class=\"config-option selected\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" checked hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
                                                 </div>
-                                            </div>
-                                            <?php $detailButton = "<div class='detail-button-wrapper'><a href='#' data-toggle='modal' data-target='#popup-key_mouse-{$index}'>Chi Tiết</a></div>"; ?>
-                                        <?php else: ?>
-                                            <?php $detailButton = ''; ?>
-                                        <?php endif; ?>
-                                    
-                                        <div class="config-option <?= $index === 0 ? 'selected' : '' ?>" 
-                                            data-product='<?= htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') ?>'>
-                                            <input type="radio" name="<?= $product->type ?>" value="" <?= $index === 0 ? 'checked' : '' ?> hidden>
-                                            <div class="option-info">
-                                                <span class="option-name"><?= $product->name ?></span>
-                                                <span class="option-desc"><?= $product->sub_note ?></span>
-                                                <?= $detailButton ?>
-                                            </div>
-                                            <span class="option-price"><?= $product->side_note ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                        else{
+                                            echo "<div class=\"config-option\" data-product=\"" . htmlspecialchars(json_encode($product), ENT_QUOTES, 'UTF-8') . "\">
+                                                <input type=\"radio\" name=\"{$product->type}\" value=\"\" hidden>
+                                                <div class=\"option-info\">
+                                                    <span class=\"option-name\">{$product->name}</span>
+                                                    <span class=\"option-desc\">{$product->sub_note}</span>
+                                                </div>
+                                                <span class=\"option-price\">{$product->side_note}</span>
+                                            </div>";
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
 
@@ -1206,7 +1201,7 @@ foreach ($dealers as $dealer) {
                                 </tr>
                                 <tr>
                                     <td class="product-details">
-                                        <img src=<?= $image_sp  ?> alt="Product">
+                                        <img src=<?= $thumbnail1 ?> alt="Product">
                                         <div>
                                             <span class="product-name" id="payment-title"><?php echo $pcName;?></span>
                                             <span class="prodcut-name" id="payment-cpu"></span>
@@ -1259,7 +1254,7 @@ foreach ($dealers as $dealer) {
                                 </tr>
                                 
                                 <!-- voucher -->
-                                <tr id="payment-voucher">
+                                <!-- <tr id="payment-voucher">
                                     <td class="product-details">
                                         <img src="" alt="Product" id="voucher-img">
                                         <div>
@@ -1271,7 +1266,7 @@ foreach ($dealers as $dealer) {
                                             <button id="voucher-quantity" onlick="increaseQuantity">1</button>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> -->
 
                             </table>
                             <div class="summary-total" style="display: flex; justify-content:  flex-end;"> 
@@ -1282,7 +1277,7 @@ foreach ($dealers as $dealer) {
                         </div>
 
                         <form id="orderForm">
-                        <label style='font-weight: bold;font-size: 16px;' >Thông tin khách hàng</label>
+                        <label>Thông tin khách hàng</label>
                          <!-- Sử dụng type="tel" và pattern để yêu cầu nhập đúng định dạng số điện thoại -->
                             <input type="text" placeholder="Họ và Tên" required>
                             <div class="form-row">
@@ -1290,19 +1285,10 @@ foreach ($dealers as $dealer) {
                                 <!-- Sử dụng type="email" để đảm bảo định dạng email hợp lệ -->
                                 <input type="email" placeholder="Email">
                             </div>
-                        <!-- Thông tin chuyển khoản -->
-
-                        <label style='font-weight: bold;font-size: 16px;'>Phương thức thanh toán</label>  
-
-                        <div class="bank-info">
-                            <p>Tên tài khoản: CÔNG TY TNHH ĐIỆN TỬ VÀ TIN HỌC TOÀN VIỆT<p>
-                            <p>Số tài khoản: 0381000415803</p>
-                            <p>Ngân hàng: VIETCOMBANK-CHI NHÁNH THỦ ĐỨC</p>
-                        </div>
                             
                         <!-- Trong phần delivery-method của form -->
                         <div class="delivery-method">
-                            <label style='font-weight: bold;font-size: 16px;'>Phương thức nhận hàng</label>
+                            <label>Phương thức nhận hàng</label>
                             <div class="delivery-options">
                                 <label>
                                     <input type="radio" name="delivery" value="store" checked onchange="toggleDeliveryInfo()">
@@ -1327,37 +1313,6 @@ foreach ($dealers as $dealer) {
                     </div>
                 </div>
                 <style>
-                 /* cuộn product */
-                body {
-                    margin: 0;
-                    font-family: Arial, sans-serif;
-                }
-
-                  .container {
-                    /* display: flex; */
-                    flex-direction: row;
-                }
-                .specs-table {
-                    position: sticky; /* Đặt vị trí cố định */
-                    top: 120; /* Đặt vị trí cố định ở trên cùng */
-                    z-index: 0; /* Đảm bảo nó nằm trên các phần tử khác */
-                    padding: 16px;
-                }
-
-                .scroll-area {
-                    max-height: calc(110vh - 150px); /* Chiều cao tối đa cho khu vực cuộn */
-                    overflow-y: auto; /* Cho phép cuộn dọc */
-                    padding: 16px;
-                    margin-top: 16px; /* Khoảng cách giữa bảng và khu vực cuộn */
-                }
-
-                .config-section {
-                    margin-bottom: 20px; /* Khoảng cách giữa các phần cấu hình */
-                }
-
-                .summary-total {
-                    margin-top: 20px; /* Khoảng cách trên cho tổng cộng */
-                }
                 .popup {
                     display: none;
                     position: fixed;
@@ -1368,37 +1323,7 @@ foreach ($dealers as $dealer) {
                     background-color: rgba(0, 0, 0, 0.5);
                     z-index: 2000;
                     overflow: hidden; /* Ngừng hiển thị thanh cuộn */
-                }
-                     .bank-info {
-                    border: 1px solid #d3d4d6;
-                    border-radius: 8px;
-                    padding: 15px;
-                    font-family: 'Arial', sans-serif;
-                }
 
-                .bank-info label {
-                    font-size: 20px;
-                    font-weight: bold;
-                    color: #333;
-                    margin-bottom: 15px;
-                    display: block;
-                    
-                    
-                }
-
-                .bank-info .bank-row {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                }
-
-                .bank-info p {
-                    margin: 5px 0;
-                    color: #555;
-                }
-
-                .bank-info strong {
-                    color: #000;
                 }
                 /* Dấu nhân ở góc trên bên phải */
                 .close-btn {
@@ -1779,7 +1704,7 @@ foreach ($dealers as $dealer) {
                     
                     if (deliveryType === 'home') {
                         deliveryInfo.innerHTML = `
-                            <input type="text" name="address" placeholder="Địa chỉ giao hàng" style="width: 550px; height: 40px; border: 1px solid #ccc; border-radius: 5px; padding: 10px; font-size: 16px;" required>
+                            <input type="text" name="address" placeholder="Địa chỉ giao hàng" style="width: 550px; height: 40px; border: 1px solid #ccc; border-radius: 5px; padding: 10px; font-size: 14px;" required>
                             <div class="shipping-note">
                                 <p>Lưu ý giao hàng:</p>
                                 <ul>
@@ -1790,7 +1715,7 @@ foreach ($dealers as $dealer) {
                         
                         // update voucher display
                         const voucher = cart.get("voucher");
-                        voucher.display = false;
+                        voucher.display = true;
                         cart.set("voucher",voucher);
                         
                     } else {
@@ -1819,7 +1744,7 @@ foreach ($dealers as $dealer) {
                         
                         // update voucher display
                         const voucher = cart.get("voucher");
-                        voucher.display = false;
+                        voucher.display = true;
                         cart.set("voucher",voucher);
                     }
 
@@ -1939,16 +1864,16 @@ foreach ($dealers as $dealer) {
         }
         
         // Sự kiện khi thay đổi tỉnh/thành phố
-        // document.getElementById('province').addEventListener('change', () => {
-        //     updateDistricts();
-        // });
+        document.getElementById('province').addEventListener('change', () => {
+            updateDistricts();
+        });
         
-        // // Sự kiện khi thay đổi quận/huyện
-        // document.getElementById('districts').addEventListener('change', () => {
-        //     const province = document.getElementById('province').value;
-        //     const district = document.getElementById('districts').value;
-        //     displayStores(province, district);
-        // });
+        // Sự kiện khi thay đổi quận/huyện
+        document.getElementById('districts').addEventListener('change', () => {
+            const province = document.getElementById('province').value;
+            const district = document.getElementById('districts').value;
+            displayStores(province, district);
+        });
 
 
                   </script>
@@ -2371,7 +2296,7 @@ foreach ($dealers as $dealer) {
 
                 .spec-section h3 {
                     color: #666;
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 600;
                     margin-bottom: 15px;
                     text-transform: uppercase;
@@ -2554,10 +2479,10 @@ foreach ($dealers as $dealer) {
             <p style="color:black;">ROSA AI PC được thiết kế chuyên biệt cho các nhà lập trình và phát triển AI, cung cấp cấu hình linh hoạt với:</p>
 
             <ul>
-                <p>• <b>Tùy chọn CPU mạnh mẽ:</b> Ryzen 5 PRO 4650G cho hiệu suất cân đối, phù hợp với các dự án AI cơ bản, và Ryzen 7 5700G dành cho các dự án phức tạp, đòi hỏi sức mạnh tính toán cao.</p>
-                <p>• <b>Lựa chọn VGA tối ưu:</b> DUAL RTX4060 O8G V2 để tiết kiệm chi phí cho các tác vụ AI vừa và nhỏ, hoặc DUAL RTX4060 O16G EVO cho khả năng xử lý mô hình AI lớn và chuyên sâu.</p>
-                <p>• <b>Tùy chọn RAM linh hoạt:</b> 16GB cho nhu cầu lập trình thông thường và 32GB để xử lý khối lượng công việc cao.</p>
-                <p>• <b>Dung lượng SSD đa dạng:</b> 256GB cho các dự án cơ bản, 512GB cho môi trường phát triển toàn diện, và 1TB dành cho lưu trữ dữ liệu lớn.</p>
+                <li>• <b>Tùy chọn CPU mạnh mẽ:</b> Ryzen 5 PRO 4650G cho hiệu suất cân đối, phù hợp với các dự án AI cơ bản, và Ryzen 7 5700G dành cho các dự án phức tạp, đòi hỏi sức mạnh tính toán cao.</li>
+                <li>• <b>Lựa chọn VGA tối ưu:</b> DUAL RTX4060 O8G V2 để tiết kiệm chi phí cho các tác vụ AI vừa và nhỏ, hoặc DUAL RTX4060 O16G EVO cho khả năng xử lý mô hình AI lớn và chuyên sâu.</li>
+                <li>• <b>Tùy chọn RAM linh hoạt:</b> 16GB cho nhu cầu lập trình thông thường và 32GB để xử lý khối lượng công việc cao.</li>
+                <li>• <b>Dung lượng SSD đa dạng:</b> 256GB cho các dự án cơ bản, 512GB cho môi trường phát triển toàn diện, và 1TB dành cho lưu trữ dữ liệu lớn.</li>
             </ul>
             <br>
             <p style="color:black;">Ngoài ra, PC còn được cài đặt sẵn các công cụ phát triển quan trọng như Python, Visual Studio Code, CUDA, cùng các giáo trình học Python và ứng dụng AI. Với Windows 11 Pro được tích hợp AI Copilot, bạn sẽ sẵn sàng lập trình AI ngay từ khi khởi động máy.</p>
@@ -2568,9 +2493,9 @@ foreach ($dealers as $dealer) {
             <p style="color:black;">CUDA, được phát triển bởi NVIDIA, là một nền tảng tính toán song song mạnh mẽ giúp tăng tốc hiệu suất xử lý của GPU. Trên ROSA AI PC, CUDA đóng vai trò quan trọng trong việc tối ưu hóa và tăng tốc các tác vụ liên quan đến trí tuệ nhân tạo:</p>
 
             <ul>
-                <p>• <b>Tăng tốc đào tạo mô hình AI:</b> CUDA cho phép tận dụng tối đa hiệu năng của VGA như DUAL RTX4060 O8G V2 và DUAL RTX4060 O16G EVO, giúp đào tạo các mô hình học sâu (Deep Learning) nhanh hơn gấp nhiều lần so với việc sử dụng CPU.</p>
-                <p>• <b>Tối ưu hóa thư viện AI:</b> Các thư viện phổ biến như TensorFlow, PyTorch, và cuDNN đều hỗ trợ CUDA, đảm bảo khả năng tính toán song song mạnh mẽ và giảm thời gian xử lý dữ liệu.</p>
-                <p>• <b>Xử lý dữ liệu lớn:</b> CUDA giúp thực hiện các thuật toán học máy (Machine Learning) trên tập dữ liệu lớn với hiệu suất cao, mở rộng khả năng nghiên cứu và phát triển AI.</p>
+                <li>• <b>Tăng tốc đào tạo mô hình AI:</b> CUDA cho phép tận dụng tối đa hiệu năng của VGA như DUAL RTX4060 O8G V2 và DUAL RTX4060 O16G EVO, giúp đào tạo các mô hình học sâu (Deep Learning) nhanh hơn gấp nhiều lần so với việc sử dụng CPU.</li>
+                <li>• <b>Tối ưu hóa thư viện AI:</b> Các thư viện phổ biến như TensorFlow, PyTorch, và cuDNN đều hỗ trợ CUDA, đảm bảo khả năng tính toán song song mạnh mẽ và giảm thời gian xử lý dữ liệu.</li>
+                <li>• <b>Xử lý dữ liệu lớn:</b> CUDA giúp thực hiện các thuật toán học máy (Machine Learning) trên tập dữ liệu lớn với hiệu suất cao, mở rộng khả năng nghiên cứu và phát triển AI.</li>
             </ul>
             
             <br>
@@ -2579,7 +2504,7 @@ foreach ($dealers as $dealer) {
             <img src="/assets/images/b.jpg" alt="Hình ảnh ứng dụng ROSA" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">
             <p style="color:black;">Tất cả máy bộ ROSA AI đều được tích hợp sẵn phần mềm ROSA, một công cụ hỗ trợ học tập và phát triển AI chuyên nghiệp. Phần mềm này bao gồm các giáo trình Python, giúp học sinh và sinh viên dễ dàng nắm bắt kiến thức lập trình, chuẩn bị tốt cho việc xây dựng các ứng dụng AI sáng tạo và thực tiễn.</p> 
             <p style="color:black;">Ngoài ra, phần mềm ROSA còn cung cấp các bài hướng dẫn chi tiết, minh họa cách sử dụng những thư viện AI phổ biến như PyTorch, YOLO, scikit-learn,... nhằm tạo ra các ứng dụng AI độc đáo. Đặc biệt, với nền tảng tính toán song song Nvidia CUDA, người dùng có thể tối ưu hóa tốc độ huấn luyện và suy luận của các mô hình học máy/AI, tận dụng tối đa sức mạnh của ROSA AI PC để hiện thực hóa ý tưởng công nghệ của mình.</p>
-            <a href="/ROSA-SW.php"> Xem thêm về phần mềm ROSA</a>
+            <a href="/ROSA-SW.php">> Xem thêm về phần mềm ROSA</a>
             <br><br>
 
             <h3>Tính Năng Vượt Trội Với Windows 11 Pro</h3>
@@ -2588,31 +2513,31 @@ foreach ($dealers as $dealer) {
             <p style="color:black;">Windows 11 Pro mang đến sự kết hợp hoàn hảo giữa hiệu năng, bảo mật, và tiện ích, phù hợp cho cả môi trường văn phòng và sử dụng cá nhân!</p>
             
             <dl>
-                <p style="font-weight: bold">Giao diện trực quan và đa nhiệm:</p>
+                <dt>Giao diện trực quan và đa nhiệm:</dt>
                 <dd><ul>
-                    <p>•  Snap Layouts và Snap Groups giúp sắp xếp cửa sổ làm việc dễ dàng và hiệu quả.</p>
-                    <p>•  Hỗ trợ nhiều màn hình, tối ưu hóa không gian làm việc.</p>
+                    <li>• Snap Layouts và Snap Groups giúp sắp xếp cửa sổ làm việc dễ dàng và hiệu quả.</li>
+                    <li>• Hỗ trợ nhiều màn hình, tối ưu hóa không gian làm việc.</li>
                 </ul></dd>
-                <p style="font-weight: bold">Bảo mật nâng cao:</p>
+                <dt>Bảo mật nâng cao:</dt>
                 <dd><ul>
-                    <p>• BitLocker bảo vệ dữ liệu trong trường hợp thiết bị bị mất hoặc đánh cắp.</p>
-                    <p>• Windows Defender tích hợp sẵn, giúp phát hiện và ngăn chặn các mối đe dọa.</p>
-                    <p>• Hỗ trợ TPM 2.0 tăng cường bảo mật phần cứng.</p>
+                    <li>• BitLocker bảo vệ dữ liệu trong trường hợp thiết bị bị mất hoặc đánh cắp.</li>
+                    <li>• Windows Defender tích hợp sẵn, giúp phát hiện và ngăn chặn các mối đe dọa.</li>
+                    <li>• Hỗ trợ TPM 2.0 tăng cường bảo mật phần cứng.</li>
                 </ul></dd>
-                <p style="font-weight: bold">Hỗ trợ từ xa:</p>
+                <dt>Hỗ trợ từ xa:</dt>
                 <dd><ul>
-                    <p>• Remote Desktop cho phép truy cập và quản lý thiết bị từ xa mọi lúc, mọi nơi.</p>
-                    <p>• Khả năng kết nối nhanh chóng với các máy chủ hoặc hệ thống làm việc.</p>
+                    <li>• Remote Desktop cho phép truy cập và quản lý thiết bị từ xa mọi lúc, mọi nơi.</li>
+                    <li>• Khả năng kết nối nhanh chóng với các máy chủ hoặc hệ thống làm việc.</li>
                 </ul></dd>
-                <p style="font-weight: bold">Tối ưu hóa cho doanh nghiệp:</p>
+                <dt>Tối ưu hóa cho doanh nghiệp:</dt>
                 <dd><ul>
-                    <p>• Group Policy giúp quản lý các chính sách thiết bị dễ dàng hơn.</p>
-                    <p>• Khả năng kết nối Azure Active Directory để đồng bộ hóa và quản lý tài khoản doanh nghiệp.</p>
+                    <li>• Group Policy giúp quản lý các chính sách thiết bị dễ dàng hơn.</li>
+                    <li>• Khả năng kết nối Azure Active Directory để đồng bộ hóa và quản lý tài khoản doanh nghiệp.</li>
                 </ul></dd>
-                <p style="font-weight: bold">Hiệu suất mạnh mẽ cho công việc và giải trí:</p>
+                <dt>Hiệu suất mạnh mẽ cho công việc và giải trí:</dt>
                 <dd><ul>
-                    <p>• Hỗ trợ DirectStorage, tăng tốc độ tải dữ liệu cho game và ứng dụng nặng.</p>
-                    <p>• Tích hợp AI Copilot, hỗ trợ tự động hóa và tăng cường hiệu quả làm việc.</p>
+                    <li>• Hỗ trợ DirectStorage, tăng tốc độ tải dữ liệu cho game và ứng dụng nặng.</li>
+                    <li>• Tích hợp AI Copilot, hỗ trợ tự động hóa và tăng cường hiệu quả làm việc.</li>
                 </ul></dd>
             </dl>
             
@@ -2620,8 +2545,6 @@ foreach ($dealers as $dealer) {
     </div>
 
                     <style>
-                     
-                                                                    
                         .specs-container {
                             max-width: 1200px;
                             margin: 0 auto;
@@ -2643,7 +2566,7 @@ foreach ($dealers as $dealer) {
 
                         .spec-section h3 {
                             color: #666;
-                            font-size: 16px;
+                            font-size: 14px;
                             font-weight: 600;
                             margin-bottom: 15px;
                             text-transform: uppercase;
@@ -2667,7 +2590,7 @@ foreach ($dealers as $dealer) {
 
                         .spec-value {
                             flex: 1;
-                            color: #000;
+                            color: #666;
                         }
 
                         @media (max-width: 992px) {
@@ -2690,6 +2613,7 @@ foreach ($dealers as $dealer) {
                             }
                         }
                     </style>
+                       <?php require "../footer.php";?>
 
     <div class="product-to">
     <div class="product-info-bottom">
@@ -2709,65 +2633,25 @@ foreach ($dealers as $dealer) {
         font-family: Arial, sans-serif;
         background-color: #fff;
         margin: 0;
-        padding: 0px 16px ;
+        padding: 65px 16px ;
     }
-        dl {
-        margin: 0;
-        padding: 0;
-    }
-
-    p {
-        margin: 5px 0; /* Giảm khoảng cách giữa các đoạn văn */
-        line-height: 1.4; /* Điều chỉnh khoảng cách giữa các dòng */
-    }
-
-    ul {
-        margin: 0;
-        padding-left: 20px; /* Thụt lề nhẹ cho danh sách */
-    }
-
-    ul p {
-        margin: 3px 0; /* Giảm khoảng cách giữa các mục trong danh sách */
-    }
-
-    dd {
-        margin: 5px 0; /* Giảm khoảng cách giữa tiêu đề và nội dung */
-    }
-    
-    ul p {
-        position: relative;
-        padding-left: 20px; /* Tạo khoảng cách giữa dấu chấm và nội dung */
-        text-indent: 0; /* Đặt không có thụt đầu dòng */
-        margin: 0 0 10px 0; /* Tùy chỉnh khoảng cách giữa các mục */
-    }
-    dl ul  {
-        padding-left: 30px; /* Lùi vào một chút */
-        margin-left: 0;
-        text-indent: -20px; /* Lùi dấu chấm để căn chỉnh */
-    }
-    ul p {
-        padding-left: 30px; /* Lùi vào một chút */
-        margin-left: 0;
-        text-indent: -20px; /* Lùi dấu chấm để căn chỉnh */
-    }
-    
 
     .product-to {
-        display: flex;
-        justify-content: space-between; /* Spread elements across available space */
-        text-align: center; /* Center align content horizontally */
-        padding: 10px 20px;
-        background-color: #F5F5FA;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    
-        max-width: 1200px; /* Constrain the width of the content */
-        margin: 0 auto; /* Center the container horizontally */
-        border-radius: 8px; /* Optional: Rounded corners for a polished look */
+    display: flex;
+    justify-content: space-between; /* Spread elements across available space */
+    text-align: center; /* Center align content horizontally */
+    padding: 10px 20px;
+    background-color: #F5F5FA;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+
+    max-width: 1200px; /* Constrain the width of the content */
+    margin: 0 auto; /* Center the container horizontally */
+    border-radius: 8px; /* Optional: Rounded corners for a polished look */
 }
 
     .product-info-bottom {
@@ -2817,7 +2701,7 @@ foreach ($dealers as $dealer) {
         border-radius: 5px;
        
         cursor: pointer;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
 
         margin-right: 30px;
@@ -2827,220 +2711,6 @@ foreach ($dealers as $dealer) {
         background-color: #FF0000;
     }
 </style>
-
-<?php
-// Khởi động session
-session_start();
-
-// Nhập tệp common.php
-include '../data/common.php';
-
-// Lấy tên tệp hiện tại (loại bỏ đường dẫn)
-$current_page = basename($_SERVER['PHP_SELF']); // Ví dụ: "ROSA-OFFICE.php"
-
-// Danh sách sản phẩm đã được chọn (lưu trong session nếu có)
-$selected_products = isset($_SESSION['random_products']) ? $_SESSION['random_products'] : [];
-
-// Lọc danh sách sản phẩm
-$filtered_list_sp = array_filter($list_sp, function ($product) use ($current_page, $selected_products) {
-    // Lấy tên file từ đường dẫn của sản phẩm
-    $product_page = basename($product->page);
-
-    // Loại bỏ sản phẩm thuộc trang hiện tại
-    if (strcasecmp($product_page, $current_page) === 0) {
-        return false;
-    }
-
-    // Loại bỏ sản phẩm đã được chọn trước đó
-    foreach ($selected_products as $selected) {
-        if ($selected->title === $product->title) {
-            return false;
-        }
-    }
-
-    return true; // Giữ lại sản phẩm không bị loại
-});
-
-// Kiểm tra số lượng sản phẩm có thể hiển thị
-$num_products_to_display = 3; // Số sản phẩm muốn hiển thị
-if (count($filtered_list_sp) < $num_products_to_display) {
-    echo "<p>Không có đủ sản phẩm để hiển thị.</p>";
-    return;
-}
-
-// Chọn ngẫu nhiên số sản phẩm cần hiển thị từ danh sách đã lọc
-$random_products = [];
-$used_indexes = [];
-$filtered_list_array = array_values($filtered_list_sp); // Chuyển danh sách về mảng có chỉ mục
-
-while (count($random_products) < $num_products_to_display) {
-    $random_index = rand(0, count($filtered_list_array) - 1);
-    if (!in_array($random_index, $used_indexes)) {
-        $random_products[] = $filtered_list_array[$random_index];
-        $used_indexes[] = $random_index;
-    }
-}
-
-// Lưu danh sách sản phẩm đã chọn vào session
-$_SESSION['random_products'] = $random_products;
-
-// Hiển thị các sản phẩm
-echo "<div style='display: flex; justify-content: center; align-items: center; text-align: center; height:30px;'>
-    <h3><b style='color:red'>Các sản phẩm khác - </b> Khám phá các máy bộ tương tự</h3></div>";
-
-echo "<div class='product-container'>"; // Container Flexbox
-foreach ($random_products as $product) {
-    // Sửa đường dẫn đúng cách
-    $product_page = ltrim($product->page, '/'); // Loại bỏ ký tự `/` thừa ở đầu nếu có
-    $product_page = preg_replace('/^(sanpham\/)+/', 'sanpham/', $product_page); // Loại bỏ dư "sanpham/"
-    $product_url = "/{$product_page}";
-
-    // Hiển thị sản phẩm
-    echo "<div class='product-item'>"; // Thêm class cho mỗi sản phẩm
-    echo "<a href='$product_url'>"; // Đưa link bao quanh hình ảnh
-    echo "<img src='../$product->image' alt='{$product->title}' onerror=\"this.src='default-image.png';\" style='display: block; margin: auto;'>";     echo "</a>";
-    echo "<h3 class='product-title'>{$product->title}</h3>";
-    echo "<p>{$product->subtitle}</p>";
-    echo "<ul>";
-    foreach (explode("\n", $product->content) as $line) {
-        echo "<li>$line</li>";
-    }
-    echo "</ul>";
-    echo "<b class='product-price'> {$product->price}</b>";
-    echo "<a href='$product_url'style='margin-top: 5%;'>Mua ngay</a>";
-    echo "</div>";
-}
-echo "</div>";
-?>
-
-
-<style>
-
-.product-container {
-    display: flex;
-    flex-wrap: wrap; /* Cho phép xuống hàng nếu không đủ không gian */
-    justify-content: space-between; /* Khoảng cách đều giữa các sản phẩm */
-    gap: 20px; /* Khoảng cách giữa các sản phẩm */
-    margin: 20px 0; /* Khoảng cách trên và dưới cho container */
-    width: 100%; /* Chiều rộng toàn bộ container */
-    text-align: left; /* Căn chỉnh các nội dung về phía trái */
-}
-
-.product-item {
-    flex: 1 1 calc(25% - 20px); /* 4 sản phẩm trên 1 hàng */
-    /* flex: 1 1 calc(16.66% - 20px); */ /* Nếu muốn 6 sản phẩm trên 1 hàng */
-    border: 1px solid #ccc; /* Viền cho sản phẩm */
-    border-radius: 10px; /* Bo góc cho sản phẩm */
-    padding: 16px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-    /*display: flex;*/
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    height: auto;
-    margin-top: 5%;
-
-}
-
-
-.product-price {
-    align-self: flex-start; /* Đặt giá bên trái */
-    margin-top: 10px; /* Tạo khoảng cách giữa giá và các phần tử khác */
-    font-size: 18px;
-    color:#FF0000;
-}
-
-.product-title {
-    color: #000;
-    font-size: 25px;
-    align-self: flex-start; /* Đẩy giá về phía bên trái */
-    margin-top: 16px; /* Khoảng cách phía trên giá */
-    text-align: left; /* Căn chỉnh nội dung bên trong sang trái */
-    width: 100%; /* Đảm bảo giá chiếm toàn bộ chiều rộng */
-    font-weight: bold;
-}
-.product-item img {
-    width: 100% !important;
-    max-width: 290px !important;
-    height: 293px !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    border-radius: 10px !important;
-}
-
-.product-item h3 {
-    font-size: 16px;
-    margin: 10px 0;
-    color: red;
-}
-
-.product-item p {
-    font-size: 16px;
-    color: #000000;
-    margin: 23px 0;
-    align-self: flex-start; /* Đẩy giá về phía bên trái */
-    text-align: left; /* Căn chỉnh các nội dung về phía trái */
-}
-
-.product-item ul {
-    list-style-type: none; /* Bỏ dấu chấm ở đầu dòng */
-    padding: 0; /* Bỏ khoảng cách bên trái */
-    margin: 0; /* Bỏ khoảng cách bên ngoài */
-}
-
-.product-item li {
-    margin-bottom: 4px; /* Khoảng cách giữa các dòng */
-}
-
-/* Chỉ áp dụng CSS cho nút "Mua ngay" */
-.product-item a:last-of-type {
-    display: inline-block;
-    width: 100%; /* Nút mua sẽ rộng toàn bộ thẻ */
-    text-align: center;
-    background-color: #ff0000;
-    color: white;
-    padding: 10px 0;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.product-item a:last-of-type:hover {
-    background-color: #cc0000; /* Màu khi hover */
-}
-
-/* Không áp dụng kiểu cho thẻ a bọc hình ảnh */
-.product-item a img {
-    display: block; /* Giữ nguyên hiển thị của hình ảnh */
-    width: 100%; /* Giữ kích thước hình ảnh */
-    height: auto;
-    border: none;
-    background: none;
-    padding: 0;
-}
-
-/* .product-item a:hover {
-    background-color: #cc0000; /* Màu khi hover */
-} */
-
-@media (max-width: 768px) {
-    .product-item {
-        flex: 1 1 calc(50% - 20px); /* 2 sản phẩm trên 1 hàng khi màn hình nhỏ */
-    }
-}
-
-@media (max-width: 480px) {
-    .product-item {
-        flex: 1 1 100%; /* 1 sản phẩm trên 1 hàng khi màn hình rất nhỏ */
-    }
-}
-</style>
-
-
-<?php require "../footer.php";?>
 
 
    

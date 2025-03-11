@@ -736,8 +736,21 @@ $result = $conn->query($sql);
         .accordion-button {
             font-weight: bold;
         }
-    </style>
+        @media (max-width: 768px) {
+        .faq-container {
+            padding: 10px; /* Giảm padding tổng */
+            gap: 10px; /* Giảm khoảng cách giữa các phần */
+        }
 
+        .faq-right {
+            width: 100%; /* Đảm bảo không bị kéo dài */
+        }
+    }
+
+        
+        
+    </style>
+<div id="cauhoi"><br>
   <div class="faq-container">
         <!-- Phần bên trái -->
         <div class="faq-left">
