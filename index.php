@@ -19,11 +19,11 @@
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="8-3-Rosa.jpg" class="img-fluid" alt="Sale Banner">
+                            <img src="8-3-Rosa.jpg" class="img-fluid" alt="Sale Banner" onclick="window.location.href='product.php#vanphong'">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="assets/images/bannerrosa2.jpg" class="img-fluid" alt="New Year Banner">
+                            <img src="assets/images/bannerrosa2.jpg" class="img-fluid" alt="Sale Banner" onclick="window.location.href='product.php#vanphong'">
                         </div>
 
                         <!-- <div class="carousel-item">
@@ -43,6 +43,20 @@
             </div>
         </div>
     </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let links = document.querySelectorAll(".carousel-item a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.stopPropagation(); // Ngăn Bootstrap chặn click
+            });
+        });
+    });
+</script>
     <style>
 /* Banner */
 .banner {
@@ -747,8 +761,6 @@ $result = $conn->query($sql);
         }
     }
 
-        
-        
     </style>
 <div id="cauhoi"><br>
   <div class="faq-container">
