@@ -1,209 +1,483 @@
-<div class="benefit mt-2">
-    <div class="container">
-        <div class="row benefit_row">
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content mr-1">
-                        <h6>Bảo hành 3 năm</h6>
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../data/bank_info.php';
+require '../header.php';
+require 'vendor/autoload.php'; // PHPMailer
+
+// Kết nối database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "database";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+$conn->set_charset("utf8");
+
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
+}
+
+// Lấy orderId từ URL
+$orderId_decoded = isset($_GET['orderId']) ? $_GET['orderId'] : '';
+$orderId = base64_decode($orderId_decoded);
+
+// Lấy thông tin đơn hàng từ database
+$query = "SELECT * FROM `order` WHERE `formatted_order_id` = ?";
+$selectStmt = $conn->prepare($query);
+$selectStmt->bind_param("s", $orderId);
+$selectStmt->execute();
+$result = $selectStmt->get_result();
+
+$order = "";
+$order_date = "";
+$name = "";
+$phone = "";
+$email = "";
+$shipping = "";
+$address = "";
+$note = "";
+$found = false;
+
+if ($result->num_rows > 0) {
+    $found = true;
+    $row = $result->fetch_assoc();
+    $order = $row['order'];
+    $order_date = $row['order_date'];
+    $name = $row['customer_name'];
+    $phone = $row['customer_phone'];
+    $email = $row['customer_email'];
+    $shipping = $row['shipping_method'];
+    $address = $row['delivery_address'];
+    $note = $row['customer_note'];
+
+    // Gửi email xác nhận đơn hàng
+    sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping, $email, $address, $note);
+} else {
+    $orderId = "";
+}
+
+// Hàm gửi email
+function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping, $email, $address, $note) {
+    $mail = new PHPMailer(true);
+
+    try {
+        // Cấu hình SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'vanan02102002@gmail.com'; // Gmail của bạn
+        $mail->Password = 'giku neuh eria jkab'; // Mật khẩu ứng dụng
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+
+        // Cấu hình email
+        $mail->setFrom('vanan02102002@gmail.com', 'ROSA COMPUTER');
+        $mail->addAddress($email, $name); // Gửi cho khách hàng
+
+        $mail->isHTML(true);
+        
+        $mail->Subject = 'ROSA COMPUTER xác nhận thông tin đơn hàng thành công #'. $orderId;
+
+        // Hình thức nhận hàng
+        $shippingMethod = ($shipping == 'home') ? 'Giao hàng tận nhà' : 'Nhận tại cửa hàng';
+
+        // cố định số smtp
+        
+    
+        // Nội dung email
+
+        $mail->Body = "
+        <body style='font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;'>
+            <div style='max-width: 70%; margin: auto; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1);'>
+                <!-- Tiêu đề -->
+                <img src='https://rosacomputer.vn/assets/images/rosa.png' alt='ROSA Computer AI' style='max-width: 150px; margin-bottom: 10px;'>
+                <div style='text-align: center;'>
+                    <h2 style='color: #ff1d1d;'>ĐẶT HÀNG THÀNH CÔNG</h2>
+                    <p style='color: #4CAF50; font-size: 16px;font-family: Arial, sans-serif;'><strong>✔ Quý khách nhận được thông tin đặt hàng tại website: https://rosacomputer.vn </strong></p>
+                </div>
+        
+                <!-- Bố cục chia đôi -->
+                <div style='display: flex; justify-content: space-between; gap: 20px;'>
+                    
+                    <!-- Cột 1: Thông tin đơn hàng -->
+                    <div style='width: 70%;'>
+                        <h3 style='text-align: center;'>📌 Thông tin đơn hàng</h3><br>
+                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                        <table style='width: 100%; font-size: 15px;font-family: Arial, sans-serif;'>
+                            <tr>
+                                <td><strong>🆔 Mã đơn hàng:</strong></td>
+                                <td>$orderId</td>
+                            </tr><br>
+                            <tr>
+                                <td><strong>📅 Ngày đặt hàng:</strong></td>
+                                <td>$order_date</td>
+                            </tr><br>
+                        </table>
+        
+                        <hr style='border: 1px solid #ddd; margin: 10px 0;'>
+                        <h3 style='color: #333;'>👤 Thông tin khách hàng</h3>
+                        <table style='width: 100%; font-size: 15px; font-family: Arial, sans-serif;'>
+                            <tr>
+                                <td><strong>📞 Số điện thoại:</strong></td>
+                                <td>$phone</td>
+                            </tr><br>
+
+                            
+                            <tr>
+                                <td><strong>🚚 Hình thức vận chuyển:</strong></td>
+                                <td style='color:rgb(255, 65, 40);'>$shippingMethod</td>
+                            </tr><br>
+
+                            <tr>
+                                <td><strong>📍 Địa chỉ nhận hàng:</strong></td>
+                                <td>$address</td><br>
+                            </tr><br>
+
+                            <tr>
+                                <td><strong>✉ Email:</strong></td>
+                                <td>$email</td>
+                            </tr><br>
+
+                            <tr>
+                                <td><strong>💳 Hinh thức thanh toán </strong></td>
+                                <td>$shipping</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+        
+                    <!-- Cột 2: Danh sách sản phẩm -->
+                    <div style='width: 50%; background-color: #f9f9f9; padding: 10px; border-radius: 5px;'>
+                        <h3 style='text-align: center;'>🛍 Chi tiết đơn hàng</h3><br>
+                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                        <div>
+                            $order
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content mr-1">
-                        <h6>Linh kiện chính hãng</h6>
+                
+                <hr style='border: 1px solid #ddd; margin: 20px 0;'>
+                <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Nhân viên sẽ liên hệ với bạn trong thời gian sớm nhất! 🚀</p><br>
+                <div style='text-align: center'>
+                    <a href='https://rosacomputer.vn/' style='color: #FFFFF,padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                         Website
+                    </a>
+                    <a href='https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/' style='color: #FFFFF,padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                         ROSA
+                    </a>
+                    <a href='https://www.linkedin.com/in/rosa-ai-computer-20980b352/' style=' color: #FFFFF; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                         ROSA 
+                    </a>
+                  
+                </div>
+                <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Đội ngũ hỗ trợ - ROSA COMPUTER<br>Email: support@rosacomputer.ai | Hotline:  (028) 39293770 - (028) 39293765</p></div>
+            </body>";
+
+        $mail -> send();
+            return "Email đã gửi thành công! ";
+        }catch (exception $e) {
+            return "Email không gửi được. Lỗi: {$mail->ErrorInfo}";
+
+            }
+        }
+
+?>
+
+<main class="order-container">
+    <div class="order-info">
+      <?php if ($found): ?>
+            <h3 style="color: red; font-weight: bold;">ĐẶT HÀNG THÀNH CÔNG </h3>
+            <p>Cảm ơn bạn đã đặt hàng từ ROSA. Vui lòng kiểm tra lại thông tin hoá đơn nhân viên sẽ liên hệ với quý khách trong thời gian sớm nhất.</p>
+            <?php else: ?>
+                <h3>KHÔNG TÌM THẤY ĐƠN HÀNG</h3>
+            <?php endif; ?>
+            
+            <h4>Hóa Đơn ID: <?php echo $orderId; ?></h4>
+            <h4>Ngày Tạo: <?php echo $order_date; ?></h4>
+            <br>
+            <h5 style="color: red; font-weight: bold;" >THÔNG TIN KHÁCH HÀNG</h3>
+                <div style="width: 100%; height: 1px; background-color:#DDDDDD; margin-top: 5px;"></div><br>
+
+            <p><strong>Tên Khách Hàng:</strong> <?php echo $name; ?></p>
+            <p><strong>Số điện thoại:</strong> <?php echo $phone; ?></p>
+            <p><strong>Email:</strong> <?php echo $email; ?></p>
+            
+            <h5 style="color: red; font-weight: bold;" >THÔNG TIN GIAO HÀNG</h3>
+                <div style="width: 100%; height: 1px; background-color:#DDDDDD; margin-top: 5px;"></div><br>
+             
+            <?php if ($shipping === 'home'): ?>
+                <p><strong>Hình thức nhận hàng:</strong> Giao hàng tại nhà</p>
+                <p><strong>Địa chỉ giao hàng:</strong> <?php echo $address; ?></p>
+                <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
+           
+            <?php elseif ($shipping === 'store'): ?>
+                <p><strong>Hình thức nhận hàng:</strong> Nhận hàng tại đại lý uỷ quyền ROSA</p>
+                <p><strong>Địa chỉ đại lý:</strong> <?php echo $address; ?></p>
+                <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
+            <?php else: ?>
+                <p><strong>Hình thức nhận hàng:</strong></p>
+            <?php endif; ?>
+
+            <div style="width: 100%; height: 1px; background-color:#DDDDDD; margin-top: 5px;"></div><p></p>
+            
+            <h5 style="color: red; font-weight: bold;">NỘI DUNG HOÁ ĐƠN:</h3>
+            <div id="order-info"><?php echo $order ?></div>
+       
+            <div style="width: 100%; height: 1px; background-color:#DDDDDD; margin-top: 5px;"></div><p></p>
+
+            <?php if ($shipping === 'home'): ?>
+                <h3 style="color: red; font-weight: bold;">THÔNG TIN CHUYỂN KHOẢN :</h3><br>
+             
+                <p><strong>Tên tài khoản:</strong> <?php echo $accountName; ?></p>
+                <p><strong>Số tài khoản:</strong> <?php echo $accountNumber; ?></p>
+                <p><strong>Tên Ngân Hàng:</strong> <?php echo $bankName; ?></p>
+                <div class="qr-code">
+                    <img src=<?php echo $QRcode; ?> alt="QR Code" />
+                </div>
+            <?php endif; ?>
+            
+            <?php if ($shipping === 'store'): ?>
+                <h3 style="color: red; font-weight: bold;">THÔNG TIN CHUYỂN KHOẢN:</h3><br>
+
+                <p><strong>Tên tài khoản:</strong> <?php echo $accountName; ?></p>
+                <p><strong>Số tài khoản:</strong> <?php echo $accountNumber; ?></p>
+                <p><strong>Tên Ngân Hàng:</strong> <?php echo $bankName; ?></p>
+                <div class="qr-code">
+                    <img src=<?php echo $QRcode; ?> alt="QR Code" />
+                </div>
+            <?php endif; ?>
+
+    </div>
+    
+        <div class ="support-news">
+            <div class ="subport-section">
+            <h3>Thông Tin Hỗ Trợ</h3>
+            <p>Tim hiểu thêm thông tin hỗ trợ khác từ ROSA khi mua sản phẩm </p>
+            <ul >
+                <li><a href="../CSBH.php">Chính sách bảo hành</a></li>
+                <li><a href="../DSDL.php">Danh sách đại lý</a></li>
+                <li><a href="../baohanh.php">Bảo hành</a></li>
+                <li><a href="../index.php#cauhoi">Câu hỏi thường gặp</a></li>
+            </ul>
+        </div>
+       <div class="news-section">
+            <h3>Tin Tức ROSA</h3>
+            <p>Bạn có thể khám phá thêm nhiều thông tin thú vị về công nghệ và giải pháp từ tin tức ROSA</p>
+            <?php
+            $newsQuery = "SELECT article_title, article_link, article_image, article_date FROM article ORDER BY article_date DESC LIMIT 4";
+            $newsResult = $conn->query($newsQuery);
+            while ($news = $newsResult->fetch_assoc()): ?>
+                <div class="news-card">
+                    <a href="<?= htmlspecialchars($news['article_link']); ?>">
+                        <img src="/tintuc_test/admin/modules/blog/uploads/<?= htmlspecialchars($news['article_image']); ?>" alt="News Image">
+                    </a>
+                    <div class="news-content">
+                        <div class="news-title">
+                            <a href="tintuc_test/tintuc/<?= htmlspecialchars($news['article_link']); ?>">
+                                <?= htmlspecialchars($news['article_title']); ?>
+                            </a>
+                        </div>
+                        <p class="news-date">Cập nhật ngày <?= htmlspecialchars(date("d/m/Y", strtotime($news['article_date']))); ?></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content">
-                        <h6>Thanh toán dễ dàng</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-items-center">
-                    <div class="benefit_content">
-                        <h6>Giao hàng tận nơi</h6>
-                    </div>
-                </div>
-            </div>
+            <?php endwhile; ?>
         </div>
     </div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-sections">
-		<!-- THÔNG TIN CÔNG TY -->
-			<div class="footer-column">
-				<h3>THÔNG TIN CÔNG TY </h3>
-				<p>Thửa đất số 13A, Tờ bản đồ C2, Khu phố 1B, Phường An Phú, Thành phố Thuận An, Tỉnh Bình Dương</p>
-				<p>Chi nhánh & TTBH HCM: 150 Ter, đường Bùi Thị Xuân, phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh .</p>
-				<p>Chi nhánh Hà Nội: Chi nhánh Hà Nội: Tầng 4, Tòa nhà Viet Tower, số 01 phố Thái Hà, P. Trung Liệt, Q. Đống Đa, TP Hà Nội</p>
-			</div>
-		<!-- HƯỚNG DẪN KHÁCH HÀNG -->
-			<div class="footer-column">
-				<h3>CHÍNH SÁCH CÔNG TY</h3>
-				<ul class="list-info">
-                        <li><a href="CSDL.php">CHÍNH SÁCH ĐẠI LÝ</a></li>
-                        <li><a href="CSBH.php">CHÍNH SÁCH BẢO HÀNH</a></li>
-                    </ul>
-			</div>
-		<!-- PHẦN MỀM & KHÓA HỌC -->
-			<div class="footer-column">
-				<h3>PHẦN MỀM & KHÓA HỌC</h3>
-				<ul class="list-info">
-                        <li><a href="courses/pytho-count.php">PYTHON CƠ BẢN</a></li>
-                        <li><a href="courses/yolo-course.php">THỊ GIÁC MÁY TÍNH</a></li>
-                        <li><a href="courses/Nextcloud.php">PHẦN MỀM QUẢN TRỊ DOANH NGHIỆP</a></li>
-                    </ul>
-                </div>
-		<!-- CỘNG ĐỒNG ROSA -->
-            <div class="footer-column">
-                <h3>CÔNG ĐỒNG ROSA</h3>
-				<ul class="list-info">
-					<li><a href="https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/"><i class="fab fa-facebook" style="color:#1877F2;"></i> ROSA</a></li>
-					<li><a href="#"><i class="fab fa-youtube" style="color:#FF0000;"></i> ROSA</a></li>
-					<li><i class="fas fa-envelope" style="color:#D44638;"></i> support@rosacomputer.ai</li>
-					<li><i class="fas fa-phone-alt" style="color:#FF0000;"></i> Phòng kinh doanh: (028)39293770 - (028)39293765 </li>
-					<li><i class="fas fa-phone-alt" style="color:#FF0000;"></i> Phòng kỹ thuật: (028) 39260996</li>
-
-				</ul>
-            </div>
-        </div>
-    </div>
-    <div id="foot-bot">
-        <div class="container">
-            <p>&copy; 2024 Bản quyền thuộc về <a href="https://rosacomputer.vn/">CÔNG TY TNHH ĐIỆN TỬ VÀ TIN HỌC TOÀN VIỆT</a></p>
-        </div>
-    </div>
-
-</footer>
-
+    <br>
+</main>
 <style>
-.row {
+/* Bố cục chính: Hai cột */
+.order-container {
+    font-family: Arial, sans-serif;
     display: flex;
-    /* flex-wrap: nowrap; Ngăn các cột xuống dòng */
-    margin-right: -15px;
-    margin-left: -15px;
     justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+
 }
 
-.footer {
-    background-color: #f8f8f8;
-    padding: 10px 0;
-    font-family: Arial, sans-serif;
+/* Cột bên trái - Thông tin đơn hàng */
+.order-info {
+    flex: 2; /* Chiếm 2/3 không gian */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.container {
-   
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-.footer-sections {
+
+/* Cột bên phải - Thông tin hỗ trợ & Tin tức */
+.support-news {
+
+    flex: 1; /* Chiếm 1/3 không gian */
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap; /* Ngăn các cột xuống dòng */
+    flex-direction: column;
     gap: 20px;
 }
-.footer-column {
-    width: 23%; /* Điều chỉnh kích thước để giống hình */
+
+/* Hộp hỗ trợ & tin tức */
+.support-section, .news-section {
+    background: white;
     padding: 20px;
-    text-align: left;
-}
-.footer-column h3 {
-    font-size: 22px;
-    color: rgb(255, 13, 13);
-    margin-bottom: 15px;
-    position: relative;
-    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.footer-column h3::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: rgb(255, 4, 4);
-    margin-top: 8px;
+
+/* Mã QR */
+.qr-code {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    margin: 20px 0;
 }
 
-.footer-column p::before {
-    content: "\1F3E0"; /* Unicode cho icon nhà */
-    margin-right: 10px;
+.qr-code img {
+    max-width: 350px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    background: white;
 }
 
-.footer-column ul {
+/* Phần tiêu đề "Thông tin hỗ trợ" */
+.subport-section h3 {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+/* Phần tiêu đề "Tin tuc ROSA" */
+.news-section h3 {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+/* Văn bản mô tả */
+.support-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+
+}
+
+/* Danh sách hỗ trợ */
+.support-section ul {
     list-style: none;
     padding: 0;
+   
 }
-.footer-column ul li a {
-    text-decoration: none;
-    color: #111111;
+
+.support-section ul li {
+    display: flex;
+    align-items: center;
     font-size: 16px;
-    display: block;
-    padding: 5px 0;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease-in-out;
 }
-.footer-column ul li a:hover {
+
+
+/* Hiệu ứng hover */
+.support-section ul li:hover {
     color: red;
 }
 
-#foot-bot p {
-    text-align: center;
-    margin: 0;
-    padding: 10px 0;
-    font-size: 19px;
-    background-color:rgb(234, 228, 228);
+/* bỏ gạch chân dưới chữ */
+a:hover, a:focus {
+    text-decoration: none;
 }
-@media (max-width: 768px) {
-    .footer-sections {
-        flex-direction: column; /* Xếp các cột theo chiều dọc */
-        align-items: center;
-        text-align: center;
-    }
-    .footer-column {
-        width: 100%; /* Chiếm toàn bộ chiều rộng */
-        padding: 10px 0;
-    }
+.news-card img {
+    width: 165px;
+    height: auto;
+    /*display: block;*/
+    margin: 0 auto 10px;
+    border-radius: 5px;
 }
-.benefit {
-    background-color: #fff;
-    padding: 20px 0;
-    border: 1px solid #ddd; /* Viền khung */
-    margin-top: 20px;
+/*vùng tin tuc*/
+.news-section {
+    font-family: Arial, sans-serif;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.benefit_row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: center;
+/*vùng hỗ trợ*/
+.subport-section {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.benefit_col {
-    flex: 1;
-    min-width: 200px;
-    padding: 10px;
-}
-.benefit_item {
+
+
+.news-card {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: #f9f9f9; /* Nền khung */
-    padding: 25px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    gap: 15px; /* Khoảng cách giữa ảnh và nội dung */
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
-.benefit_content h6 {
+
+.news-card img {
+    width: 100px;  /* Kích thước ảnh */
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.news-content {
+    flex: 1; /* Để nội dung mở rộng theo chiều ngang */
+}
+
+.news-title a {
     font-size: 16px;
     font-weight: bold;
     color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
 }
 
+.news-title a:hover {
+    color: #007bff;
+}
+
+.news-date {
+    font-size: 12px;
+    color: #888;
+}
+
+
+/* Responsive cho mobile */
 @media (max-width: 768px) {
-    .benefit_row {
-        flex-direction: column;
-        align-items: center;
+    .order-container {
+        flex-direction: column; /* Xếp chồng lên nhau khi màn hình nhỏ */
+    }
+    
+    .order-info, .support-news {
+        flex: 1;
+    }
+
+    .qr-code img {
+        max-width: 120px; /* Thu nhỏ QR trên màn hình nhỏ */
     }
 }
+
 </style>
+<?php require "../footer.php"; ?>
+

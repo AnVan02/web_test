@@ -1,6 +1,7 @@
 <?php
 include('admin_copy/config/config.php');
 
+
 if (!isset($_GET['tab']) || empty($_GET['tab'])) {
     die("Vui lòng chọn một tab.");
 }
@@ -18,7 +19,6 @@ if (!$query) {
 ?>
     <title>Bài viết thuộc tab: <?= htmlspecialchars($tab); ?></title>
    
-
 <div class="container">
     <section class="article-list">
         <h1>Bài viết về: <?= htmlspecialchars($tab); ?></h1>
@@ -35,8 +35,7 @@ if (!$query) {
         } else {
             echo "Không có bài viết nào trong tab này";
         }
-
-        ?>
+    ?>
     </section>
 </div>
 <style> 

@@ -39,7 +39,6 @@ if ($found) {
             <p><strong>Số tài khoản:</strong> $accountNumber</p>
             <p><strong>Ngân hàng:</strong> $bankName</p>
 
-            
             <p>Vui lòng thanh toán và chờ nhân viên liên hệ xác nhận đơn hàng của bạn</p>
             <p>Cảm ơn bạn đã mua sắm tại ROSA!</p>
         ";

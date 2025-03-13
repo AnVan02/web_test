@@ -35,6 +35,7 @@ if (!$query) {
 // Debug: Hiển thị số lượng bài viết tìm thấy
 $total_articles = mysqli_num_rows($query);
 echo "<p style='color: red; font-weight: bold;'>Tổng số bài viết tìm thấy: " . $total_articles . "</p>";
+
 ?>
 
 <title>Bài viết thuộc tag: <?= htmlspecialchars($tag); ?></title>
