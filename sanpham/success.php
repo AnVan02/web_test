@@ -58,37 +58,138 @@ if ($result->num_rows > 0) {
     $orderId = "";
 }
 
-// Hàm gửi email
+// Gửi email thông tin cho khách hàng 
+
 function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping, $email, $address, $note) {
     $mail = new PHPMailer(true);
-
     try {
-        // Cấu hình SMTP
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'vanan02102002@gmail.com'; // Gmail của bạn
-        $mail->Password = 'djre jwmk kaqr zdkh'; // Mật khẩu ứng dụng
+        $mail->Username = 'vanan02102002@gmail.com'; // Thay bằng email của bạn
+        $mail->Password = 'djre jwmk kaqr zdkh'; // Mật khẩu ứng dụng Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
         $mail->CharSet = 'UTF-8';
         $mail->Encoding = 'base64';
 
-        // Cấu hình email
+        // Gửi email cho khách hàng
         $mail->setFrom('vanan02102002@gmail.com', 'ROSA COMPUTER');
-        $mail->addAddress($email, $name); // Gửi cho khách hàng
+        $mail->addAddress($email, $name);
+        $mail->addReplyTo('vanan02102002@gmail.com', 'ROSA COMPUTER');
 
         $mail->isHTML(true);
-        
-        $mail->Subject = 'ROSA COMPUTER xác nhận thông tin đơn hàng thành công #'. $orderId;
-
-        // Hình thức nhận hàng
-        $shippingMethod = ($shipping == 'home') ? 'Giao hàng tận nhà' : 'Nhận tại cửa hàng';
-
-        // cố định số smtp
-        
+        $mail->Subject = 'ROSA COMPUTER xác nhận đơn hàng thành công từ anh/chị ' . $name . ' với mã đơn hàng là ' . $orderId . '';
     
-        // Nội dung email
+        $mail->Body = "
+        <body style='font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;'>
+            <div style='max-width: 70%; margin: auto; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1);'>
+                <!-- Tiêu đề -->
+                <img src='https://rosacomputer.vn/assets/images/rosa.png' alt='ROSA Computer AI' style='max-width: 150px; margin-bottom: 10px;'>
+                <div style='text-align: center;'>
+                    <h2 style='color: #ff1d1d;'>KÍNH CHÀO </h2>
+                    <p style='color: #4CAF50; font-size: 16px;font-family: Arial, sans-serif;'><strong>Quý khách nhận được thông tin đặt hàng tại web https://rosacomputer.vn </strong></p>
+                </div>
+                <!-- Bố cục chia đôi -->
+                <div style='display: flex; justify-content: space-between; gap: 20px;'>
+                    <div style='width: 90%;'>
+                        <h3> THÔNG TIN ĐƠN HÀNG</h3>
+                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                        <table style='width: 100%; font-size: 15px;font-family: Arial, sans-serif;'>
+                            <tr>
+                                <td><strong> Mã đơn hàng:</strong></td>
+                                <td style='color:rgb(255, 65, 40);'>$orderId</td>
+                            </tr><br>
+                            <tr>
+                                <td><strong> Ngày đặt hàng:</strong></td>
+                                <td style='color:rgb(255, 65, 40);'>$order_date</td>
+                            </tr><br>
+                        </table>
+
+                        <hr style='border: 1px solid #ddd; margin: 10px 0;'>
+                        <h3 style='color: #333;'> THÔNG TIN KHÁCH HÀNG </h3>
+                        <table style='width: 100%; font-size: 15px; font-family: Arial, sans-serif;'>
+                            <tr>
+                                <td><strong>Tên khách hàng </strong></td>
+                                <td>$name</td>
+                            </tr><br>
+
+                            <tr>
+                                <td><strong> Số điện thoại:</strong></td>
+                                <td>$phone</td>
+                            </tr><br>
+
+                            <tr>
+                                <td><strong>Email </strong></td>
+                                <td>$email</td>
+                            </tr></br>
+
+                            <tr>
+                                <td><strong> Địa chỉ nhận hàng:</strong></td>
+                                <td>$address</td><br>
+                            </tr><br>
+
+                            <tr>
+                                <td><strong> Hinh thức thanh toán </strong></td>
+                                <td>$shipping</td>
+                            </tr>
+                            <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                            <tr>
+                                <td><strong>Chi tiết đơn hàng <strong></td>
+                                <td>$order</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <hr style='border: 1px solid #ddd; margin: 20px 0;'>
+                <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Nhân viên sẽ liên hệ với bạn trong thời gian sớm nhất! 🚀</p><br>
+                <div style='text-align: center'>
+                    <a href='https://rosacomputer.vn/' style='color: red; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                        <img src='https://img.icons8.com/ultraviolet/96/domain.png' alt='Facebook' style='height:25px; vertical-align: middle;'>ROSA COMPUTER AI
+                    </a>
+                    <a href='https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/' style='color: red; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                        <img src='https://img.icons8.com/fluency/96/facebook-new.png' alt='Facebook' style='height:25px; vertical-align: middle;'>ROSA COMPUTER AI
+                    </a>
+                    <a href='https://www.linkedin.com/in/rosa-ai-computer-20980b352/' style='color: red; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                        <img src='https://img.icons8.com/color/96/linkedin.png' alt='LinkedIn' style='height:25px; vertical-align: middle;'>ROSA COMPUTER AI
+                    </a>
+                </div>
+                <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Đội ngũ hỗ trợ - ROSA COMPUTER<br>Email: support@rosacomputer.ai | Hotline:  (028) 39293770 - (028) 39293765</p></div>
+            </body>";
+        
+        $mail->send();
+
+        // Gửi thông báo cho admin
+        sendAdminNotification($orderId, $order, $order_date, $name, $phone, $shipping, $email, $address, $note);
+
+    } catch (Exception $e) {
+        error_log("Email xác nhận không gửi được. Lỗi: {$mail->ErrorInfo}");
+    }
+}
+
+// Gửi email thông báo cho admin 
+
+function sendAdminNotification($orderId, $order, $order_date, $name, $phone, $shipping, $email, $address, $note) {
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'vanan02102002@gmail.com'; 
+        $mail->Password = 'djre jwmk kaqr zdkh'; 
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+
+        // Gửi cho admin
+        $mail->setFrom('vanan02102002@gmail.com', 'ROSA COMPUTER');
+        $mail->addAddress('vanan02102002@gmail.com','Admin ROSA'); // admin 1 
+        $mail->addReplyTo('vanan02102002@gmail.com', 'ROSA COMPUTER'); 
+
+        $mail->isHTML(true);
+        $mail->Subject = ' Đơn hàng mới từ ROSA COMPUTER  từ ' . $name . ' - ' . $orderId . '';
 
         $mail->Body = "
         <body style='font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;'>
@@ -96,95 +197,81 @@ function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping,
                 <!-- Tiêu đề -->
                 <img src='https://rosacomputer.vn/assets/images/rosa.png' alt='ROSA Computer AI' style='max-width: 150px; margin-bottom: 10px;'>
                 <div style='text-align: center;'>
-                    <h2 style='color: #ff1d1d;'>ĐẶT HÀNG THÀNH CÔNG</h2>
-                    <p style='color: #4CAF50; font-size: 16px;font-family: Arial, sans-serif;'><strong>✔ Quý khách nhận được thông tin đặt hàng tại website: https://rosacomputer.vn </strong></p>
+                    <h2 style='color: #ff1d1d;'>  THÔNG BÁO ĐƠN HÀNG MỚI </h2>
+                    <p style='color: #4CAF50; font-size: 16px;font-family: Arial, sans-serif;'><strong>✔ Đơn hàng từ thông tin website: https://rosacomputer.vn </strong></p>
                 </div>
-        
-                <!-- Bố cục chia đôi -->
                 <div style='display: flex; justify-content: space-between; gap: 20px;'>
-                    
-                    <!-- Cột 1: Thông tin đơn hàng -->
-                    <div style='width: 70%;'>
-                        <h3 style='text-align: center;'>📌 Thông tin đơn hàng</h3><br>
-                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                    <div style='width: 90%;'>
+                        <h3> Thông tin đơn hàng</h3>
                         <hr style='border:1px solid #ddd ; margin:10px 0;'>
                         <table style='width: 100%; font-size: 15px;font-family: Arial, sans-serif;'>
                             <tr>
-                                <td><strong>🆔 Mã đơn hàng:</strong></td>
-                                <td>$orderId</td>
+                                <td><strong> Mã đơn hàng:</strong></td>
+                                <td style='color:rgb(255, 65, 40);'>$orderId</td>
                             </tr><br>
                             <tr>
-                                <td><strong>📅 Ngày đặt hàng:</strong></td>
-                                <td>$order_date</td>
+                                <td><strong> Ngày đặt hàng:</strong></td>
+                                <td style='color:rgb(255, 65, 40);'>$order_date</td>
                             </tr><br>
                         </table>
-        
+                    
                         <hr style='border: 1px solid #ddd; margin: 10px 0;'>
-                        <h3 style='color: #333;'>👤 Thông tin khách hàng</h3>
+                        <h3 style='color: #333;'> Thông tin khách hàng</h3>
                         <table style='width: 100%; font-size: 15px; font-family: Arial, sans-serif;'>
                             <tr>
-                                <td><strong>📞 Số điện thoại:</strong></td>
+                                <td><trong>Tên khách hàng</strong></td>
+                                <td>$name</td>
+                            </tr><br>
+                            <tr>
+                                <td><strong> Số điện thoại:</strong></td>
                                 <td>$phone</td>
                             </tr><br>
 
-                            
                             <tr>
-                                <td><strong>🚚 Hình thức vận chuyển:</strong></td>
-                                <td style='color:rgb(255, 65, 40);'>$shippingMethod</td>
-                            </tr><br>
-
-                            <tr>
-                                <td><strong>📍 Địa chỉ nhận hàng:</strong></td>
-                                <td>$address</td><br>
-                            </tr><br>
-
-                            <tr>
-                                <td><strong>✉ Email:</strong></td>
+                                <td><strong> Email:</strong></td>
                                 <td>$email</td>
                             </tr><br>
+                            
+                            <tr>
+                                <td><strong> Địa chỉ nhận hàng:</strong></td>
+                                <td >$address</td><br>
+                            </tr><br>
 
                             <tr>
-                                <td><strong>💳 Hinh thức thanh toán </strong></td>
-                                <td>$shipping</td>
+                                <td><strong> Hình thức vận chuyển:</strong></td>
+                                <td;'>$shipping</td>
+                            </tr><br>
+                            
+                            <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                            <tr>
+                                <td><strong>  Chi tiết đơn hàng <strong></td>
+                                <td >$order</td>
                             </tr>
                             
                         </table>
                     </div>
-        
-                    <!-- Cột 2: Danh sách sản phẩm -->
-                    <div style='width: 50%; background-color: #f9f9f9; padding: 10px; border-radius: 5px;'>
-                        <h3 style='text-align: center;'>🛍 Chi tiết đơn hàng</h3><br>
-                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
-                        <div>
-                            $order
-                        </div>
-                    </div>
                 </div>
-                
-                <hr style='border: 1px solid #ddd; margin: 20px 0;'>
-                <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Nhân viên sẽ liên hệ với bạn trong thời gian sớm nhất! 🚀</p><br>
+                <hr style='border: 1px solid #ddd; margin: 10px 0;'>
                 <div style='text-align: center'>
-                    <a href='https://rosacomputer.vn/' style='color: #FFFFF,padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
-                         Website
+                    <a href='https://rosacomputer.vn/' style='color: red; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                        <img src='https://img.icons8.com/ultraviolet/96/domain.png' alt='Facebook' style='height:25px; vertical-align: middle;'>ROSA COMPUTER AI
                     </a>
-                    <a href='https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/' style='color: #FFFFF,padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
-                         ROSA
+                    <a href='https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/' style='color: red; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                        <img src='https://img.icons8.com/fluency/96/facebook-new.png' alt='Facebook' style='height:25px; vertical-align: middle;'>ROSA COMPUTER AI
                     </a>
-                    <a href='https://www.linkedin.com/in/rosa-ai-computer-20980b352/' style=' color: #FFFFF; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
-                         ROSA 
+                    <a href='https://www.linkedin.com/in/rosa-ai-computer-20980b352/' style='color: red; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                        <img src='https://img.icons8.com/color/96/linkedin.png' alt='LinkedIn' style='height:25px; vertical-align: middle;'>ROSA COMPUTER AI
                     </a>
-                  
                 </div>
                 <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Đội ngũ hỗ trợ - ROSA COMPUTER<br>Email: support@rosacomputer.ai | Hotline:  (028) 39293770 - (028) 39293765</p></div>
             </body>";
+            
 
-        $mail -> send();
-            return "Email đã gửi thành công! ";
-        }catch (exception $e) {
-            return "Email không gửi được. Lỗi: {$mail->ErrorInfo}";
-
-            }
-        }
+        $mail->send();
+    } catch (Exception $e) {
+        error_log("Email admin không gửi được. Lỗi: {$mail->ErrorInfo}");
+    }
+}
 
 ?>
 
@@ -203,22 +290,22 @@ function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping,
             <h5 style="color: red; font-weight: bold;" >THÔNG TIN KHÁCH HÀNG</h3>
                 <div style="width: 100%; height: 1px; background-color:#DDDDDD; margin-top: 5px;"></div><br>
 
-            <p><strong>Tên Khách Hàng:</strong> <?php echo $name; ?></p>
-            <p><strong>Số điện thoại:</strong> <?php echo $phone; ?></p>
-            <p><strong>Email:</strong> <?php echo $email; ?></p>
+            <p><strong>Tên Khách Hàng:</strong> <span style="margin-left: 10%;"> <?php echo $name; ?></span></p>
+            <p><strong>Số điện thoại:</strong> <span style="margin-left:13%"><?php echo $phone; ?></span></p>
+            <p><strong>Email:</strong><span style="margin-left:21%"><?php echo $email; ?></span></p>
             
             <h5 style="color: red; font-weight: bold;" >THÔNG TIN GIAO HÀNG</h3>
                 <div style="width: 100%; height: 1px; background-color:#DDDDDD; margin-top: 5px;"></div><br>
              
             <?php if ($shipping === 'home'): ?>
-                <p><strong>Hình thức nhận hàng:</strong> Giao hàng tại nhà</p>
-                <p><strong>Địa chỉ giao hàng:</strong> <?php echo $address; ?></p>
-                <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
+                <p><strong>Hình thức nhận hàng:</strong>Giao hàng tại nhà</p>
+                <p><strong>Địa chỉ giao hàng:</strong><?php echo $address; ?></p>
+                <p><strong>Ghi chú khách hàng:</strong><span style="margin-left:20%"> <?php echo $note; ?></span></p>
            
             <?php elseif ($shipping === 'store'): ?>
                 <p><strong>Hình thức nhận hàng:</strong> Nhận hàng tại đại lý uỷ quyền ROSA</p>
-                <p><strong>Địa chỉ đại lý:</strong> <?php echo $address; ?></p>
-                <p><strong>Ghi chú khách hàng:</strong> <?php echo $note; ?></p>
+                <p><strong>Thông tin đại lý:</strong><?php echo $address; ?></p>
+                <p><strong>Ghi chú khách hàng:</strong><span style="margin-left:20%"> <?php echo $note; ?></span></p>
             <?php else: ?>
                 <p><strong>Hình thức nhận hàng:</strong></p>
             <?php endif; ?>
@@ -232,10 +319,9 @@ function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping,
 
             <?php if ($shipping === 'home'): ?>
                 <h3 style="color: red; font-weight: bold;">THÔNG TIN CHUYỂN KHOẢN :</h3><br>
-             
-                <p><strong>Tên tài khoản:</strong> <?php echo $accountName; ?></p>
-                <p><strong>Số tài khoản:</strong> <?php echo $accountNumber; ?></p>
-                <p><strong>Tên Ngân Hàng:</strong> <?php echo $bankName; ?></p>
+                <p><strong>Tên tài khoản:</strong><?php echo $accountName; ?></p>
+                <p><strong>Số tài khoản:</strong><?php echo $accountNumber; ?></p>
+                <p><strong>Tên Ngân Hàng:</strong><?php echo $bankName; ?></p>
                 <div class="qr-code">
                     <img src=<?php echo $QRcode; ?> alt="QR Code" />
                 </div>
@@ -243,9 +329,8 @@ function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping,
             
             <?php if ($shipping === 'store'): ?>
                 <h3 style="color: red; font-weight: bold;">THÔNG TIN CHUYỂN KHOẢN:</h3><br>
-
-                <p><strong>Tên tài khoản:</strong> <?php echo $accountName; ?></p>
-                <p><strong>Số tài khoản:</strong> <?php echo $accountNumber; ?></p>
+                <p><strong>Tên tài khoản:</strong><?php echo $accountName; ?></p>
+                <p><strong>Số tài khoản:</strong><?php echo $accountNumber; ?></p>
                 <p><strong>Tên Ngân Hàng:</strong> <?php echo $bankName; ?></p>
                 <div class="qr-code">
                     <img src=<?php echo $QRcode; ?> alt="QR Code" />

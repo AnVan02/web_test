@@ -44,26 +44,25 @@ echo "<p style='color: red; font-weight: bold;'>Tổng số bài viết tìm th�
     <section class="article-list">
         <h1 style="text-transform: uppercase">Bài viết về: "<?= htmlspecialchars($tag); ?>"</h1>
         <div style="width: 40%; height: 2px; background-color:red; margin-top: 5px;"></div>
-
         <p></p>
         <?php
-        if ($total_articles > 0) {
-            while ($row = mysqli_fetch_assoc($query)) {
-                // Format ngày tháng
-                $formatted_date = date("d/m/Y", strtotime($row['article_date'])); 
+            if ($total_articles > 0) {
+                while ($row = mysqli_fetch_assoc($query)) {
+                    // Format ngày tháng
+                    $formatted_date = date("d/m/Y", strtotime($row['article_date'])); 
 
-                echo "<div class='article-item'>";
-                echo "<img src='/tintuc_test/admin/modules/blog/uploads/"  . htmlspecialchars($row['article_image']) . "' class='article-image'>";
-                echo "<div class='article-content'>";
-                echo "<h3><a href='/tintuc/" . urlencode($row['article_link']) . "'>" . htmlspecialchars($row['article_title']) . "</a></h3>";
-                echo "<p>" . htmlspecialchars_decode($row['article_excerpt']) . "...</p>";
-                echo "<p class='article-meta'><strong>Ngày đăng: </strong>" . $formatted_date . " | <strong>Tác giả: </strong>" . htmlspecialchars($row['article_author']) . "</p>";
-                echo "</div>";
-                echo "</div>";
+                    echo "<div class='article-item'>";
+                    echo "<img src='/tintuc_test/admin/modules/blog/uploads/"  . htmlspecialchars($row['article_image']) . "' class='article-image'>";
+                    echo "<div class='article-content'>";
+                    echo "<h3><a href='/tintuc/" . urlencode($row['article_link']) . "'>" . htmlspecialchars($row['article_title']) . "</a></h3>";
+                    echo "<p>" . htmlspecialchars_decode($row['article_excerpt']) . "...</p>";
+                    echo "<p class='article-meta'><strong>Ngày đăng: </strong>" . $formatted_date . " | <strong>Tác giả: </strong>" . htmlspecialchars($row['article_author']) . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>Không có bài viết nào trong tag này.</p>";
             }
-        } else {
-            echo "<p>Không có bài viết nào trong tag này.</p>";
-        }
         ?>
     </section>
 </div>

@@ -68,7 +68,7 @@ function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping,
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'vanan02102002@gmail.com'; // Gmail của bạn
-        $mail->Password = 'giku neuh eria jkab'; // Mật khẩu ứng dụng
+        $mail->Password = 'djre jwmk kaqr zdkh'; // Mật khẩu ứng dụng
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
         $mail->CharSet = 'UTF-8';
@@ -99,14 +99,10 @@ function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping,
                     <h2 style='color: #ff1d1d;'>ĐẶT HÀNG THÀNH CÔNG</h2>
                     <p style='color: #4CAF50; font-size: 16px;font-family: Arial, sans-serif;'><strong>✔ Quý khách nhận được thông tin đặt hàng tại website: https://rosacomputer.vn </strong></p>
                 </div>
-        
                 <!-- Bố cục chia đôi -->
                 <div style='display: flex; justify-content: space-between; gap: 20px;'>
-                    
-                    <!-- Cột 1: Thông tin đơn hàng -->
-                    <div style='width: 70%;'>
-                        <h3 style='text-align: center;'>📌 Thông tin đơn hàng</h3><br>
-                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
+                    <div style='width: 90%;'>
+                        <h3>📌 Thông tin đơn hàng</h3>
                         <hr style='border:1px solid #ddd ; margin:10px 0;'>
                         <table style='width: 100%; font-size: 15px;font-family: Arial, sans-serif;'>
                             <tr>
@@ -147,33 +143,29 @@ function sendOrderEmail($orderId, $order, $order_date, $name, $phone, $shipping,
                                 <td><strong>💳 Hinh thức thanh toán </strong></td>
                                 <td>$shipping</td>
                             </tr>
+
+                            <hr style='border:1px solid #ddd ; margin:10px 0;'>
+
+                            <tr>
+                                <td><strong> 🛍 Chi tiết đơn hàng <strong></td>
+                                <td>$order</td>
+                            </tr>
                             
                         </table>
                     </div>
-        
-                    <!-- Cột 2: Danh sách sản phẩm -->
-                    <div style='width: 50%; background-color: #f9f9f9; padding: 10px; border-radius: 5px;'>
-                        <h3 style='text-align: center;'>🛍 Chi tiết đơn hàng</h3><br>
-                        <hr style='border:1px solid #ddd ; margin:10px 0;'>
-                        <div>
-                            $order
-                        </div>
-                    </div>
                 </div>
-                
                 <hr style='border: 1px solid #ddd; margin: 20px 0;'>
                 <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Nhân viên sẽ liên hệ với bạn trong thời gian sớm nhất! 🚀</p><br>
                 <div style='text-align: center'>
-                    <a href='https://rosacomputer.vn/' style='color: #FFFFF,padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
-                         Website
+                    <a href='https://rosacomputer.vn/' style=' color: #FFFFF; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
+                         Website ROSA 
                     </a>
                     <a href='https://www.facebook.com/people/ROSA-AI-Computer/61559427752479/' style='color: #FFFFF,padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
-                         ROSA
+                         ROSA COMPUTER AI
                     </a>
                     <a href='https://www.linkedin.com/in/rosa-ai-computer-20980b352/' style=' color: #FFFFF; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px;'>
-                         ROSA 
+                         ROSA COMPUTER AI 
                     </a>
-                  
                 </div>
                 <p style='font-family: Arial, sans-serif; text-align: center; font-size: 15px; color: #ff1d1d;'>Đội ngũ hỗ trợ - ROSA COMPUTER<br>Email: support@rosacomputer.ai | Hotline:  (028) 39293770 - (028) 39293765</p></div>
             </body>";

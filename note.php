@@ -802,3 +802,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 ?>
+ <!-- link ở ảnh sản phâm -->
+<a href="product.php#vanphong"><img src="Rosa_Office_3-removebg-preview.png" alt="PC" class="small" style= " bottom: 270px;"></a>
+
+<!--  -->

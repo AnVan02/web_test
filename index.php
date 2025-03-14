@@ -233,8 +233,8 @@ $result = $conn->query($sql);
     <div class="container">
         <div class="grid">
             <div class="card">
-                <img src="name (3).jpg" alt="Background" class="large">
-                <img src="Rosa_Office_3-removebg-preview.png" alt="PC" class="small" style= " bottom: 270px;">
+            <a href="product.php#vanphong"><img src="name (3).jpg" alt="Background" class="large"></a>
+                <a href="product.php#vanphong"><img src="Rosa_Office_3-removebg-preview.png" alt="PC" class="small" style= " bottom: 270px;"></a>
                 <h3 style="font-weight: bolder">ROSA OFFICE</h3>
                 <p style="text-align:center">Mang đến hiệu suất ổn định và tính năng bảo mật cao, hoàn hảo cho công việc văn phòng hàng ngày.</p>
                 <ul1 class="pList-logo-sec ul1">
@@ -253,15 +253,14 @@ $result = $conn->query($sql);
                     <li1>
                         <img src="https://img.icons8.com/fluency/48/microsoft-word-2019.png" alt="" class="img-fluid">
                     </li1>
-                
-                
+                    
                 </ul1>
                     <a href="product.php#vanphong" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
 
             <div class="card">
-                <img src="deep-learning.jpg" alt="Background" class="large">
-                <img src="2.png" alt="PC" class="small" style =" bottom:270px;">
+                <a href="product.php#ai"><img src="deep-learning.jpg" alt="Background" class="large"></a>
+                <a href="product.php#ai"><img src="2.png" alt="PC" class="small" style =" bottom:270px;"></a>
                 <h3 style="font-weight: bolder">ROSA AI</h3>
                 <p style=" text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
                     <ul1 class="pList-logo-sec ul1">
@@ -282,8 +281,8 @@ $result = $conn->query($sql);
             </div>
 
             <div class="card">
-                <img src="name (6).jpg" alt="Background" class="large">
-                <img src="case 510 (1).png" alt="PC" class="small" style="width: 417px; bottom:244px">
+            <a href="product.php#gaming"><img src="name (6).jpg" alt="Background" class="large"></a>
+                <a href="product.php#gaming"><img src="case 510 (1).png" alt="PC" class="small" style="width: 417px; bottom:244px"></a>
                 <h3 style="font-weight: bolder">ROSA GAMING</h3>
                 <p style="text-align:center">Cấu hình cao và các card đồ họa mạnh mẽ, mang đến hiệu suất vượt trội cho các tựa game yêu thích.</p>
                 <ul1 class= "pList-logo-sec ul1">
@@ -305,8 +304,8 @@ $result = $conn->query($sql);
             </div>
 
             <div class="card">
-                <img src="name (4).jpg" alt="Background" class="large" style="display:flex">
-                <img src="1.2.png" alt="PC" class="small" style="bottom: 220px;">
+            <a href="product.php#mini"><img src="name (4).jpg" alt="Background" class="large" style="display:flex"></a>
+                <a href="product.php#mini"><img src="1.2.png" alt="PC" class="small" style="bottom: 220px;"></a>
                 <h3 style="font-weight: bolder">ROSA MINI </h3>
                 <p style="text-align:center">Tối ưu cho lập trình AI, với công cụ cải tiến và cấu hình mạnh mẽ để phát triển ứng dụng trí tuệ nhân tạo.</p>
                 <ul1 class = "pList-logo-sec ul1">
@@ -325,12 +324,17 @@ $result = $conn->query($sql);
                     <li1>
                         <img src="https://img.icons8.com/fluency/48/microsoft-word-2019.png" alt="" class="img-fluid">
                     </li1>
-                                   
+                    
+                    <li1>
+                        <img src ="https://img.icons8.com/fluency/48/microsoft-word-2020.png" alt="" class="img-fluid">
+                    </li>
                 </ul1>
+                
                     <a href="product.php#mini" class="btn" style="background:#FF0000 ; color:#FFFFFF ">KHÁM PHÁ</a>
             </div>
         </div>
     </div>
+
 
 <style>
 
