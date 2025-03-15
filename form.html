@@ -1,0 +1,113 @@
+
+    <title>Form Khách Hàng</title>
+ 
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Thông Tin Khách Hàng</h2>
+        <form onsubmit="return validateForm()">
+            <label for="name">Họ và Tên:</label>
+            <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+
+            <label for="phone">Số Điện Thoại:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required pattern="[0-9]{10}">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Nhập email" required>
+
+            <button type="submit" class="btn-submit">Gửi Thông Tin</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let email = document.getElementById("email").value.trim();
+            
+            let phoneRegex = /^[0-9]{10}$/;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!phoneRegex.test(phone)) {
+                alert("Số điện thoại không hợp lệ! (10 chữ số)");
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("Email không hợp lệ!");
+                return false;
+            }
+
+            alert("Thông tin đã gửi thành công!");
+            return true;
+        }
+    </script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    h2 {
+        text-align: center;
+        color: red;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn-submit {
+        background-color: red;
+        color: white;
+        padding: 12px;
+        border: none;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-submit:hover {
+        background-color: darkred;
+    }
+
+    @media (max-width: 768px) {
+        .form-container {
+            padding: 15px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        .btn-submit {
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
+</style>
+

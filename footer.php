@@ -1,19 +1,57 @@
 <br>
-<div class="container footer-contact1"style="">
-<div class="footer-newsletter1">
+<div class="container footer-contact1">
+    <div class="footer-newsletter1">
     <h3 style="color: red;">Nhận thông tin từ ROSA.</h3>
     <p>Đăng ký email để nhận các thông tin mới nhất từ ROSA</p>
 
-    <form action="send_email.php" method="POST">
-        <input type="email" name="email" placeholder="Email của bạn" required 
-               style="padding: 10px; border: none; border-radius: 20px; width: 200px; text-align: center;">
-        <button type="submit" 
-                style="padding: 10px 20px; background-color: red; color: white; border: none; border-radius: 20px; cursor: pointer;">
-            ĐĂNG KÝ
-        </button>
-    </form>
-</div>
+    <form id="subscribeForm">
+    <input type="email" name="email" id="emailInput" placeholder="Email của bạn" required
+        style="padding: 10px; border: none; border-radius: 20px; width: 200px; text-align: center;">
+    <button type="submit"
+        style="padding: 10px 20px; background-color: red; color: white; border: none; border-radius: 20px; cursor: pointer;">
+        ĐĂNG KÝ
+    </button>
+</form>
+    <!-- Thông báo kết quả -->
+    <div id="messageBox" style="display: none;margin-top: 10px;"></div>
 
+    <script>
+
+document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Ngăn trang tải lại
+
+    var email = document.getElementById("emailInput").value;
+    var messageBox = document.getElementById("messageBox");
+
+    if (email.trim() === "") {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.innerHTML = "❌ Vui lòng nhập email!";
+        return;
+    }
+
+    var formData = new FormData();
+    formData.append("email", email);
+
+    fetch("sanpham/send_email.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        messageBox.style.display = "block";
+        messageBox.innerHTML = data.includes("✅") ? `<span style="color: green;">${data}</span>` : `<span style="color: red;">${data}</span>`;
+    })
+    .catch(error => {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.innerHTML = "❌ Đã xảy ra lỗi, vui lòng thử lại!";
+    });
+});
+
+</script>
+
+</div>
 
     <div class="footer-support1" >
         <h3  style="color:red" >Thông tin hỗ trợ.</h3>
@@ -83,6 +121,15 @@
 </footer>
 
 <style>
+
+/* không gạch chân */
+#foot-bot1 a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    color: red
+}
+
+
     
 .footer-contact1 {
     display: flex;

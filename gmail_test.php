@@ -59,7 +59,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'vanan0210200@gmail.com'; // Gmail của bạn
-    $mail->Password = 'iarw csdj bmfd iyls'; // Mật khẩu ứng dụng
+    $mail->Password = 'iarw csdj bmfd iylsiarw csdj bmfd iyls'; // Mật khẩu ứng dụng
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 

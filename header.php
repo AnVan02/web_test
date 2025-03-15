@@ -130,16 +130,18 @@
 
     </script>
         <style>
-       
+ 
         .header {
-        
+            position :sticky;
+            top:0;
+            width:100%;
+            z-index:1000;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px 0;
             /* font-weight:bold; */
             font-size: 20px;
             font-family: Arial, sans-serif;
-            
         }
 
         .nav_container {
@@ -158,8 +160,6 @@
             position: relative;
             margin: 0 15px;
         }
-
-        
 
         .nav_container ul li a:hover {
             color: #007bff;
@@ -317,7 +317,6 @@
             margin-left: 0;
         }
     }
-
         
         .header-top {
             background: #f8f8f8;
@@ -361,6 +360,7 @@
         .header {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            
         }
      
         .nav_container ul li {
